@@ -5,9 +5,9 @@
  */
 package Business.UserHandle;
 
-import Business.Employee.Employee;
+import Business.EmployeeArea.EmployeeArea;
 import Business.Role.Role;
-import Business.WorkQueue.WorkQueue;        
+import Business.WorkLoad.WorkLoad;        
         
 /**
  *
@@ -16,12 +16,12 @@ import Business.WorkQueue.WorkQueue;
 public class UserHandle {
     private String username;
     private String password;
-    private Employee employee;
+    private EmployeeArea employeearea;
     private Role role;
-    private WorkQueue workQueue;
+    private WorkLoad workload;
 
-    public UserAccount() {
-        workQueue = new WorkQueue();
+    public UserHandle() {
+        workload = new WorkLoad();
     }
     
     
@@ -46,20 +46,20 @@ public class UserHandle {
         return role;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployeeArea(EmployeeArea employeearea) {
+        this.employeearea = employeearea;
     }
 
     public void setRole(Role role) {
         this.role = role;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public EmployeeArea getEmployeeArea() {
+        return employeearea;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
+    public WorkLoad getWorkLoad() {
+        return workload;
     }
 
     
