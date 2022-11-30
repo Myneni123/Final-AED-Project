@@ -13,18 +13,18 @@ public class Supplier_WorkLoad extends WorkLoad{
     
     private int requestQuantity;
     private boolean add;
-    private Supplier supplier;
+    private Suppliers suppliers;
 
      public Supplier_WorkLoad(){
         add = false;
     }
      
-    public Supplier getSupplier() {
-        return supplier;
+    public Suppliers getSuppliers() {
+        return suppliers;
     }
 
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
+    public void setSuppliers(Suppliers suppliers) {
+        this.suppliers = suppliers;
     }
 
     public boolean isAdd() {
