@@ -16,8 +16,8 @@ package Business.Organization;
 
 import Business.Enterprise.CDCEnterprise;
 import Business.Organization.Organization.Type;
-import Business.Supplier.Provider;
-//import Business.Supplier.Supplier;
+//import Business.Supplier.Provider;
+import Business.Supplier.Supplier;
 import java.util.ArrayList;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
  */
 public class OrganizationDirectory {
     
-    private ArrayList<Organization> organizationList;
+    //private ArrayList<Organization> organizationList;
 
     public OrganizationDirectory() {
         organizationList = new ArrayList<>();
