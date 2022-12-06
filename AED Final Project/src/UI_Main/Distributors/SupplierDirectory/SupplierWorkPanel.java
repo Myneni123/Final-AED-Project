@@ -1,7 +1,7 @@
 /*
  * AdminWorkAreaJPanel.java
  *
- * Created on October 10, 2008, 8:50 AM
+ * 
  */
 package UI_Main.Distributors.SupplierDirectory;
 
@@ -28,7 +28,7 @@ import Validation.Validation;
 
 /**
  *
- * @author raunak
+ * @author Admin
  */
 public class SupplierWorkPanel extends javax.swing.JPanel {
 
@@ -40,7 +40,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
     Supplier s;
 
     /**
-     * Creates new form AdminWorkAreaJPanel
+     * Creates new setup AdminWorkAreaJPanel
      */
     public SupplierWorkPanel(JPanel userProcessContainer, UserHandle account, Supplier_Org organization, Enterprise enterprise, MainSystem business) {
         initComponents();
@@ -52,10 +52,10 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
         for (Supplier supplier : organization.getSupplierList().getSupplierList()) {
             if (account.getEmployee().getName().equals(supplier.getSupplierName())) {
                 s = supplier;
-                System.out.println("supplier name" + s.getSupplierName());
+                System.out.println("supplier_name" + s.getSupplierName());
             }
         }
-        System.out.println("busi" + business.getWorkQueue().getWorkRequestList().size());
+        System.out.println("bus" + business.getWorkQueue().getWorkRequestList().size());
         if (s.getWorkQueue() == null) {
             Work_Queue w = new Work_Queue();
             s.setWorkQueue(w);
