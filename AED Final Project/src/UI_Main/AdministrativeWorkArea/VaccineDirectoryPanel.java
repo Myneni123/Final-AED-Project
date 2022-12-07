@@ -7,32 +7,30 @@ package UI_Main.AdministrativeWorkArea;
 
 
 
-import Business.CDC.Disease;
-import Business.EcoSystem;
-import Business.Supplier.Vaccine;
+import Business.C2D.Disease;
+import Business_Frame.MainSystem;
+import Business.SupplierArea.Vaccine;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
- * @author Administrator
+ * @author admin
  */
 public class VaccineDirectoryPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ManagePersonDirectoryJPanel
-     */
+    
    private JPanel userProcessContainer;
-   private EcoSystem business;
+   private MainSystem businesses;
  
-    public VaccineDirectoryPanel(JPanel userProcessContainer, EcoSystem business){
+    public VaccineDirectoryPanel(JPanel userProcessContainer, MainSystem businesses){
         initComponents();
         this.userProcessContainer=userProcessContainer;
-        this.business=business;
+        this.businesses=businesses;
        
         populateVaccineTable();
         populatecombo();
@@ -40,7 +38,7 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
     public void populateVaccineTable(){
          DefaultTableModel dtm= (DefaultTableModel) tblVaccine.getModel();
        dtm.setRowCount(0);
-       for (Vaccine vaccine : business.getVaccineList().getVaccineList()) {
+       for (Vaccine vaccine : businesses.getVaccineList().getVaccineList()) {
         
            Object[] row = new Object[2];
            row[0]= vaccine;
@@ -50,7 +48,7 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
        }
     
     public void populatecombo(){
-        for (Disease disease : business.getDiseaseList().getDiseaseList()) {
+        for (Disease disease : businesses.getDiseaseList().getDiseaseList()) {
             comboDisease.addItem(disease);
         }
     }
@@ -153,12 +151,12 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         // TODO add your handling code here:
         if(!txtVaccineName.getText().equals("")){
-        Vaccine v= business.getVaccineList().addVaccine();
+        Vaccine v= businesses.getVaccineList().addVaccine();
         v.setVaccineName(txtVaccineName.getText());
         v.setDisease((Disease) comboDisease.getSelectedItem());
         populateVaccineTable();
         }else{
-             JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Enter a valid entry", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         
     }//GEN-LAST:event_btnNewActionPerformed
@@ -174,15 +172,15 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
           int selectedRow= tblVaccine.getSelectedRow();
          if(selectedRow<0){
-             JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Please select atleast one row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
       }
         else{
              
          Vaccine p=(Vaccine) tblVaccine.getValueAt(selectedRow, 0);
 
-         business.getVaccineList().removeVaccine(p);
+         businesses.getVaccineList().removeVaccine(p);
          
-          JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
+          JOptionPane.showMessageDialog(null, "Account deletion successful");
         populateVaccineTable();
          }
          
@@ -190,7 +188,7 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
 
     private void txtVaccineNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVaccineNameKeyPressed
         // TODO add your handling code here:
-        Validator.onlyString(evt, txtVaccineName);
+        Validation.onlyString(evt, txtVaccineName);
     }//GEN-LAST:event_txtVaccineNameKeyPressed
 
 
