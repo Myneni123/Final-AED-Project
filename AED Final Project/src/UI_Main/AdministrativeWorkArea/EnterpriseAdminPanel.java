@@ -208,11 +208,11 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         if (MainSystem.checkIfUsernameIsUnique(username)) {
             UserHandle account = null;
             if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.CDC) {
-                account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employeeclass, new CDCAdminRole());
+                account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employeeclass, new C2DRole());
             } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Distributor) {
-                account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employeeclass, new DistributorAdminRole());
+                account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employeeclass, new DistributorRole());
             } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Hospital) {
-                account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employeeclass, new HospitalAdminRole());
+                account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employeeclass, new HospitalRole());
             }
 
             populateTable();
@@ -240,7 +240,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = enterpriseJTable.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a row for deleting the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
             UserHandle p = (UserHandle) enterpriseJTable.getValueAt(selectedRow, 2);
