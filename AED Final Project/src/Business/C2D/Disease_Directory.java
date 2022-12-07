@@ -4,7 +4,7 @@
  */
 package Business.C2D;
 
-import Business.Supplier.Vaccine;
+import Business.SupplierArea.Vaccine;
 import java.util.ArrayList;
 
 /**
@@ -12,28 +12,28 @@ import java.util.ArrayList;
  * @author mynenidivya
  */
 public class Disease_Directory {
-     private ArrayList<Disease> diseaseList;
+     private ArrayList<Disease> Disease_List;
     
     public Disease_Directory(){
-        diseaseList= new ArrayList<>();
+        Disease_List= new ArrayList<>();
     }
 
     public ArrayList<Disease> getDiseaseList() {
-        return diseaseList;
+        return Disease_List;
     }
 
-    public void setDiseaseList(ArrayList<Disease> diseaseList) {
-        this.diseaseList = diseaseList;
+    public void setDiseaseList(ArrayList<Disease> Disease_List) {
+        this.Disease_List = Disease_List;
     }
        public Disease addDisease() {
         Disease vaccine = new Disease();
-        diseaseList.add(vaccine);
+        Disease_List.add(vaccine);
         return vaccine;
     }
     
-    //Removing an Employee from the Directory
+    //Removing an Employee from the Vaccine Directory
     public void removeDisease(Disease vaccine) {
-        diseaseList.remove(vaccine);
+        Disease_List.remove(vaccine);
     }
     
 }

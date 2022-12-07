@@ -9,31 +9,32 @@ package Business.EmployeeArea;
  * @author mynenidivya
  */
 public class Employeeclass {
-     private String name;
-    private int id;
-    private static int count = 1;
+    
+    private String Name;
+    private int E_Id;
+    private static int Count = 1;
 
-    public Employee() {
-        id = count;
-        count++;
+    public Employeeclass() {
+        E_Id = Count;
+        Count++;
     }
 
     public int getId() {
-        return id;
+        return E_Id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     
     public String getName() {
-        return name;
+        return Name;
     }
 
     @Override
     public String toString() {
-        return name;
+        return Name;
     }
     
     

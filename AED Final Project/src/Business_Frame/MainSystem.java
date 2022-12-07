@@ -13,7 +13,7 @@ import Business.OrganizationFrame.Organization;
 import Business.Role.CDCAdminRole;
 import Business.Role.DistributorAdminRole;
 import Business.Role.HospitalAdminRole;
-import Business.Role.Role;
+import Business.Role.Roles;
 import Business.Role.SystemAdminRole;
 import Business.SupplierArea.VaccineDirectory;
 import Business.UserHandle.UserAccount;
@@ -74,7 +74,7 @@ public class MainSystem extends OrganizationFrame {
     }
 
     @Override
-    public HashSet<Role> getSupportedRole() {
+    public HashSet<Roles> getSupportedRole() {
         roles.add(new SystemAdminRole());
         roles.add(new HospitalAdminRole());
         roles.add(new DistributorAdminRole());

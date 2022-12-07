@@ -4,9 +4,9 @@
  */
 package Business.NetworkArea;
 
-import Business.Enterprise.EnterpriseDirectory;
-import Business.Organization.Organization;
-import Business.Role.Role;
+import Business.EnterpriseFrame.Enterprise_Directory;
+import Business.OrganizationFrame.Organization;
+import Business.Role.Roles;
 import java.util.ArrayList;
 
 /**
@@ -15,30 +15,30 @@ import java.util.ArrayList;
  */
 public class NetworkArea {
     
-    private String name;
-    private EnterpriseDirectory enterpriseDirectory;
+    private String Name;
+    private Enterprise_Directory EnterpriseDirectory;
 
-    public Network() {
+    public NetworkArea() {
        
-        enterpriseDirectory = new EnterpriseDirectory();
+        EnterpriseDirectory = new Enterprise_Directory();
     }
     
 
-    public EnterpriseDirectory getEnterpriseDirectory() {
-        return enterpriseDirectory;
+    public Enterprise_Directory getEnterpriseDirectory() {
+        return EnterpriseDirectory;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     @Override
     public String toString() {
-        return name;
+        return Name;
     }
     
 }

@@ -4,42 +4,42 @@
  */
 package Business.Clinicarea;
 
-import Business.Organization.ClinicOrganization;
-import Business.Organization.Organization;
-import Business.Supplier.Vaccine;
-import Business.Supplier.VaccineDirectory;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Organization;
+import Business.SupplierArea.Vaccine;
+import Business.SupplierArea.Vaccine_Directory;
 
 /**
  *
  * @author mynenidivya
  */
 public class PharmacyWork {
-    private VaccineDirectory vaccineList;
-    private String pharmacyName;
+    private Vaccine_Directory VaccineList;
+    private String PharmacyName;
 
     public PharmacyWork(){
-        vaccineList= new VaccineDirectory();
+        VaccineList= new Vaccine_Directory();
     }
     
-    public VaccineDirectory getVaccine() {
-        return vaccineList;
+    public Vaccine_Directory getVaccine() {
+        return VaccineList;
     }
 
-    public void setVaccine(VaccineDirectory vaccine) {
-        this.vaccineList = vaccine;
+    public void setVaccine(Vaccine_Directory Vaccine) {
+        this.VaccineList = Vaccine;
     }
 
     public String getPharmacyName() {
-        return pharmacyName;
+        return PharmacyName;
     }
 
-    public void setPharmacyName(String pharmacyName) {
-        this.pharmacyName = pharmacyName;
+    public void setPharmacyName(String PharmacyName) {
+        this.PharmacyName = PharmacyName;
     }
     
     @Override
     public String toString(){
-        return pharmacyName;
+        return PharmacyName;
     }
     
     

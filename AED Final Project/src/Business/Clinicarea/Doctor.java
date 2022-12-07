@@ -4,35 +4,35 @@
  */
 package Business.Clinicarea;
 
-import Business.Organization.ClinicOrganization;
+import Business.OrganizationFrame.Clinical_Organization;
 /**
  *
  * @author mynenidivya
  */
 public class Doctor {
-    private String docName;
-    private String doctorId;
-    private static int docCount;
+    private String DoctorName;
+    private String DoctorId;
+    private static int DocCount;
     
     public Doctor(){
-        doctorId= "DOC"+(++docCount);
+       DoctorId = "DOC"+(++ DocCount);
     }
 
     public String getDocName() {
-        return docName;
+        return DoctorName;
     }
 
-    public void setDocName(String docName) {
-        this.docName = docName;
+    public void setDocName(String DoctorName) {
+        this.DoctorName = DoctorName;
     }
 
     public String getDoctorId() {
-        return doctorId;
+        return DoctorId;
     } 
     
     @Override
     public String toString(){
-        return docName;
+        return DoctorName;
     }
     
 }

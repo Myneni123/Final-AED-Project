@@ -6,7 +6,7 @@ package Business.EnterpriseFrame;
 
 import java.util.HashSet;
 import Business.Role.ProviderRole;
-import Business.Role.Role;
+import Business.Role.Roles;
 import Business.Role.SupplierRole;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,7 +22,7 @@ public class Distributorenterprise {
     }
 
     @Override
-    public HashSet<Role> getSupportedRole() {
+    public HashSet<Roles> getSupportedRole() {
          roles= new HashSet<>();
         roles.add(new ProviderRole());
         roles.add(new SupplierRole());

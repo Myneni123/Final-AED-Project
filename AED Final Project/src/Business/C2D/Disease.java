@@ -9,29 +9,29 @@ package Business.C2D;
  * @author mynenidivya
  */
 public class Disease {
-    private String diseaseName;
-    private String diseaseId;
-    private static int dCount;
+    private String DiseaseName;
+    private String DiseaseId;
+    private static int Count;
     
     public Disease(){
-        diseaseId= "Dis"+(++dCount);
+        DiseaseId= "Dis"+(++Count);
     }
 
     public String getDiseaseName() {
-        return diseaseName;
+        return DiseaseName;
     }
 
-    public void setDiseaseName(String diseaseName) {
-        this.diseaseName = diseaseName;
+    public void setDiseaseName(String DiseaseName) {
+        this.DiseaseName = DiseaseName;
     }
 
     public String getDiseaseId() {
-        return diseaseId;
+        return DiseaseId;
     }
 
     @Override
     public String toString(){
-    return diseaseName;
+    return DiseaseName;
 }
 
     
