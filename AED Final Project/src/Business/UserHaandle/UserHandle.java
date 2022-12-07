@@ -6,66 +6,66 @@ package Business.UserHaandle;
 
 import Business.EmployeeArea.Employeeclass;
 import Business.Role.Roles;
-import Business.WorkQueue.WorkQueue;
+import Business.WorkLoad.Work_Queue;
 
 /**
  *
  * @author mynenidivya
  */
 public class UserHandle {
-    private String Username;
+    private String UserName;
     private String Password;
-    private EmployeeArea Employee;
-    private Role role;
-    private WorkQueue workQueue;
+    private Employeeclass Employee;
+    private Roles Role;
+    private Work_Queue WorkQueue;
 
-    public UserAccount() {
-        workQueue = new WorkQueue();
+    public UserHandle() {
+        WorkQueue = new Work_Queue();
     }
     
     
     
     public String getUsername() {
-        return username;
+        return UserName;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.UserName = username;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.Password = password;
     }
 
-    public Role getRole() {
-        return role;
+    public Roles getRole() {
+        return Role;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployee(Employeeclass employee) {
+        this.Employee = employee;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(Roles role) {
+        this.Role = role;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public Employeeclass getEmployee() {
+        return Employee;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
+    public Work_Queue getWorkQueue() {
+        return WorkQueue;
     }
 
     
     
     @Override
     public String toString() {
-        return username;
+        return UserName;
     }
     
     
