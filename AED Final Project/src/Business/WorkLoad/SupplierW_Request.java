@@ -10,7 +10,7 @@ import Business.SupplierArea.Supplier;
  *
  * @author mynenidivya
  */
-public class SupplierW_Request {
+public class SupplierW_Request extends Work_Request {
     
     private int RequestQuantity;
     private boolean add;
