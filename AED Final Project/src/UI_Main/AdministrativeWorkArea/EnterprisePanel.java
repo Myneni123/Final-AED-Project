@@ -4,15 +4,15 @@
  */
 package UI_Main.AdministrativeWorkArea;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
+import Business_Frame.MainSystem;
+import Business.EnterpriseFrame.Enterprise;
+import Business.NetworkArea.NetworkArea;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
@@ -21,15 +21,15 @@ import utility.Validator;
 public class EnterprisePanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem system;
+    private MainSystem sys;
 
     /**
      * Creates new form ManageEnterpriseJPanel
      */
-    public EnterprisePanel(JPanel userProcessContainer, EcoSystem system) {
+    public EnterprisePanel(JPanel userProcessContainer, MainSystem sys) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.system = system;
+        this.sys = sys;
 
         populateTable();
         populateComboBox();
@@ -39,11 +39,11 @@ public class EnterprisePanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
 
         model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+        for (NetworkArea networkarea : sys.getNetworkList()) {
+            for (Enterprise enterprise : networkarea.getEnterpriseDirectory().getEnterpriseList()) {
                 Object[] row = new Object[3];
                 row[0] = enterprise;
-                row[1] = network.getName();
+                row[1] = networkarea.getName();
                 row[2] = enterprise.getEnterpriseType().getValue();
 
                 model.addRow(row);
@@ -55,8 +55,8 @@ public class EnterprisePanel extends javax.swing.JPanel {
         networkJComboBox.removeAllItems();
         enterpriseTypeJComboBox.removeAllItems();
 
-        for (Network network : system.getNetworkList()) {
-            networkJComboBox.addItem(network);
+        for (NetworkArea networkarea : sys.getNetworkList()) {
+            networkJComboBox.addItem(networkarea);
         }
 
         for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
@@ -170,21 +170,21 @@ public class EnterprisePanel extends javax.swing.JPanel {
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
         if(!nameJTextField.getText().equals("")){
-        Network network = (Network) networkJComboBox.getSelectedItem();
+        NetworkArea networkarea = (NetworkArea) networkJComboBox.getSelectedItem();
         Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
 
-        if (network == null || type == null) {
+        if (networkarea == null || type == null) {
             JOptionPane.showMessageDialog(null, "Invalid Input!");
             return;
         }
 
         String name = nameJTextField.getText();
         
-        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+        Enterprise enterprise = networkarea.getEnterpriseDirectory().createAndAddEnterprise(name, type);
 
         populateTable();
          }else{
-             JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Enter a valid value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_submitJButtonActionPerformed
@@ -204,17 +204,17 @@ public class EnterprisePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow= enterpriseJTable.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select atleast one row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         else{
 
             Enterprise p=(Enterprise) enterpriseJTable.getValueAt(selectedRow, 0);
 
-            for (Network network : system.getNetworkList()) {
-                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            for (NetworkArea networkarea : sys.getNetworkList()) {
+                for (Enterprise enterprise : networkarea.getEnterpriseDirectory().getEnterpriseList()) {
                    
                         if(p==enterprise){
-                           network.getEnterpriseDirectory().getEnterpriseList().remove(p);
+                           networkarea.getEnterpriseDirectory().getEnterpriseList().remove(p);
                             break;
                         }
 
@@ -222,14 +222,14 @@ public class EnterprisePanel extends javax.swing.JPanel {
                 }
             }
 
-            JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
+            JOptionPane.showMessageDialog(null, "Account deleted successfully");
             populateTable();
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
         // TODO add your handling code here:
-        Validator.onlyString(evt, nameJTextField);
+        Validation.onlyString(evt, nameJTextField);
     }//GEN-LAST:event_nameJTextFieldKeyPressed
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
