@@ -16,7 +16,7 @@ import Validation.Validation;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class EnterprisePanel extends javax.swing.JPanel {
 
@@ -24,7 +24,7 @@ public class EnterprisePanel extends javax.swing.JPanel {
     private MainSystem sys;
 
     /**
-     * Creates new form ManageEnterpriseJPanel
+     * Creates new form for ManageEnterprisePanel
      */
     public EnterprisePanel(JPanel userProcessContainer, MainSystem sys) {
         initComponents();
