@@ -11,30 +11,18 @@ import Business.WorkLoad.Work_Queue;
  *
  * @author mynenidivya
  */
-public class Supplier {
+public class Provider {
     
-    private String Name;
+    private String providerName;
     private static int Count;
-    private String SupplierId;
+    private String providerId;
     private Vaccine_Directory vaccineList;
     private Work_Queue workQueue;
     
-    public Supplier(){
-        SupplierId= "SID"+(++Count);
+    public Provider(){
+        providerId= "PID"+(++Count);
         vaccineList= new Vaccine_Directory();
         workQueue= new Work_Queue();
-    }
-
-    public String getSupplierName() {
-        return Name;
-    }
-
-    public void setSupplierName(String supplierName) {
-        this.Name = supplierName;
-    }
-
-    public String getSupplierId() {
-        return SupplierId;
     }
 
     public Work_Queue getWorkQueue() {
@@ -44,9 +32,21 @@ public class Supplier {
     public void setWorkQueue(Work_Queue workQueue) {
         this.workQueue = workQueue;
     }
+    
+    public String getProviderName() {
+        return providerName;
+    }
 
-    public void setSupplierId(String supplierId) {
-        this.SupplierId = supplierId;
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
+    }
+
+    public String getProviderId() {
+        return providerId;
+    }
+
+    public void setProviderId(String providerId) {
+        this.providerId = providerId;
     }
 
     public Vaccine_Directory getVaccineList() {
@@ -59,8 +59,7 @@ public class Supplier {
     
     @Override
     public String toString(){
-        return Name;
+        return providerName;
     }
-    
     
 }
