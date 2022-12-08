@@ -22,7 +22,7 @@ import UI_Main.Hospital.Clinic.PharmacyArea.PharmacyWorkPanel;
  *
  * @author mynenidivya
  */
-public class PharmacyRole {
+public class PharmacyRole extends Roles {
     
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserHandle account, Organization organization, Enterprise enterprise, MainSystem business) {

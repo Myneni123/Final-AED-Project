@@ -4,6 +4,10 @@
  */
 package UI_Main.C2D;
 
+import Business.EnterpriseFrame.Enterprise;
+import Business_Frame.MainSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +17,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
     /**
      * Creates new form C2DAdminWork_Space
      */
-    public C2DAdminWork_Space() {
+    public C2DAdminWork_Space(JPanel userProcessContainer, Enterprise enterprise, MainSystem business) {
         initComponents();
     }
 

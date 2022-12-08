@@ -4,6 +4,9 @@
  */
 package UI_Main.C2D;
 
+import Business_Frame.MainSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +16,7 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
     /**
      * Creates new form C2D_CatalogPanel
      */
-    public C2D_CatalogPanel() {
+    public C2D_CatalogPanel(JPanel userProcessContainer, MainSystem business) {
         initComponents();
     }
 

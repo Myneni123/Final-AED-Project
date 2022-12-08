@@ -4,6 +4,9 @@
  */
 package UI_Main.DistributorsArea;
 
+import Business.EnterpriseFrame.Enterprise;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +16,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
     /**
      * Creates new form DistributorWorkAreaPanel
      */
-    public DistributorWorkAreaPanel() {
+    public DistributorWorkAreaPanel(JPanel userProcessContainer, Enterprise enterprise) {
         initComponents();
     }
 

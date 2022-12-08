@@ -4,6 +4,9 @@
  */
 package UI_Main.Hospital_class;
 
+import Business.EnterpriseFrame.Enterprise;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +16,7 @@ public class HospitalAdminPanel extends javax.swing.JPanel {
     /**
      * Creates new form HospitalAdminPanel
      */
-    public HospitalAdminPanel() {
+    public HospitalAdminPanel(JPanel userProcessContainer, Enterprise enterprise) {
         initComponents();
     }
 

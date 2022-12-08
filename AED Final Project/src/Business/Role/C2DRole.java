@@ -4,10 +4,29 @@
  */
 package Business.Role;
 
+import Business_Frame.MainSystem;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Supplier_Org;
+import Business.OrganizationFrame.Provider_Org;
+import Business.UserHaandle.UserHandle;
+import Business.SupplierArea.Supplier;
+import javax.swing.JPanel;
+import UI_Main.C2D.C2DAdminWork_Space;
+
 /**
  *
  * @author mynenidivya
  */
-public class C2DRole {
+public class C2DRole extends Roles {
+     @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserHandle account, Organization organization, Enterprise enterprise, MainSystem business) {
+        return new C2DAdminWork_Space(userProcessContainer, enterprise, business);
+    }
+     @Override
+    public String toString(){
+        return RoleType.CDCAdmin.getValue();
+    }
     
 }

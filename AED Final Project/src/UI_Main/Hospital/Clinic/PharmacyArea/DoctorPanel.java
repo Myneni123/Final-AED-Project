@@ -4,6 +4,8 @@
  */
 package UI_Main.Hospital.Clinic.PharmacyArea;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +15,7 @@ public class DoctorPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorPanel
      */
-    public DoctorPanel() {
+    public DoctorPanel(JPanel userProcessContainer) {
         initComponents();
     }
 
