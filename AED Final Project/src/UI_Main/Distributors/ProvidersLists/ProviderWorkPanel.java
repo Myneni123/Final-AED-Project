@@ -1,7 +1,7 @@
 /*
  * AdminWorkAreaJPanel.java
  *
- * Created on October 10, 2008, 8:50 AM
+ * 
  */
 
 package UI_Main.Distributors.ProvidersLists;
@@ -32,7 +32,7 @@ import Validation.Validation;
 
 /**
  *
- * @author  raunak
+ * @author admin
  */
 public class ProviderWorkPanel extends javax.swing.JPanel {
     

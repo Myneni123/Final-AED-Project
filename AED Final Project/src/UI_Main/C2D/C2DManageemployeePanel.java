@@ -4,18 +4,18 @@
  */
 package UI_Main.C2D;
 
-import Business.Employee.Employee;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.EmployeeArea.Employeeclass;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.OrganizationDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class C2DManageemployeePanel extends javax.swing.JPanel {
 
@@ -55,7 +55,7 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+        for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
             Object[] row = new Object[2];
             row[0] = employee.getId();
             row[1] = employee.getName();
@@ -175,7 +175,7 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
         organization.getEmployeeDirectory().createEmployee(name);
          populateTable(organization);
          }else{
-             JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Enter a valid value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_addJButtonActionPerformed
@@ -196,7 +196,7 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
 
     private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
         // TODO add your handling code here:
-        Validator.onlyString(evt, nameJTextField);
+        Validation.onlyString(evt, nameJTextField);
     }//GEN-LAST:event_nameJTextFieldKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
