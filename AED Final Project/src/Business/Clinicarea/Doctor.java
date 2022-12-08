@@ -7,7 +7,7 @@ package Business.Clinicarea;
 import Business.OrganizationFrame.Clinical_Organization;
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Doctor {
     private String DoctorName;

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Vaccine_Directory {
     private ArrayList<Vaccine> vaccinationList;

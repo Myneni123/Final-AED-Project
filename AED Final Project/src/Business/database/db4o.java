@@ -13,10 +13,10 @@ import com.db4o.ta.TransparentPersistenceSupport;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class db4o {
-    private static final String FILENAME = "C:\\DataBank9.db4o"; // path to the data store
+    private static final String FILENAME = "C:\\Users\\bhema\\Downloads\\DataBank9.db4o"; // path to the data store
     private static db4o dB4OUtil;
     
     public synchronized static db4o getInstance(){

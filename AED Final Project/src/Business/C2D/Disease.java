@@ -6,7 +6,7 @@ package Business.C2D;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Disease {
     private String DiseaseName;

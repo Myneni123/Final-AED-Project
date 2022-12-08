@@ -15,7 +15,7 @@ import UI_Main.AdministrativeWorkArea.AdminWorkPanel;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class SysteAdmin extends Roles {
     

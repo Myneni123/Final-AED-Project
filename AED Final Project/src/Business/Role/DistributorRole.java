@@ -18,7 +18,7 @@ import UI_Main.DistributorsArea.DistributorWorkAreaPanel;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class DistributorRole extends Roles {
     

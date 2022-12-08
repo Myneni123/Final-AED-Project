@@ -6,7 +6,7 @@ package Business.WorkLoad;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class PharmacyW_Request extends Work_Request {
     private int requestQuantity;
