@@ -4,6 +4,12 @@
  */
 package UI_Main.Distributors.ProvidersLists;
 
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Provider_Org;
+import Business.UserHaandle.UserHandle;
+import Business_Frame.MainSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +19,7 @@ public class ProvidersWorkPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProvidersWorkPanel
      */
-    public ProvidersWorkPanel() {
+    public ProvidersWorkPanel(JPanel userProcessContainer, UserHandle account, Provider_Org par, Enterprise enterprise, MainSystem Business) {
         initComponents();
     }
 

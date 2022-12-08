@@ -4,6 +4,12 @@
  */
 package UI_Main.Hospital.Clinic.PharmacyArea;
 
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.UserHaandle.UserHandle;
+import Business_Frame.MainSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +19,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyWorkPanel
      */
-    public PharmacyWorkPanel() {
+    public PharmacyWorkPanel(JPanel userProcessContainer, UserHandle account, Clinical_Organization par, Enterprise enterprise, MainSystem business) {
         initComponents();
     }
 

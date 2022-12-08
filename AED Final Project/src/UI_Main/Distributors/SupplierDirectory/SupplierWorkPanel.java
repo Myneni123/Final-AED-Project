@@ -4,6 +4,12 @@
  */
 package UI_Main.Distributors.SupplierDirectory;
 
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Supplier_Org;
+import Business.UserHaandle.UserHandle;
+import Business_Frame.MainSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +19,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
     /**
      * Creates new form SupplierWorkPanel
      */
-    public SupplierWorkPanel() {
+    public SupplierWorkPanel(JPanel userProcessContainer, UserHandle account, Supplier_Org par, Enterprise enterprise, MainSystem Business) {
         initComponents();
     }
 

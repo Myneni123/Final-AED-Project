@@ -4,6 +4,12 @@
  */
 package UI_Main.HospitalArea.Clinic;
 
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.UserHaandle.UserHandle;
+import Business_Frame.MainSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mynenidivya
@@ -13,7 +19,7 @@ public class ClinicalAdminPanel extends javax.swing.JPanel {
     /**
      * Creates new form ClinicalAdminPanel
      */
-    public ClinicalAdminPanel() {
+    public ClinicalAdminPanel(JPanel userProcessContainer, UserHandle account, Clinical_Organization par, Enterprise enterprise, MainSystem business) {
         initComponents();
     }
 

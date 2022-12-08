@@ -15,9 +15,9 @@ import java.util.HashSet;
  *
  * @author mynenidivya
  */
-public class Hospital_Enterprise {
-    public HospitalEnterprise(String name) {
-        super(name, EnterpriseType.Hospital);
+public class Hospital_Enterprise extends Enterprise {
+    public Hospital_Enterprise(String Name) {
+        super(Name, EnterpriseType.Hospital);
     }
 
     @Override

@@ -4,11 +4,12 @@
  */
 package Business.EnterpriseFrame;
 
-import java.util.HashSet;
-import Business.Role.CDCManagerRole;
+
+import Business.Role.C2D_Manager;
 import Business.Role.Roles;
 import java.util.ArrayList;
 import java.util.HashSet;
+import Business.OrganizationFrame.Organization;
 
 /**
  *
@@ -22,7 +23,7 @@ public class C2DEnterprise extends Enterprise {
     @Override
     public HashSet<Roles> getSupportedRole() {
          roles= new HashSet<>();
-        roles.add(new CDCManagerRole());
+        roles.add(new C2D_Manager());
         return roles;
     }
     
