@@ -1,4 +1,5 @@
 /*
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -72,6 +73,7 @@ public class Work_Request {
 
     public void setRequestDate(Date requestDate) {
         this.Requestdate = requestDate;
+
     }
 
     public Date getResolveDate() {
@@ -83,7 +85,9 @@ public class Work_Request {
     }
     @Override
     public String toString(){
+
         return Status;
+
     }
     
 }
