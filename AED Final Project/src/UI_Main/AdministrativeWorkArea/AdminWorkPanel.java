@@ -1,13 +1,13 @@
 /*
- * AdminWorkAreaJPanel.java
+ * AdminWorkPanel.java
  *
- * Created on October 10, 2008, 8:50 AM
+ *
  */
 package UI_Main.AdministrativeWorkArea;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
+import Business_Frame.MainSystem;
+import Business.EnterpriseFrame.Enterprise;
+import Business.NetworkArea.NetworkArea;
 import Business.Organization.Organization;
 import java.awt.CardLayout;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import userinterface.SystemAdminWorkAreas.ManageDiseaseDirectoryJPanel;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class AdminWorkPanel extends javax.swing.JPanel {
 
@@ -28,7 +28,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
     EcoSystem system;
 
     /**
-     * Creates new form AdminWorkAreaJPanel
+     * Creates new form AdminWorkPanel
      */
     public AdminWorkPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
