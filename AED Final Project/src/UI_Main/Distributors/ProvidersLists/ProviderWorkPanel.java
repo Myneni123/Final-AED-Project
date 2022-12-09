@@ -6,30 +6,29 @@
 
 package UI_Main.Distributors.ProvidersLists;
 
-import userinterface.Distributor.Supplier.*;
-import Business.Clinic.Pharmacy;
-import userinterface.Hospital.Clinic.*;
-import Business.EcoSystem;
-import userinterface.Hospital.*;
-import Business.Enterprise.Enterprise;
-import Business.Organization.ClinicOrganization;
-import Business.Organization.Organization;
-
-import Business.Organization.ProviderOrganization;
-import Business.Organization.SupplierOrganization;
-import Business.Supplier.Provider;
-import Business.Supplier.Supplier;
-import Business.Supplier.Vaccine;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.PharmacyWorkRequest;
-import Business.WorkQueue.SupplierWorkRequest;
-import Business.WorkQueue.WorkQueue;
-import Business.WorkQueue.WorkRequest;
+import UI_Main.Distributors.SupplierDirectory.*;
+import Business.Clinicarea.PharmacyWork;
+import UI_Main.HospitalArea.Clinic.*;
+import Business_Frame.MainSystem;
+import UI_Main.Hospital_class.*;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.Supplier_Org;
+import Business.OrganizationFrame.Provider_Org;
+import Business.SupplierArea.Supplier;
+import Business.SupplierArea.Vaccine;
+import Business.SupplierArea.Provider;
+import Business.UserHaandle.UserHandle;
+import Business.WorkLoad.PharmacyW_Request;
+import Business.WorkLoad.SupplierW_Request;
+import Business.WorkLoad.Work_Queue;
+import Business.WorkLoad.Work_Request;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
@@ -38,14 +37,14 @@ import utility.Validator;
 public class ProviderWorkPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
-    UserAccount account; 
-    ProviderOrganization organization; 
+    UserHandle account; 
+    Provider_Org organization; 
     Enterprise enterprise; 
-    EcoSystem business;
+    MainSystem business;
      //Supplier s;
      Provider provider;
     /** Creates new form AdminWorkAreaJPanel */
-    public ProviderWorkPanel(JPanel userProcessContainer, UserAccount account, ProviderOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public ProviderWorkPanel(JPanel userProcessContainer, UserHandle account, Provider_Org organization, Enterprise enterprise, MainSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -62,7 +61,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         provider=organization.getProvider();
         System.out.println("busi"+business.getWorkQueue().getWorkRequestList().size());
         if(provider.getWorkQueue()== null){
-        WorkQueue w= new WorkQueue();
+        Work_Queue w= new Work_Queue();
         provider.setWorkQueue(w);
         }
         populateCombo();
@@ -80,8 +79,8 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
     }
      public void populateSupCombo(){
          for (Organization organization1 : enterprise.getOrganizationDirectory().getOrganizationList()) {
-             if(organization1 instanceof SupplierOrganization){
-                 SupplierOrganization s= (SupplierOrganization) organization1;
+             if(organization1 instanceof Supplier_Org){
+                 Supplier_Org s= (Supplier_Org) organization1;
                  for (Supplier supplier : s.getSupplierList().getSupplierList()) {
                      comboSup.addItem(supplier);
                  }
@@ -97,11 +96,11 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         
         
         
-        for (WorkRequest work : business.getWorkQueue().getWorkRequestList()){
-           if(work instanceof PharmacyWorkRequest){ 
+        for (Work_Request work : business.getWorkQueue().getWorkRequestList()){
+           if(work instanceof PharmacyW_Request){ 
             Object[] row = new Object[5];
             row[0] = work.getVaccine().getVaccineName();
-            row[1] = ((PharmacyWorkRequest) work).getQuantity();
+            row[1] = ((PharmacyW_Request) work).getQuantity();
             row[2] = work;
             row[3] = work.getReceiver();
             row[4] = work.getSender();
@@ -116,15 +115,15 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         
         
         
-        for (WorkRequest work : provider.getWorkQueue().getWorkRequestList()){
-           if(work instanceof SupplierWorkRequest){ 
+        for (Work_Request work : provider.getWorkQueue().getWorkRequestList()){
+           if(work instanceof SupplierW_Request){ 
             Object[] row = new Object[6];
             row[0] = work.getVaccine().getVaccineName();
-            row[1] = ((SupplierWorkRequest) work).getQuantity();
+            row[1] = ((SupplierW_Request) work).getQuantity();
             row[2] = work;
             row[3] = work.getReceiver();
             row[4] = work.getSender();
-            row[5] = ((SupplierWorkRequest) work).getSupplier();
+            row[5] = ((SupplierW_Request) work).getSupplier();
             model.addRow(row);
            }
         }
@@ -147,10 +146,10 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
      
       public void populateQuantity(){
          
-         for ( WorkRequest workRequest : provider.getWorkQueue().getWorkRequestList()) {
+         for ( Work_Request workRequest : provider.getWorkQueue().getWorkRequestList()) {
             // HashMap<WorkRequest,Integer> map = new HashMap<WorkRequest,Integer>();
              int temp=0;
-             SupplierWorkRequest p= (SupplierWorkRequest) workRequest;
+             SupplierW_Request p= (SupplierW_Request) workRequest;
              if(workRequest.getStatus().equals("Complete") && !p.isAdd() ){ //&& add == false
                  Vaccine v = workRequest.getVaccine();
                 
@@ -354,11 +353,11 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
       }
         else{
              
-         PharmacyWorkRequest p=(PharmacyWorkRequest) requestTable.getValueAt(selectedRow, 2);
+         PharmacyW_Request p=(PharmacyW_Request) requestTable.getValueAt(selectedRow, 2);
            int temp=0;
         if(p.getReceiver()!= null){
          if (p.getStatus().equals("Pending")) {
-         UserAccount a =p.getSender();
+         UserHandle a =p.getSender();
          if(provider.getVaccineList().getVaccineList().size()<= 0){
              JOptionPane.showMessageDialog(null, "No Stock available. Request from Supplier");
             return;
@@ -402,7 +401,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
       }
         else{
              
-         PharmacyWorkRequest p=(PharmacyWorkRequest) requestTable.getValueAt(selectedRow, 2);
+         PharmacyW_Request p=(PharmacyW_Request) requestTable.getValueAt(selectedRow, 2);
 
          p.setStatus("Pending");
          p.setReceiver(account);
@@ -434,7 +433,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
       }
         else{
              
-         PharmacyWorkRequest p=(PharmacyWorkRequest) requestTable.getValueAt(selectedRow, 2);
+         PharmacyW_Request p=(PharmacyW_Request) requestTable.getValueAt(selectedRow, 2);
 
          business.getWorkQueue().getWorkRequestList().remove(p);
          
@@ -447,7 +446,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
 
     private void reqBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqBtn2ActionPerformed
  if(!txtquant.getText().equals("")){
-        SupplierWorkRequest request= new SupplierWorkRequest();
+        SupplierW_Request request= new SupplierW_Request();
         Supplier sup= (Supplier) comboSup.getSelectedItem();
         request.setVaccine((Vaccine)comboVaccine.getSelectedItem());
         request.setQuantity(Integer.parseInt(txtquant.getText()));
@@ -473,7 +472,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         }
         else{
 
-            WorkRequest p=(WorkRequest) requestTable1.getValueAt(selectedRow, 2);
+            Work_Request p=(Work_Request) requestTable1.getValueAt(selectedRow, 2);
 
             // s.getWorkQueue().getWorkRequestList().remove(p);
             provider.getWorkQueue().getWorkRequestList().remove(p);
@@ -490,7 +489,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
 
     private void txtquantKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtquantKeyPressed
         // TODO add your handling code here:
-        Validator.onlyInteger(evt, txtquant);
+        Validation.onlyInteger(evt, txtquant);
     }//GEN-LAST:event_txtquantKeyPressed
     
     
