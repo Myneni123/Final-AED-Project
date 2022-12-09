@@ -1,80 +1,79 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Business.WorkLoad;
-        
-  
-import Business.Supplier.Vaccine;
-import Business.UserAccount.UserAccount;
+
 import java.util.Date;
+import Business.SupplierArea.Vaccine;
+import Business.UserHaandle.UserHandle;
 
 /**
  *
- * @author bhema
+ * @author mynenidivya
  */
 public class Work_Request {
     
-    
-    private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
-    private String status;
-    private Date requestDate;
+     private String Message;
+    private UserHandle Sender;
+    private UserHandle Receiver;
+    private String Status;
+    private Date Requestdate;
     private Date resolveDate;
-    private Vaccine vaccine;
+    private Vaccine Vaccine;
     
-    public WorkRequest(){
-        requestDate = new Date();
+    public Work_Request(){
+        Requestdate = new Date();
     }
 
     public String getMessage() {
-        return message;
+        return Message;
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        this.Message = message;
     }
 
-    public UserAccount getSender() {
-        return sender;
+    public UserHandle getSender() {
+        return Sender;
     }
 
     public Vaccine getVaccine() {
-        return vaccine;
+        return Vaccine;
     }
 
     public void setVaccine(Vaccine vaccine) {
-        this.vaccine = vaccine;
+        this.Vaccine = vaccine;
     }
 
-    public void setSender(UserAccount sender) {
-        this.sender = sender;
+    public void setSender(UserHandle sender) {
+        this.Sender = sender;
     }
 
-    public UserAccount getReceiver() {
-        return receiver;
+    public UserHandle getReceiver() {
+        return Receiver;
     }
 
-    public void setReceiver(UserAccount receiver) {
-        this.receiver = receiver;
+    public void setReceiver(UserHandle receiver) {
+        this.Receiver = receiver;
     }
 
     public String getStatus() {
-        return status;
+        return Status;
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.Status = status;
     }
 
     public Date getRequestDate() {
-        return requestDate;
+        return Requestdate;
     }
 
     public void setRequestDate(Date requestDate) {
-        this.requestDate = requestDate;
+        this.Requestdate = requestDate;
+
     }
 
     public Date getResolveDate() {
@@ -86,7 +85,9 @@ public class Work_Request {
     }
     @Override
     public String toString(){
-        return status;
+
+        return Status;
+
     }
     
 }
