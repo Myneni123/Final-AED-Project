@@ -5,26 +5,26 @@
  */
 package UI_Main.Distributors.SupplierDirectory;
 
-import Business.Clinic.Pharmacy;
-import userinterface.Hospital.Clinic.*;
-import Business.EcoSystem;
-import userinterface.Hospital.*;
-import Business.Enterprise.Enterprise;
-import Business.Organization.ClinicOrganization;
-import Business.Organization.Organization;
-import Business.Organization.SupplierOrganization;
-import Business.Supplier.Supplier;
-import Business.Supplier.Vaccine;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.PharmacyWorkRequest;
-import Business.WorkQueue.SupplierWorkRequest;
-import Business.WorkQueue.WorkQueue;
-import Business.WorkQueue.WorkRequest;
+import Business.Clinicarea.PharmacyWork;
+import UI_Main.HospitalArea.Clinic.*;
+import Business_Frame.MainSystem;
+import UI_Main.Hospital_class.*;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.Supplier_Org;
+import Business.SupplierArea.Supplier;
+import Business.SupplierArea.Vaccine;
+import Business.UserHaandle.UserHandle;
+import Business.WorkLoad.PharmacyW_Request;
+import Business.WorkLoad.SupplierW_Request;
+import Business.WorkLoad.Work_Queue;
+import Business.WorkLoad.Work_Request;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
@@ -33,16 +33,16 @@ import utility.Validator;
 public class SupplierWorkPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    UserAccount account;
-    SupplierOrganization organization;
+    UserHandle account;
+    Supplier_Org organization;
     Enterprise enterprise;
-    EcoSystem business;
+    MainSystem business;
     Supplier s;
 
     /**
      * Creates new form AdminWorkAreaJPanel
      */
-    public SupplierWorkPanel(JPanel userProcessContainer, UserAccount account, SupplierOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public SupplierWorkPanel(JPanel userProcessContainer, UserHandle account, Supplier_Org organization, Enterprise enterprise, MainSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -57,7 +57,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
         }
         System.out.println("busi" + business.getWorkQueue().getWorkRequestList().size());
         if (s.getWorkQueue() == null) {
-            WorkQueue w = new WorkQueue();
+            Work_Queue w = new Work_Queue();
             s.setWorkQueue(w);
         }
         populateCombo();
@@ -77,11 +77,11 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (WorkRequest work : s.getWorkQueue().getWorkRequestList()) {
-            if (work instanceof SupplierWorkRequest) {
+        for (Work_Request work : s.getWorkQueue().getWorkRequestList()) {
+            if (work instanceof SupplierW_Request) {
                 Object[] row = new Object[5];
                 row[0] = work.getVaccine().getVaccineName();
-                row[1] = ((SupplierWorkRequest) work).getQuantity();
+                row[1] = ((SupplierW_Request) work).getQuantity();
                 row[2] = work;
                 row[3] = work.getReceiver();
                 row[4] = work.getSender();
@@ -237,11 +237,11 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select the row to assign the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            SupplierWorkRequest p = (SupplierWorkRequest) requestTable.getValueAt(selectedRow, 2);
+            SupplierW_Request p = (SupplierW_Request) requestTable.getValueAt(selectedRow, 2);
                 int temp=0;
             if (p.getReceiver() != null) {
                 if (p.getStatus().equals("Pending")) {
-                    UserAccount a = p.getSender();
+                    UserHandle a = p.getSender();
                     if (s.getVaccineList().getVaccineList().size() <= 0) {
                         JOptionPane.showMessageDialog(null, "No Stock available. Request from Supplier");
                         return;
@@ -285,7 +285,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select the row to assign the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            SupplierWorkRequest p = (SupplierWorkRequest) requestTable.getValueAt(selectedRow, 2);
+            SupplierW_Request p = (SupplierW_Request) requestTable.getValueAt(selectedRow, 2);
 
             p.setStatus("Pending");
             p.setReceiver(account);
@@ -342,7 +342,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            PharmacyWorkRequest p = (PharmacyWorkRequest) requestTable.getValueAt(selectedRow, 2);
+            PharmacyW_Request p = (PharmacyW_Request) requestTable.getValueAt(selectedRow, 2);
 
             s.getWorkQueue().getWorkRequestList().remove(p);
             business.getWorkQueue().getWorkRequestList().remove(p);
@@ -354,7 +354,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
 
     private void txtquantKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtquantKeyPressed
         // TODO add your handling code here:
-        Validator.onlyInteger(evt, txtquant);
+        Validation.onlyInteger(evt, txtquant);
     }//GEN-LAST:event_txtquantKeyPressed
 
 
