@@ -16,7 +16,7 @@ import java.util.HashSet;
  *
  * @author mynenidivya
  */
-public class Distributorenterprise {
+public class Distributorenterprise extends Enterprise {
      public Distributorenterprise(String name) {
         super(name, Enterprise.EnterpriseType.Distributor);
     }

@@ -6,27 +6,27 @@ package Business_Frame;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import Business.C2D.DiseaseDirectory;
+import Business.C2D.Disease_Directory;
 import Business.EnterpriseFrame.Enterprise;
-import Business.NetworkArea.Network;
+import Business.NetworkArea.NetworkArea;
 import Business.OrganizationFrame.Organization;
-import Business.Role.CDCAdminRole;
-import Business.Role.DistributorAdminRole;
-import Business.Role.HospitalAdminRole;
+import Business.Role.C2DRole;
+import Business.Role.DistributorRole;
+import Business.Role.HospitalRole;
 import Business.Role.Roles;
-import Business.Role.SystemAdminRole;
-import Business.SupplierArea.VaccineDirectory;
-import Business.UserHandle.UserAccount;
+import Business.Role.SysteAdmin;
+import Business.SupplierArea.Vaccine_Directory;
+import Business.UserHaandle.UserHandle;
 
 /**
  *
  * @author mynenidivya
  */
-public class MainSystem extends OrganizationFrame {
+public class MainSystem extends Organization {
      private static MainSystem business;
-    private ArrayList<Network> networkList;
-    private VaccineDirectory vaccineList;
-    private DiseaseDirectory diseaseList;
+    private ArrayList<NetworkArea> networkList;
+    private Vaccine_Directory vaccineList;
+    private Disease_Directory diseaseList;
 
     public static MainSystem getInstance() {
         if (business == null) {
@@ -38,19 +38,19 @@ public class MainSystem extends OrganizationFrame {
     private MainSystem() {
         super(null);
         networkList = new ArrayList<>();
-       vaccineList= new VaccineDirectory();
-       diseaseList= new DiseaseDirectory();
+       vaccineList= new Vaccine_Directory();
+       diseaseList= new Disease_Directory();
     }
 
-    public ArrayList<Network> getNetworkList() {
+    public ArrayList<NetworkArea> getNetworkList() {
         return networkList;
     }
 
-    public VaccineDirectory getVaccineList() {
+    public Vaccine_Directory getVaccineList() {
         return vaccineList;
     }
 
-    public void setVaccineList(VaccineDirectory vaccineList) {
+    public void setVaccineList(Vaccine_Directory vaccineList) {
         this.vaccineList = vaccineList;
     }
     
@@ -58,44 +58,44 @@ public class MainSystem extends OrganizationFrame {
         business=system;
     }
     
-    public DiseaseDirectory getDiseaseList() {
+    public Disease_Directory getDiseaseList() {
         return diseaseList;
     }
     
     
-    public void setDiseaseList(DiseaseDirectory diseaseList) {
+    public void setDiseaseList(Disease_Directory diseaseList) {
         this.diseaseList = diseaseList;
     }
 
-    public Network createAndAddNetwork() {
-        Network network = new Network();
+    public NetworkArea createAndAddNetwork() {
+        NetworkArea network = new NetworkArea();
         networkList.add(network);
         return network;
     }
 
     @Override
     public HashSet<Roles> getSupportedRole() {
-        roles.add(new SystemAdminRole());
-        roles.add(new HospitalAdminRole());
-        roles.add(new DistributorAdminRole());
-        roles.add(new CDCAdminRole());
+        roles.add(new SysteAdmin());
+        roles.add(new HospitalRole());
+        roles.add(new DistributorRole());
+        roles.add(new C2DRole());
         return roles;
     }
 
     public static boolean checkIfUsernameIsUnique(String username) {
 
       //  if (!this.getUserAccountDirectory().checkIfUsernameIsUnique(username)) {
-             for (Network network : business.getNetworkList()) {
+             for (NetworkArea network : business.getNetworkList()) {
                  
                 for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                    for (UserAccount ua : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                    for (UserHandle ua : enterprise.getUserAccountDirectory().getUserAccountList()) {
                         if(ua.getUsername().equals(username)){
                             return false;
                         }
                     }
                     
                         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-                            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+                            for (UserHandle ua : organization.getUserAccountDirectory().getUserAccountList()) {
                                  if(ua.getUsername().equals(username)){
                             return false;
                         }

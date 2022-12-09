@@ -3,19 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Business.EnterpriseFrame;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.OrganizationDirectory;
 
 /**
  *
  * @author mynenidivya
  */
-public class Enterprise {
+public abstract class Enterprise extends Organization {
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
     
-    public Enterprise(String name, EnterpriseType type) {
-        super(name);
+    public Enterprise(String Name, EnterpriseType type) {
+        super(Name);
         this.enterpriseType = type;
         organizationDirectory = new OrganizationDirectory();
     }
@@ -38,4 +38,13 @@ public class Enterprise {
             return value;
         }
     
+    }
+    public EnterpriseType getEnterpriseType() {
+        return enterpriseType;
+    }
+
+    public OrganizationDirectory getOrganizationDirectory() {
+        return organizationDirectory;
+    }
+
 }

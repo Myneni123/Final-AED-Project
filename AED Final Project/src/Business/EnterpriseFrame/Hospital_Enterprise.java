@@ -5,7 +5,8 @@
 package Business.EnterpriseFrame;
 
 
-import Business.Role.ClinicAdminRole;
+import Business.Role.ClinicalRole;
+import Business.Role.ClinicalRole;
 import Business.Role.Roles;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -23,7 +24,7 @@ public class Hospital_Enterprise extends Enterprise {
     @Override
     public HashSet<Roles> getSupportedRole() {
          roles= new HashSet<>();
-        roles.add(new ClinicAdminRole());
+        roles.add(new ClinicalRole());
         return roles;
     }
     

@@ -4,9 +4,9 @@
  */
 package Business_Frame;
 
-import Business_Frame.EmployeeArea.Employee;
-import Business.Role.SystemAdminRole;
-import Business.UserAccount.UserAccount;
+import Business.EmployeeArea.Employeeclass;
+import Business.Role.SysteAdmin;
+import Business.UserHaandle.UserHandle;
 
 /**
  *
@@ -25,9 +25,9 @@ public class ConfigureSystem {
         //create user account
         
         
-        Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
+        Employeeclass employee = system.getEmployeeDirectory().createEmployee("RRH");
         
-        UserAccount ua = system.getUserAccountDirectory().createUserAccount("admin", "admin", employee, new SystemAdminRole());
+        UserHandle ua = system.getUserAccountDirectory().createUserAccount("admin", "admin", employee, new SysteAdmin());
         
         return system;
     }
