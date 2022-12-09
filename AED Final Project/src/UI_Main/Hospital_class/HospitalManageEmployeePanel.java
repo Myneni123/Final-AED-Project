@@ -16,7 +16,7 @@ import Validation.Validation;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class HospitalManageEmployeePanel extends javax.swing.JPanel {
 
@@ -24,7 +24,7 @@ public class HospitalManageEmployeePanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     
     /**
-     * Creates new form ManageOrganizationJPanel
+     * Creates new setup ManageOrganizationJPanel
      */
     public HospitalManageEmployeePanel(JPanel userProcessContainer,OrganizationDirectory organizationDir) {
         initComponents();
@@ -171,7 +171,7 @@ public class HospitalManageEmployeePanel extends javax.swing.JPanel {
         organization.getEmployeeDirectory().createEmployee(name);
          populateTable(organization);
          }else{
-             JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Enter a valid value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_addJButtonActionPerformed
