@@ -60,23 +60,23 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
 //    }
     
     public void populateEmployeeComboBox(Clinical_Organization organization){
-        employeeJComboBox.removeAllItems();
+        clinicEmpJComboBox.removeAllItems();
         
         for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
-            employeeJComboBox.addItem(employee);
+            clinicEmpJComboBox.addItem(employee);
         }
     }
     
     private void populateRoleComboBox(Clinical_Organization e){
-        roleJComboBox.removeAllItems();
+        clinicroleJComboBox.removeAllItems();
         for (Roles role : e.getSupportedRole()){
-            roleJComboBox.addItem(role);
+            clinicroleJComboBox.addItem(role);
         }
     }
 
     public void popData() {
 
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) clinicuserJTable.getModel();
 
         model.setRowCount(0);
 
@@ -85,7 +85,7 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
                 Object row[] = new Object[2];
                 row[0] = ua;
                 row[1] = ua.getRole();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+                ((DefaultTableModel) clinicuserJTable.getModel()).addRow(row);
             }
         }
     }
@@ -99,42 +99,43 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        createUserJButton = new javax.swing.JButton();
-        nameJTextField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        CliniccreateUserJButton = new javax.swing.JButton();
+        ClinicnameJTextField = new javax.swing.JTextField();
+        lblClinicUsername = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        userJTable = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        passwordJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        employeeJComboBox = new javax.swing.JComboBox();
-        backjButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        roleJComboBox = new javax.swing.JComboBox();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        clinicuserJTable = new javax.swing.JTable();
+        lblClinicPassword = new javax.swing.JLabel();
+        clinicpasswordJTextField = new javax.swing.JTextField();
+        lblClinicemp = new javax.swing.JLabel();
+        clinicEmpJComboBox = new javax.swing.JComboBox();
+        ClinicbackjButton1 = new javax.swing.JButton();
+        lblClinicRole = new javax.swing.JLabel();
+        clinicroleJComboBox = new javax.swing.JComboBox();
+        lblCreateclinic = new javax.swing.JLabel();
+        lblViewuser = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        createUserJButton.setText("Create");
-        createUserJButton.addActionListener(new java.awt.event.ActionListener() {
+        CliniccreateUserJButton.setText("Create");
+        CliniccreateUserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createUserJButtonActionPerformed(evt);
+                CliniccreateUserJButtonActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
+        add(CliniccreateUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
 
-        nameJTextField.addActionListener(new java.awt.event.ActionListener() {
+        ClinicnameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameJTextFieldActionPerformed(evt);
+                ClinicnameJTextFieldActionPerformed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 146, -1));
+        add(ClinicnameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 146, -1));
 
-        jLabel1.setText("User Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 353, -1, -1));
+        lblClinicUsername.setText("User Name");
+        add(lblClinicUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 353, -1, -1));
 
-        userJTable.setModel(new javax.swing.table.DefaultTableModel(
+        clinicuserJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -157,53 +158,58 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(userJTable);
-        if (userJTable.getColumnModel().getColumnCount() > 0) {
-            userJTable.getColumnModel().getColumn(0).setResizable(false);
-            userJTable.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(clinicuserJTable);
+        if (clinicuserJTable.getColumnModel().getColumnCount() > 0) {
+            clinicuserJTable.getColumnModel().getColumn(0).setResizable(false);
+            clinicuserJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 375, 179));
 
-        jLabel2.setText("Password");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 393, -1, -1));
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 146, -1));
+        lblClinicPassword.setText("Password");
+        add(lblClinicPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 393, -1, -1));
+        add(clinicpasswordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 146, -1));
 
-        jLabel3.setText("Employee");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
+        lblClinicemp.setText("Employee");
+        add(lblClinicemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
 
-        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 146, -1));
+        add(clinicEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 146, -1));
 
-        backjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backjButton1.setText("<< Back");
-        backjButton1.addActionListener(new java.awt.event.ActionListener() {
+        ClinicbackjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ClinicbackjButton1.setText("<< Back");
+        ClinicbackjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backjButton1ActionPerformed(evt);
+                ClinicbackjButton1ActionPerformed(evt);
             }
         });
-        add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 112, -1));
+        add(ClinicbackjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 112, -1));
 
-        jLabel4.setText("Role");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
+        lblClinicRole.setText("Role");
+        add(lblClinicRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
 
-        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 146, -1));
+        clinicroleJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clinicroleJComboBoxActionPerformed(evt);
+            }
+        });
+        add(clinicroleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 146, -1));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("Create UserAccounts");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 170, 20));
+        lblCreateclinic.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblCreateclinic.setText("Create UserAccounts");
+        add(lblCreateclinic, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 170, 20));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel6.setText("View UserAccounts");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 170, 30));
+        lblViewuser.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblViewuser.setText("View UserAccounts");
+        add(lblViewuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 170, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        String userName = nameJTextField.getText();
-        String password = passwordJTextField.getText();
+    private void CliniccreateUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CliniccreateUserJButtonActionPerformed
+        String userName = ClinicnameJTextField.getText();
+        String password = clinicpasswordJTextField.getText();
          if(!((userName.equals("") || (password.equals(""))))){
         if(MainSystem.checkIfUsernameIsUnique(userName)){
-        Employeeclass employee = (Employeeclass) employeeJComboBox.getSelectedItem();
-        Roles role = (Roles) roleJComboBox.getSelectedItem();
+        Employeeclass employee = (Employeeclass) clinicEmpJComboBox.getSelectedItem();
+        Roles role = (Roles) clinicroleJComboBox.getSelectedItem();
         //ClinicOrganization organizations = null;
 //        if (role instanceof PharmaManagerRole){
 //            System.out.println("pharmamed()");
@@ -227,33 +233,37 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
              JOptionPane.showMessageDialog(null, "Enter valid value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_createUserJButtonActionPerformed
+    }//GEN-LAST:event_CliniccreateUserJButtonActionPerformed
 
-    private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
+    private void ClinicbackjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicbackjButton1ActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backjButton1ActionPerformed
+    }//GEN-LAST:event_ClinicbackjButton1ActionPerformed
 
-    private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
+    private void ClinicnameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicnameJTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameJTextFieldActionPerformed
+    }//GEN-LAST:event_ClinicnameJTextFieldActionPerformed
+
+    private void clinicroleJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clinicroleJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clinicroleJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backjButton1;
-    private javax.swing.JButton createUserJButton;
-    private javax.swing.JComboBox employeeJComboBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton ClinicbackjButton1;
+    private javax.swing.JButton CliniccreateUserJButton;
+    private javax.swing.JTextField ClinicnameJTextField;
+    private javax.swing.JComboBox clinicEmpJComboBox;
+    private javax.swing.JTextField clinicpasswordJTextField;
+    private javax.swing.JComboBox clinicroleJComboBox;
+    private javax.swing.JTable clinicuserJTable;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JTextField passwordJTextField;
-    private javax.swing.JComboBox roleJComboBox;
-    private javax.swing.JTable userJTable;
+    private javax.swing.JLabel lblClinicPassword;
+    private javax.swing.JLabel lblClinicRole;
+    private javax.swing.JLabel lblClinicUsername;
+    private javax.swing.JLabel lblClinicemp;
+    private javax.swing.JLabel lblCreateclinic;
+    private javax.swing.JLabel lblViewuser;
     // End of variables declaration//GEN-END:variables
 }
