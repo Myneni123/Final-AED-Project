@@ -6,12 +6,12 @@
 
 package UI_Main.HospitalArea.Clinic;
 
-import Business.EcoSystem;
-import userinterface.Hospital.*;
-import Business.Enterprise.Enterprise;
-import Business.Organization.ClinicOrganization;
-import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
+import Business_Frame.MainSystem;
+import UI_Main.Hospital_class.*;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Organization;
+import Business.UserHaandle.UserHandle;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -22,12 +22,12 @@ import javax.swing.JPanel;
 public class ClinicalAdminPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
-    UserAccount account; 
-    ClinicOrganization organization; 
+    UserHandle account; 
+    Clinical_Organization organization; 
     Enterprise enterprise; 
-    EcoSystem business;
+    MainSystem business;
     /** Creates new form AdminWorkAreaJPanel */
-    public ClinicalAdminPanel(JPanel userProcessContainer, UserAccount account, ClinicOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public ClinicalAdminPanel(JPanel userProcessContainer, UserHandle account, Clinical_Organization organization, Enterprise enterprise, MainSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
