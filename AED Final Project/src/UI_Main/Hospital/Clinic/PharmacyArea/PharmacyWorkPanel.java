@@ -6,25 +6,25 @@
 
 package UI_Main.Hospital.Clinic.PharmacyArea;
 
-import Business.Clinic.Pharmacy;
-import userinterface.Hospital.Clinic.*;
-import Business.EcoSystem;
-import Business.Employee.Employee;
-import userinterface.Hospital.*;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.ClinicOrganization;
-import Business.Organization.Organization;
-import Business.Supplier.Vaccine;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.PharmacyWorkRequest;
-import Business.WorkQueue.WorkRequest;
+import Business.Clinicarea.PharmacyWork;
+import UI_Main.HospitalArea.Clinic.*;
+import Business_Frame.MainSystem;
+import Business.EmployeeArea.Employeeclass;
+import UI_Main.Hospital_class.*;
+import Business.EnterpriseFrame.Enterprise;
+import Business.NetworkArea.NetworkArea;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Organization;
+import Business.SupplierArea.Vaccine;
+import Business.UserHaandle.UserHandle;
+import Business.WorkLoad.PharmacyW_Request;
+import Business.WorkLoad.Work_Request;
 import java.awt.CardLayout;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
@@ -33,13 +33,13 @@ import utility.Validator;
 public class PharmacyWorkPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
-    UserAccount account; 
-    ClinicOrganization organization; 
+    UserHandle account; 
+    Clinical_Organization organization; 
     Enterprise enterprise; 
-    EcoSystem business;
+    MainSystem business;
     
     /** Creates new form AdminWorkAreaJPanel */
-    public PharmacyWorkPanel(JPanel userProcessContainer, UserAccount account, ClinicOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public PharmacyWorkPanel(JPanel userProcessContainer, UserHandle account, Clinical_Organization organization, Enterprise enterprise, MainSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -64,11 +64,11 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for (WorkRequest work : organization.getWorkQueue().getWorkRequestList()){
-           if(work instanceof PharmacyWorkRequest){ 
+        for (Work_Request work : organization.getWorkQueue().getWorkRequestList()){
+           if(work instanceof PharmacyW_Request){ 
             Object[] row = new Object[4];
             row[0] = work.getVaccine().getVaccineName();
-            row[1] = ((PharmacyWorkRequest) work).getQuantity();
+            row[1] = ((PharmacyW_Request) work).getQuantity();
             row[2] = work;
             row[3] = work.getReceiver();
             model.addRow(row);
@@ -79,7 +79,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
          DefaultTableModel model = (DefaultTableModel) availableTable.getModel();
         
         model.setRowCount(0);
-        Pharmacy p= organization.getP();
+        PharmacyWork p= organization.getP();
          System.out.println("pharmacy"+ p.getVaccine().getVaccineList().size());
         for (Vaccine vaccine : p.getVaccine().getVaccineList()){
           
@@ -92,10 +92,10 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
     }
      public void populateQuantity(){
          
-         for ( WorkRequest workRequest : account.getWorkQueue().getWorkRequestList()) {
+         for ( Work_Request workRequest : account.getWorkQueue().getWorkRequestList()) {
             // HashMap<WorkRequest,Integer> map = new HashMap<WorkRequest,Integer>();
              int temp=0;
-             PharmacyWorkRequest p= (PharmacyWorkRequest) workRequest;
+             PharmacyW_Request p= (PharmacyW_Request) workRequest;
              if(workRequest.getStatus().equals("Complete") && !p.isAdd() ){ //&& add == false
                  Vaccine v = workRequest.getVaccine();
                 
@@ -225,7 +225,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
 
     private void reqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqBtnActionPerformed
          if(!txtquant.getText().equals("")){
-        PharmacyWorkRequest request= new PharmacyWorkRequest();
+        PharmacyW_Request request= new PharmacyW_Request();
         request.setVaccine((Vaccine)comboVaccine.getSelectedItem());
         request.setQuantity(Integer.parseInt(txtquant.getText()));
         request.setStatus("Requested");
@@ -254,7 +254,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
         }
         else{
 
-            WorkRequest p=(WorkRequest) requestTable.getValueAt(selectedRow, 2);
+            Work_Request p=(Work_Request) requestTable.getValueAt(selectedRow, 2);
 
            // s.getWorkQueue().getWorkRequestList().remove(p);
             organization.getWorkQueue().getWorkRequestList().remove(p);
@@ -267,7 +267,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
 
     private void txtquantKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtquantKeyPressed
         // TODO add your handling code here:
-        Validator.onlyInteger(evt, txtquant);
+        Validation.onlyInteger(evt, txtquant);
     }//GEN-LAST:event_txtquantKeyPressed
     
     
