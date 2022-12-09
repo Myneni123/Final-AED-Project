@@ -4,9 +4,9 @@
  */
 package UI_Main.DistributorsArea;
 
-import Business.Organization.Organization;
-import Business.Organization.Organization.Type;
-import Business.Organization.OrganizationDirectory;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.Organization.Type;
+import Business.OrganizationFrame.OrganizationDirectory;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;

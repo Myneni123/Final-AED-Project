@@ -6,7 +6,7 @@
 
 package UI_Main.DistributorsArea;
 
-import Business.Enterprise.Enterprise;
+import Business.EnterpriseFrame.Enterprise;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 

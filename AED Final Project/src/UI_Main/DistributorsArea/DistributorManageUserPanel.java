@@ -4,22 +4,22 @@
  */
 package UI_Main.DistributorsArea;
 
-import Business.Clinic.Doctor;
-import Business.Clinic.Pharmacy;
-import Business.EcoSystem;
-import Business.Employee.Employee;
-import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
-import Business.Organization.Organization.Type;
-import Business.Organization.ProviderOrganization;
-import Business.Organization.SupplierOrganization;
-import Business.Role.PharmaManagerRole;
+import Business.Clinicarea.Doctor;
+import Business.Clinicarea.PharmacyWork;
+import Business_Frame.MainSystem;
+import Business.EmployeeArea.Employeeclass;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.Organization.Type;
+import Business.OrganizationFrame.Provider_Org;
+import Business.OrganizationFrame.Supplier_Org;
+import Business.Role.PharmacyRole;
 import Business.Role.ProviderRole;
-import Business.Role.Role;
+import Business.Role.Roles;
 import Business.Role.SupplierRole;
-import Business.Supplier.Provider;
-import Business.Supplier.Supplier;
-import Business.UserAccount.UserAccount;
+import Business.SupplierArea.Provider;
+import Business.SupplierArea.Supplier;
+import Business.UserHaandle.UserHandle;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -58,7 +58,7 @@ public class DistributorManageUserPanel extends javax.swing.JPanel {
     public void populateEmployeeComboBox(Organization organization){
         employeeJComboBox.removeAllItems();
         
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+        for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
             employeeJComboBox.addItem(employee);
         }
     }
@@ -66,11 +66,11 @@ public class DistributorManageUserPanel extends javax.swing.JPanel {
     private void populateRoleComboBox(Enterprise e){
         roleJComboBox.removeAllItems();
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        if(organization instanceof SupplierOrganization){
+        if(organization instanceof Supplier_Org){
        // for (Role role : e.getSupportedRole()){
             roleJComboBox.addItem(new SupplierRole());
         }
-        if(organization instanceof ProviderOrganization){
+        if(organization instanceof Provider_Org){
              roleJComboBox.addItem(new ProviderRole());
         }
        // }
@@ -83,7 +83,7 @@ public class DistributorManageUserPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+            for (UserHandle ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object row[] = new Object[2];
                 row[0] = ua;
                 row[1] = ua.getRole();
@@ -202,10 +202,10 @@ public class DistributorManageUserPanel extends javax.swing.JPanel {
         String userName = nameJTextField.getText();
         String password = passwordJTextField.getText();
          if(!((userName.equals("") || (password.equals(""))))){
-        if(EcoSystem.checkIfUsernameIsUnique(userName)){
+        if(MainSystem.checkIfUsernameIsUnique(userName)){
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        Employee employee = (Employee) employeeJComboBox.getSelectedItem();
-        Role role = (Role) roleJComboBox.getSelectedItem();
+        Employeeclass employee = (Employeeclass) employeeJComboBox.getSelectedItem();
+        Roles role = (Roles) roleJComboBox.getSelectedItem();
 //        if (role instanceof SupplierRole){
 //        Supplier organizations = new Supplier();
 //        //enterprise.getOrganizationDirectory().createOrganization(Type.Sup);
@@ -216,19 +216,19 @@ public class DistributorManageUserPanel extends javax.swing.JPanel {
 //            organizations.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
 //              
 //        }
-        if (organization instanceof SupplierOrganization){
+        if (organization instanceof Supplier_Org){
            Supplier s= new Supplier();
             
            s.setSupplierName(employee.getName());
-           ((SupplierOrganization) organization).getSupplierList().getSupplierList().add(s);
+           ((Supplier_Org) organization).getSupplierList().getSupplierList().add(s);
           
         }
-        if (organization instanceof ProviderOrganization){
+        if (organization instanceof Provider_Org){
            Provider p= new Provider();
             
            p.setProviderName(employee.getName());
            
-           ((ProviderOrganization) organization).setProvider(p);
+           ((Provider_Org) organization).setProvider(p);
           
         }
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
