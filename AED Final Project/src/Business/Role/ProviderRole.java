@@ -16,7 +16,7 @@ import Business.SupplierArea.Supplier;
 import javax.swing.JPanel;
 import UI_Main.HospitalArea.Clinic.ClinicalAdminPanel;
 import UI_Main.Distributors.SupplierDirectory.SupplierWorkPanel;
-import UI_Main.Distributors.ProvidersLists.ProvidersWorkPanel;
+import UI_Main.Distributors.ProvidersLists.ProviderWorkPanel;
 
 
 /**
@@ -27,7 +27,7 @@ public class ProviderRole extends Roles {
     
       @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserHandle account, Organization organization, Enterprise enterprise, MainSystem Business) {
-         return new ProvidersWorkPanel(userProcessContainer,  account, (Provider_Org) organization,  enterprise,  Business);
+         return new ProviderWorkPanel(userProcessContainer,  account, (Provider_Org) organization,  enterprise,  Business);
     }
      @Override
     public String toString(){

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI_Main.DistributorsArea;
+package UI_Main.C2D;
 
 import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author raunak
  */
-public class DistributorManageOrganization extends javax.swing.JPanel {
+public class CDCManageorganizationPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory directory;
     private JPanel userProcessContainer;
@@ -23,7 +23,7 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public DistributorManageOrganization(JPanel userProcessContainer,OrganizationDirectory directory) {
+    public CDCManageorganizationPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
@@ -34,18 +34,15 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
     
     private void populateCombo(){
         organizationJComboBox.removeAllItems();
-       // for (Type type : Organization.Type.values()){
-         //   if (!type.getValue().equals(Type.Admin.getValue()))
-                organizationJComboBox.addItem(Type.Provider);
-                organizationJComboBox.addItem(Type.Supplier);
+        //for (Type type : Organization.Type.values()){
+          //  if (!type.getValue().equals(Type.CDCManager.getValue()))
+                organizationJComboBox.addItem(Type.CDCManager);
         //}
     }
 
     private void populateTable(){
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
-        model.setRowCount(0);
-        
+        model.setRowCount(0); 
         for (Organization organization : directory.getOrganizationList()){
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
@@ -69,6 +66,7 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -115,7 +113,7 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
         add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 310, -1, -1));
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 81, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 140, -1));
 
         jLabel1.setText("Organization Type ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 228, -1, -1));
@@ -127,6 +125,10 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
             }
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 310, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel4.setText("Manage Organization");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 170, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
@@ -147,6 +149,7 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
     private javax.swing.JButton addJButton;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTable organizationJTable;

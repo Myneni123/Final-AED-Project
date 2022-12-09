@@ -15,7 +15,7 @@ import Business.SupplierArea.Supplier;
 import javax.swing.JPanel;
 import UI_Main.HospitalArea.Clinic.ClinicalAdminPanel;
 import UI_Main.Distributors.SupplierDirectory.SupplierWorkPanel;
-import UI_Main.Distributors.ProvidersLists.ProvidersWorkPanel;
+import UI_Main.Distributors.ProvidersLists.ProviderWorkPanel;
 import UI_Main.Hospital.Clinic.PharmacyArea.PharmacyWorkPanel;
 
 /**

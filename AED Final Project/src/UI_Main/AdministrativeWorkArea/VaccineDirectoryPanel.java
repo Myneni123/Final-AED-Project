@@ -21,31 +21,39 @@ import utility.Validator;
  *
  * @author Administrator
  */
-public class DiseaseDirectoryPanel extends javax.swing.JPanel {
+public class VaccineDirectoryPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form DiseaseDirectoryPanel
+     * Creates new form ManagePersonDirectoryJPanel
      */
    private JPanel userProcessContainer;
    private EcoSystem business;
  
-    public DiseaseDirectoryPanel(JPanel userProcessContainer, EcoSystem business){
+    public VaccineDirectoryPanel(JPanel userProcessContainer, EcoSystem business){
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.business=business;
-        populateDiseaseTable();
+       
+        populateVaccineTable();
+        populatecombo();
     }
-    public void populateDiseaseTable(){
-         DefaultTableModel dtm= (DefaultTableModel) tblDisease.getModel();
+    public void populateVaccineTable(){
+         DefaultTableModel dtm= (DefaultTableModel) tblVaccine.getModel();
        dtm.setRowCount(0);
-       for (Disease disease : business.getDiseaseList().getDiseaseList()) {
+       for (Vaccine vaccine : business.getVaccineList().getVaccineList()) {
+        
            Object[] row = new Object[2];
-           row[0]= disease;
-           row[1]=disease.getDiseaseId();
+           row[0]= vaccine;
+           row[1]=vaccine.getVaccineId();
            dtm.addRow(row);
        }  
        }
     
+    public void populatecombo(){
+        for (Disease disease : business.getDiseaseList().getDiseaseList()) {
+            comboDisease.addItem(disease);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,7 +65,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDisease = new javax.swing.JTable();
+        tblVaccine = new javax.swing.JTable();
         btnNew = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         lblwelcome = new javax.swing.JLabel();
@@ -65,16 +73,18 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         txtVaccineName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        comboDisease = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblDisease.setModel(new javax.swing.table.DefaultTableModel(
+        tblVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Disease Name", "Disease ID"
+                "Vaccine Name", "Vaccine ID"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -85,11 +95,11 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblDisease);
+        jScrollPane1.setViewportView(tblVaccine);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 120, 590, 170));
 
-        btnNew.setText("Create New Disease");
+        btnNew.setText("Create New Vaccine");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
@@ -108,7 +118,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         lblwelcome.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         add(lblwelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 240, 20));
 
-        btnDelete.setText("Delete Disease");
+        btnDelete.setText("Delete Vaccine");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -117,7 +127,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 180, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel3.setText("Create Disease ");
+        jLabel3.setText("Create Vaccine ");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 170, 30));
 
         txtVaccineName.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -128,8 +138,13 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         add(txtVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 120, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel4.setText("Manage Disease Directory");
+        jLabel4.setText("Manage Vaccine Directory");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 320, 30));
+
+        add(comboDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 120, -1));
+
+        jLabel1.setText("Disease: ");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
 
         jLabel2.setText("Name:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, -1, -1));
@@ -137,14 +152,14 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         // TODO add your handling code here:
-         if(!txtVaccineName.getText().equals("")){
-        Disease v= business.getDiseaseList().addDisease();
-        v.setDiseaseName(txtVaccineName.getText());
-        populateDiseaseTable();
-         }else{
+        if(!txtVaccineName.getText().equals("")){
+        Vaccine v= business.getVaccineList().addVaccine();
+        v.setVaccineName(txtVaccineName.getText());
+        v.setDisease((Disease) comboDisease.getSelectedItem());
+        populateVaccineTable();
+        }else{
              JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-
         
     }//GEN-LAST:event_btnNewActionPerformed
 
@@ -157,17 +172,18 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-          int selectedRow= tblDisease.getSelectedRow();
+          int selectedRow= tblVaccine.getSelectedRow();
          if(selectedRow<0){
              JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
       }
         else{
              
-         Disease p=(Disease) tblDisease.getValueAt(selectedRow, 0);
+         Vaccine p=(Vaccine) tblVaccine.getValueAt(selectedRow, 0);
 
-         business.getDiseaseList().removeDisease(p);
+         business.getVaccineList().removeVaccine(p);
+         
           JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
-        populateDiseaseTable();
+        populateVaccineTable();
          }
          
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -182,12 +198,14 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnNew;
+    private javax.swing.JComboBox comboDisease;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblwelcome;
-    private javax.swing.JTable tblDisease;
+    private javax.swing.JTable tblVaccine;
     private javax.swing.JTextField txtVaccineName;
     // End of variables declaration//GEN-END:variables
 }

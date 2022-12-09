@@ -2,18 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI_Main.HospitalArea.Clinic;
+package UI_Main.C2D;
 
-import Business.Clinic.Doctor;
-import Business.Clinic.Pharmacy;
 import Business.EcoSystem;
-import userinterface.Hospital.*;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Organization.ClinicOrganization;
 import Business.Organization.Organization;
-import Business.Role.DoctorRole;
-import Business.Role.PharmaManagerRole;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -25,41 +19,33 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Administrator
  */
-public class ClinicManageUsersPanel extends javax.swing.JPanel {
+public class CDCManageUserHandlePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageUserAccountJPanel
      */
-    JPanel userProcessContainer;
-    UserAccount account; 
-    ClinicOrganization organization; 
-    Enterprise enterprise; 
-    EcoSystem business;
+    private JPanel container;
+    private Enterprise enterprise;
 
-    public ClinicManageUsersPanel(JPanel userProcessContainer, UserAccount account, ClinicOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public CDCManageUserHandlePanel(JPanel container, Enterprise enterprise) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
-        this.account=account;
-        this.business=business;
-        this.organization= organization;
+        this.container = container;
 
-       // popOrganizationComboBox();
+        popOrganizationComboBox();
        // employeeJComboBox.removeAllItems();
         popData();
-        populateEmployeeComboBox(organization);
-        populateRoleComboBox(organization);
     }
 
-//    public void popOrganizationComboBox() {
-//        organizationJComboBox.removeAllItems();
-//
-//        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-//            organizationJComboBox.addItem(organization);
-//        }
-//    }
+    public void popOrganizationComboBox() {
+        organizationJComboBox.removeAllItems();
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            organizationJComboBox.addItem(organization);
+        }
+    }
     
-    public void populateEmployeeComboBox(ClinicOrganization organization){
+    public void populateEmployeeComboBox(Organization organization){
         employeeJComboBox.removeAllItems();
         
         for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
@@ -67,7 +53,7 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
         }
     }
     
-    private void populateRoleComboBox(ClinicOrganization e){
+    private void populateRoleComboBox(Enterprise e){
         roleJComboBox.removeAllItems();
         for (Role role : e.getSupportedRole()){
             roleJComboBox.addItem(role);
@@ -109,10 +95,10 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         employeeJComboBox = new javax.swing.JComboBox();
         backjButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        organizationJComboBox = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -123,13 +109,7 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
             }
         });
         add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
-
-        nameJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameJTextFieldActionPerformed(evt);
-            }
-        });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 146, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 190, -1));
 
         jLabel1.setText("User Name");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 353, -1, -1));
@@ -163,16 +143,17 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
             userJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 375, 179));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 28, 375, 179));
 
         jLabel2.setText("Password");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 393, -1, -1));
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 146, -1));
+        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 190, -1));
 
         jLabel3.setText("Employee");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
 
-        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 146, -1));
+        employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 200, -1));
 
         backjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backjButton1.setText("<< Back");
@@ -183,62 +164,59 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
         });
         add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 112, -1));
 
+        jLabel5.setText("Organization");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
+
+        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                organizationJComboBoxActionPerformed(evt);
+            }
+        });
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 237, 180, -1));
+
         jLabel4.setText("Role");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
 
-        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 146, -1));
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("Create UserAccounts");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 170, 20));
-
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel6.setText("View UserAccounts");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 170, 30));
+        roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 190, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
         String userName = nameJTextField.getText();
         String password = passwordJTextField.getText();
-         if(!((userName.equals("") || (password.equals(""))))){
+          if(!((userName.equals("") || (password.equals(""))))){
         if(EcoSystem.checkIfUsernameIsUnique(userName)){
+        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
-        //ClinicOrganization organizations = null;
-//        if (role instanceof PharmaManagerRole){
-//            System.out.println("pharmamed()");
-//        Pharmacy organizations = new Pharmacy();
-//         organizations.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-//        }
-//        else{
-//           Doctor  organizations = new Doctor();
-//            organizations.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-//              System.out.println("dovc()");
-//        }
-       
+        
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         
         popData();
-        }
-        else{
+        }else{
            JOptionPane.showMessageDialog(null, "Please enter unique username", "Warning", JOptionPane.WARNING_MESSAGE); 
         }
-        }else{
+          }else{
              JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-
+ 
     }//GEN-LAST:event_createUserJButtonActionPerformed
 
     private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
         // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        container.remove(this);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.previous(container);
     }//GEN-LAST:event_backjButton1ActionPerformed
 
-    private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameJTextFieldActionPerformed
+    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
+        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+        if (organization != null){
+            populateEmployeeComboBox(organization);
+            populateRoleComboBox(enterprise);
+        }
+    }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backjButton1;
@@ -249,9 +227,9 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
+    private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField passwordJTextField;
     private javax.swing.JComboBox roleJComboBox;
     private javax.swing.JTable userJTable;
