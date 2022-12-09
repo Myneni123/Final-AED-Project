@@ -8,15 +8,15 @@ package UI_Main.AdministrativeWorkArea;
 import Business_Frame.MainSystem;
 import Business.EnterpriseFrame.Enterprise;
 import Business.NetworkArea.NetworkArea;
-import Business.Organization.Organization;
+import Business.OrganizationFrame.Organization;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import userinterface.SystemAdminWorkAreas.ManageVaccineDirectoryJPanel;
-import userinterface.SystemAdminWorkAreas.ManageDiseaseDirectoryJPanel;
-import userinterface.SystemAdminWorkAreas.ManageDiseaseDirectoryJPanel;
+import UI_Main.AdministrativeWorkArea.VaccineDirectoryPanel;
+import UI_Main.AdministrativeWorkArea.DiseaseDirectoryPanel;
+import UI_Main.AdministrativeWorkArea.DiseaseDirectoryPanel;
 
 /**
  *
@@ -25,15 +25,15 @@ import userinterface.SystemAdminWorkAreas.ManageDiseaseDirectoryJPanel;
 public class AdminWorkPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    EcoSystem system;
+    MainSystem sys;
 
     /**
      * Creates new form AdminWorkPanel
      */
-    public AdminWorkPanel(JPanel userProcessContainer, EcoSystem system) {
+    public AdminWorkPanel(JPanel userProcessContainer, MainSystem sys) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.system = system;
+        this.sys = sys;
 
         populateTree();
     }
@@ -44,10 +44,10 @@ public class AdminWorkPanel extends javax.swing.JPanel {
 
         
         
-        ArrayList<Network> networkList = system.getNetworkList();
+        ArrayList<NetworkArea> networkList = sys.getNetworkList();
         ArrayList<Enterprise> enterpriseList;
         ArrayList<Organization> organizationList;
-        Network network;
+        NetworkArea networkarea;
         Enterprise enterprise;
         Organization organization;
 
@@ -60,11 +60,11 @@ public class AdminWorkPanel extends javax.swing.JPanel {
         DefaultMutableTreeNode enterpriseNode;
         DefaultMutableTreeNode organizationNode;
         for (int i = 0; i < networkList.size(); i++) {
-            network = networkList.get(i);
-            networkNode = new DefaultMutableTreeNode(network.getName());
+            networkarea = networkList.get(i);
+            networkNode = new DefaultMutableTreeNode(networkarea.getName());
             networks.insert(networkNode, i);
 
-            enterpriseList = network.getEnterpriseDirectory().getEnterpriseList();
+            enterpriseList = networkarea.getEnterpriseDirectory().getEnterpriseList();
 
             for (int j = 0; j < enterpriseList.size(); j++) {
                 enterprise = enterpriseList.get(j);
@@ -177,7 +177,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
 
     private void manageEnterpriseJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEnterpriseJButtonActionPerformed
 
-        EnterprisePanel manageEnterpriseJPanel = new EnterprisePanel(userProcessContainer, system);
+        EnterprisePanel manageEnterpriseJPanel = new EnterprisePanel(userProcessContainer, sys);
         userProcessContainer.add("manageEnterpriseJPanel", manageEnterpriseJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -185,7 +185,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
 
     private void manageAdminJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageAdminJButtonActionPerformed
         // TODO add your handling code here:
-        EnterpriseAdminPanel manageEnterpriseAdminJPanel = new EnterpriseAdminPanel(userProcessContainer, system);
+        EnterpriseAdminPanel manageEnterpriseAdminJPanel = new EnterpriseAdminPanel(userProcessContainer, sys);
         userProcessContainer.add("manageEnterpriseAdminJPanel", manageEnterpriseAdminJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -193,7 +193,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_manageAdminJButtonActionPerformed
 
     private void manageNetworkJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageNetworkJButtonActionPerformed
-        NetworkPanel manageNetworkJPanel = new NetworkPanel(userProcessContainer, system);
+        NetworkPanel manageNetworkJPanel = new NetworkPanel(userProcessContainer, sys);
         userProcessContainer.add("manageNetworkJPanel", manageNetworkJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -209,7 +209,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
 
     private void btnVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineActionPerformed
         // TODO add your handling code here:
-        VaccineDirectoryPanel manageNetworkJPanel = new VaccineDirectoryPanel(userProcessContainer, system);
+        VaccineDirectoryPanel manageNetworkJPanel = new VaccineDirectoryPanel(userProcessContainer, sys);
         userProcessContainer.add("ManageVaccineDirectoryJPanel", manageNetworkJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -217,7 +217,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
 
     private void btnDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiseaseActionPerformed
         // TODO add your handling code here:
-         DiseaseDirectoryPanel manageNetworkJPanel = new DiseaseDirectoryPanel(userProcessContainer, system);
+         DiseaseDirectoryPanel manageNetworkJPanel = new DiseaseDirectoryPanel(userProcessContainer, sys);
         userProcessContainer.add("ManageDiseaseDirectoryJPanel", manageNetworkJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
