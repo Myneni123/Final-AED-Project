@@ -4,20 +4,20 @@
  */
 package UI_Main.HospitalArea.Clinic;
 
-import Business.EcoSystem;
-import userinterface.Hospital.*;
-import Business.Employee.Employee;
-import Business.Enterprise.Enterprise;
-import Business.Organization.ClinicOrganization;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
-import Business.Role.Role;
-import Business.UserAccount.UserAccount;
+import Business_Frame.MainSystem;
+import UI_Main.Hospital_class.*;
+import Business.EmployeeArea.Employeeclass;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.OrganizationDirectory;
+import Business.Role.Roles;
+import Business.UserHaandle.UserHandle;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
@@ -26,14 +26,14 @@ import utility.Validator;
 public class ClinicManageemployeePanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    UserAccount account; 
-    ClinicOrganization organization; 
+    UserHandle account; 
+    Clinical_Organization organization; 
     Enterprise enterprise; 
-    EcoSystem business;
+    MainSystem business;
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ClinicManageemployeePanel(JPanel userProcessContainer, UserAccount account, ClinicOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public ClinicManageemployeePanel(JPanel userProcessContainer, UserHandle account, Clinical_Organization organization, Enterprise enterprise, MainSystem business) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -61,12 +61,12 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
 //        }
 //    }
 
-    private void populateTable(ClinicOrganization organization){
+    private void populateTable(Clinical_Organization organization){
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         
         model.setRowCount(0);
         
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+        for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
             
             Object[] row = new Object[2];
             row[0] = employee.getId();
@@ -185,7 +185,7 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
 
     private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
         // TODO add your handling code here:
-        Validator.onlyString(evt, nameJTextField);
+        Validation.onlyString(evt, nameJTextField);
     }//GEN-LAST:event_nameJTextFieldKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

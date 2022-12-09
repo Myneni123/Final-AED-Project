@@ -4,18 +4,18 @@
  */
 package UI_Main.HospitalArea.Clinic;
 
-import Business.Clinic.Doctor;
-import Business.Clinic.Pharmacy;
-import Business.EcoSystem;
-import userinterface.Hospital.*;
-import Business.Employee.Employee;
-import Business.Enterprise.Enterprise;
-import Business.Organization.ClinicOrganization;
-import Business.Organization.Organization;
+import Business.Clinicarea.Doctor;
+import Business.Clinicarea.PharmacyWork;
+import Business_Frame.MainSystem;
+import UI_Main.Hospital_class.*;
+import Business.EmployeeArea.Employeeclass;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Clinical_Organization;
+import Business.OrganizationFrame.Organization;
 import Business.Role.DoctorRole;
-import Business.Role.PharmaManagerRole;
-import Business.Role.Role;
-import Business.UserAccount.UserAccount;
+import Business.Role.PharmacyRole;
+import Business.Role.Roles;
+import Business.UserHaandle.UserHandle;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -31,12 +31,12 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
      * Creates new form ManageUserAccountJPanel
      */
     JPanel userProcessContainer;
-    UserAccount account; 
-    ClinicOrganization organization; 
+    UserHandle account; 
+    Clinical_Organization organization; 
     Enterprise enterprise; 
-    EcoSystem business;
+    MainSystem business;
 
-    public ClinicManageUsersPanel(JPanel userProcessContainer, UserAccount account, ClinicOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public ClinicManageUsersPanel(JPanel userProcessContainer, UserHandle account, Clinical_Organization organization, Enterprise enterprise, MainSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -59,17 +59,17 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
 //        }
 //    }
     
-    public void populateEmployeeComboBox(ClinicOrganization organization){
+    public void populateEmployeeComboBox(Clinical_Organization organization){
         employeeJComboBox.removeAllItems();
         
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+        for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
             employeeJComboBox.addItem(employee);
         }
     }
     
-    private void populateRoleComboBox(ClinicOrganization e){
+    private void populateRoleComboBox(Clinical_Organization e){
         roleJComboBox.removeAllItems();
-        for (Role role : e.getSupportedRole()){
+        for (Roles role : e.getSupportedRole()){
             roleJComboBox.addItem(role);
         }
     }
@@ -81,7 +81,7 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+            for (UserHandle ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object row[] = new Object[2];
                 row[0] = ua;
                 row[1] = ua.getRole();
@@ -201,9 +201,9 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
         String userName = nameJTextField.getText();
         String password = passwordJTextField.getText();
          if(!((userName.equals("") || (password.equals(""))))){
-        if(EcoSystem.checkIfUsernameIsUnique(userName)){
-        Employee employee = (Employee) employeeJComboBox.getSelectedItem();
-        Role role = (Role) roleJComboBox.getSelectedItem();
+        if(MainSystem.checkIfUsernameIsUnique(userName)){
+        Employeeclass employee = (Employeeclass) employeeJComboBox.getSelectedItem();
+        Roles role = (Roles) roleJComboBox.getSelectedItem();
         //ClinicOrganization organizations = null;
 //        if (role instanceof PharmaManagerRole){
 //            System.out.println("pharmamed()");

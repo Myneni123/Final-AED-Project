@@ -6,8 +6,8 @@
 
 package UI_Main.Hospital_class;
 
-import userinterface.AdministrativeRole.*;
-import Business.Enterprise.Enterprise;
+import UI_Main.AdministrativeWorkArea.*;
+import Business.EnterpriseFrame.Enterprise;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
