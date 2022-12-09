@@ -44,63 +44,64 @@ public class ClinicalAdminPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        userJButton = new javax.swing.JButton();
-        manageEmployeeJButton = new javax.swing.JButton();
-        enterpriseLabel = new javax.swing.JLabel();
+        lblClinicWork = new javax.swing.JLabel();
+        ClinicManageuserJButton = new javax.swing.JButton();
+        ClinicmanageEmpJButton = new javax.swing.JButton();
+        lblClinicEnterprise = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 204, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Clinic Work Area -Adminstrative Role");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        lblClinicWork.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblClinicWork.setText("Clinic Work Area -Adminstrative Role");
+        add(lblClinicWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        userJButton.setText("Manage User Account");
-        userJButton.addActionListener(new java.awt.event.ActionListener() {
+        ClinicManageuserJButton.setText("Manage User Account");
+        ClinicManageuserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userJButtonActionPerformed(evt);
+                ClinicManageuserJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 170, -1));
+        add(ClinicManageuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 170, -1));
 
-        manageEmployeeJButton.setText("Manage Employee");
-        manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
+        ClinicmanageEmpJButton.setText("Manage Employee");
+        ClinicmanageEmpJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageEmployeeJButtonActionPerformed(evt);
+                ClinicmanageEmpJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 170, -1));
+        add(ClinicmanageEmpJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 170, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Enterprise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, 30));
+        lblClinicEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblClinicEnterprise.setText("Enterprise :");
+        add(lblClinicEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, 30));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
+    private void ClinicManageuserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicManageuserJButtonActionPerformed
         // TODO add your handling code here:
         ClinicManageUsersPanel muajp = new ClinicManageUsersPanel( userProcessContainer,  account,  organization,  enterprise,  business);
         userProcessContainer.add("ClinicManageUserAccountJPanel", muajp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_userJButtonActionPerformed
+    }//GEN-LAST:event_ClinicManageuserJButtonActionPerformed
 
-    private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
+    private void ClinicmanageEmpJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicmanageEmpJButtonActionPerformed
 
         ClinicManageemployeePanel manageEmployeeJPanel = new ClinicManageemployeePanel(userProcessContainer,  account,  organization,  enterprise,  business);
         userProcessContainer.add("ClinicManageEmployeeJPanel", manageEmployeeJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
-    }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
+    }//GEN-LAST:event_ClinicmanageEmpJButtonActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton manageEmployeeJButton;
-    private javax.swing.JButton userJButton;
+    private javax.swing.JButton ClinicManageuserJButton;
+    private javax.swing.JButton ClinicmanageEmpJButton;
+    private javax.swing.JLabel lblClinicEnterprise;
+    private javax.swing.JLabel lblClinicWork;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
     
