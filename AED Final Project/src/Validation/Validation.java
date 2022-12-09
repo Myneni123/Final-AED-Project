@@ -11,7 +11,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Validation {
     public static void onlyString(KeyEvent evt, JTextField field) {
@@ -31,7 +31,7 @@ public class Validation {
             (c == evt.VK_BACK_SPACE) ||
             (c == evt.VK_DELETE))) {
 
-        JOptionPane.showMessageDialog(null, "Enter Integers only");
+        JOptionPane.showMessageDialog(null, "Enter Integers");
        field.setText("");
         }
      }
