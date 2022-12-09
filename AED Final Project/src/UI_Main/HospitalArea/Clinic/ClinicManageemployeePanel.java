@@ -62,7 +62,7 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
 //    }
 
     private void populateTable(Clinical_Organization organization){
-        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) ClinicOrgJTable.getModel();
         
         model.setRowCount(0);
         
@@ -84,17 +84,18 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        organizationJTable = new javax.swing.JTable();
-        addJButton = new javax.swing.JButton();
-        backJButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        nameJTextField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        ClinicOrgJTable = new javax.swing.JTable();
+        ClinicaddJButton = new javax.swing.JButton();
+        ClinicEmpbackJButton = new javax.swing.JButton();
+        lblClinicEmpName = new javax.swing.JLabel();
+        ClinicnameEmpTextField = new javax.swing.JTextField();
+        lblClinicViewEmp = new javax.swing.JLabel();
+        lblClinicCreateEmp = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
+        ClinicOrgJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -120,53 +121,53 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(organizationJTable);
-        if (organizationJTable.getColumnModel().getColumnCount() > 0) {
-            organizationJTable.getColumnModel().getColumn(0).setResizable(false);
-            organizationJTable.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(ClinicOrgJTable);
+        if (ClinicOrgJTable.getColumnModel().getColumnCount() > 0) {
+            ClinicOrgJTable.getColumnModel().getColumn(0).setResizable(false);
+            ClinicOrgJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 63, 480, 92));
 
-        addJButton.setText("Create Employee");
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
+        ClinicaddJButton.setText("Create Employee");
+        ClinicaddJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
+                ClinicaddJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 315, -1, -1));
+        add(ClinicaddJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 315, -1, -1));
 
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        ClinicEmpbackJButton.setText("<< Back");
+        ClinicEmpbackJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                ClinicEmpbackJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 315, -1, -1));
+        add(ClinicEmpbackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 315, -1, -1));
 
-        jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 40, -1));
+        lblClinicEmpName.setText("Name");
+        add(lblClinicEmpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 40, -1));
 
-        nameJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        ClinicnameEmpTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                nameJTextFieldKeyPressed(evt);
+                ClinicnameEmpTextFieldKeyPressed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 126, -1));
+        add(ClinicnameEmpTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 126, -1));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel4.setText("View Employee");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 130, 30));
+        lblClinicViewEmp.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblClinicViewEmp.setText("View Employee");
+        add(lblClinicViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 130, 30));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("Create Employee");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 130, 30));
+        lblClinicCreateEmp.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblClinicCreateEmp.setText("Create Employee");
+        add(lblClinicCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-         if(!nameJTextField.getText().equals("")){
+    private void ClinicaddJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicaddJButtonActionPerformed
+         if(!ClinicnameEmpTextField.getText().equals("")){
         //ClinicOrganization organization = (ClinicOrganization) organizationEmpJComboBox.getSelectedItem();
-        String name = nameJTextField.getText();
+        String name = ClinicnameEmpTextField.getText();
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
         }else{
@@ -174,28 +175,28 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
         }
 
         
-    }//GEN-LAST:event_addJButtonActionPerformed
+    }//GEN-LAST:event_ClinicaddJButtonActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void ClinicEmpbackJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicEmpbackJButtonActionPerformed
 
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_ClinicEmpbackJButtonActionPerformed
 
-    private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
+    private void ClinicnameEmpTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ClinicnameEmpTextFieldKeyPressed
         // TODO add your handling code here:
-        Validation.onlyString(evt, nameJTextField);
-    }//GEN-LAST:event_nameJTextFieldKeyPressed
+        Validation.onlyString(evt, ClinicnameEmpTextField);
+    }//GEN-LAST:event_ClinicnameEmpTextFieldKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addJButton;
-    private javax.swing.JButton backJButton;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton ClinicEmpbackJButton;
+    private javax.swing.JTable ClinicOrgJTable;
+    private javax.swing.JButton ClinicaddJButton;
+    private javax.swing.JTextField ClinicnameEmpTextField;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JTable organizationJTable;
+    private javax.swing.JLabel lblClinicCreateEmp;
+    private javax.swing.JLabel lblClinicEmpName;
+    private javax.swing.JLabel lblClinicViewEmp;
     // End of variables declaration//GEN-END:variables
 }
