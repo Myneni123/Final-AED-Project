@@ -4,13 +4,13 @@
  */
 package UI_Main.Hospital_class;
 
-import Business.EcoSystem;
-import userinterface.AdministrativeRole.*;
-import Business.Employee.Employee;
-import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
-import Business.Role.Role;
-import Business.UserAccount.UserAccount;
+import Business_Frame.MainSystem;
+import UI_Main.AdministrativeWorkArea.*;
+import Business.EmployeeArea.Employeeclass;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.Organization;
+import Business.Role.Roles;
+import Business.UserHaandle.UserHandle;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -49,14 +49,14 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
     public void populateEmployeeComboBox(Organization organization){
         employeeJComboBox.removeAllItems();
         
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+        for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
             employeeJComboBox.addItem(employee);
         }
     }
     
     private void populateRoleComboBox(Enterprise e){
         roleJComboBox.removeAllItems();
-        for (Role role : e.getSupportedRole()){
+        for (Roles role : e.getSupportedRole()){
             roleJComboBox.addItem(role);
         }
     }
@@ -68,7 +68,7 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+            for (UserHandle ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object row[] = new Object[2];
                 row[0] = ua;
                 row[1] = ua.getRole();
@@ -187,10 +187,10 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
         String userName = nameJTextField.getText();
         String password = passwordJTextField.getText();
         if(!((userName.equals("") || (password.equals(""))))){
-        if(EcoSystem.checkIfUsernameIsUnique(userName)){
+        if(MainSystem.checkIfUsernameIsUnique(userName)){
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        Employee employee = (Employee) employeeJComboBox.getSelectedItem();
-        Role role = (Role) roleJComboBox.getSelectedItem();
+        Employeeclass employee = (Employeeclass) employeeJComboBox.getSelectedItem();
+        Roles role = (Roles) roleJComboBox.getSelectedItem();
         
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         

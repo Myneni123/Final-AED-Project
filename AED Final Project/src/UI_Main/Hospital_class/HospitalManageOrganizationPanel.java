@@ -4,10 +4,10 @@
  */
 package UI_Main.Hospital_class;
 
-import userinterface.AdministrativeRole.*;
-import Business.Organization.Organization;
-import Business.Organization.Organization.Type;
-import Business.Organization.OrganizationDirectory;
+import UI_Main.AdministrativeWorkArea.*;
+import Business.OrganizationFrame.Organization;
+import Business.OrganizationFrame.Organization.Type;
+import Business.OrganizationFrame.OrganizationDirectory;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;

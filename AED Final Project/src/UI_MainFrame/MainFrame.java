@@ -4,15 +4,15 @@
  */
 package UI_MainFrame;
 
-import Business.CDC.DiseaseDirectory;
-import Business.EcoSystem;
-import Business.ConfigureASystem;
-import Business.DB4OUtil.DB4OUtil;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.Organization;
-import Business.Supplier.VaccineDirectory;
-import Business.UserAccount.UserAccount;
+import Business.C2D.Disease_Directory;
+import Business_Frame.MainSystem;
+import Business_Frame.ConfigureSystem;
+import Business.database.db4o;
+import Business.EnterpriseFrame.Enterprise;
+import Business.NetworkArea.NetworkArea;
+import Business.OrganizationFrame.Organization;
+import Business.SupplierArea.Vaccine_Directory;
+import Business.UserHaandle.UserHandle;
 import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -27,13 +27,13 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
-    private EcoSystem system;
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private MainSystem system;
+    private db4o dB4OUtil = db4o.getInstance();
 
     public MainFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
-        EcoSystem.setInstance(system);
+        MainSystem.setInstance(system);
         setExtendedState(getExtendedState()| JFrame.MAXIMIZED_BOTH);
 //        VaccineDirectory v= new VaccineDirectory();
 //        DiseaseDirectory d= new DiseaseDirectory();
@@ -111,12 +111,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         //Step1: Check in the system user account directory if you have the user
         
-        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
+        UserHandle userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
         if (userAccount == null) {
             //Step2: Go inside each network to check each enterprise
-            for (Network network : system.getNetworkList()) {
+            for (NetworkArea network : system.getNetworkList()) {
                 //Step 2-a: Check against each enterprise
                 for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
                     userAccount = enterprise.getUserAccountDirectory().authenticateUser(userName, password);
