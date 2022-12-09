@@ -32,22 +32,26 @@ public class DoctorPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblAppointment = new javax.swing.JLabel();
+        lblDoctor = new javax.swing.JLabel();
+        lblAppointment1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(153, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(lblAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 400, 240));
 
-        jLabel1.setText("No Appointment for today");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 170, 38));
+        lblDoctor.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblDoctor.setText("Doctor Work Area");
+        add(lblDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 26, 137, 37));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel2.setText("Doctor Work Area");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 26, 137, 37));
+        lblAppointment1.setText("No Appointment for today");
+        add(lblAppointment1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 170, 38));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblAppointment;
+    private javax.swing.JLabel lblAppointment1;
+    private javax.swing.JLabel lblDoctor;
     // End of variables declaration//GEN-END:variables
 }
