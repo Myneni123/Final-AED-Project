@@ -34,15 +34,15 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
     }
     
     private void populateCombo(){
-        organizationJComboBox.removeAllItems();
+        HospitalManageOrgJComboBox.removeAllItems();
       //  for (Type type : Organization.Type.values()){
        //     if (!type.getValue().equals(Type.Clinic.getValue()))
-                organizationJComboBox.addItem(Type.Clinic);
+                HospitalManageOrgJComboBox.addItem(Type.Clinic);
       //  }
     }
 
     private void populateTable(){
-        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) HospitalManageOrgJTable.getModel();
         
         model.setRowCount(0);
         
@@ -64,15 +64,16 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        organizationJTable = new javax.swing.JTable();
-        addJButton = new javax.swing.JButton();
-        organizationJComboBox = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        HospitalManageOrgJTable = new javax.swing.JTable();
+        HospitalManageOrgaddJButton = new javax.swing.JButton();
+        HospitalManageOrgJComboBox = new javax.swing.JComboBox();
+        lblHospitalOrgType = new javax.swing.JLabel();
+        HospitalManageOrgbackJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 153, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
+        HospitalManageOrgJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -98,57 +99,57 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(organizationJTable);
-        if (organizationJTable.getColumnModel().getColumnCount() > 0) {
-            organizationJTable.getColumnModel().getColumn(0).setResizable(false);
-            organizationJTable.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(HospitalManageOrgJTable);
+        if (HospitalManageOrgJTable.getColumnModel().getColumnCount() > 0) {
+            HospitalManageOrgJTable.getColumnModel().getColumn(0).setResizable(false);
+            HospitalManageOrgJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 60, 480, 92));
 
-        addJButton.setText("Add Clinic");
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
+        HospitalManageOrgaddJButton.setText("Add Clinic");
+        HospitalManageOrgaddJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
+                HospitalManageOrgaddJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(511, 310, -1, -1));
+        add(HospitalManageOrgaddJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(511, 310, -1, -1));
 
-        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 81, -1));
+        HospitalManageOrgJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(HospitalManageOrgJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 81, -1));
 
-        jLabel1.setText("Organization Type ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 228, -1, -1));
+        lblHospitalOrgType.setText("Organization Type ");
+        add(lblHospitalOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 228, -1, -1));
 
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        HospitalManageOrgbackJButton.setText("<< Back");
+        HospitalManageOrgbackJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                HospitalManageOrgbackJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 310, -1, -1));
+        add(HospitalManageOrgbackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 310, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+    private void HospitalManageOrgaddJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalManageOrgaddJButtonActionPerformed
 
-        Type type = (Type) organizationJComboBox.getSelectedItem();
+        Type type = (Type) HospitalManageOrgJComboBox.getSelectedItem();
         directory.createOrganization(type);
         populateTable();
-    }//GEN-LAST:event_addJButtonActionPerformed
+    }//GEN-LAST:event_HospitalManageOrgaddJButtonActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void HospitalManageOrgbackJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalManageOrgbackJButtonActionPerformed
 
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_HospitalManageOrgbackJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addJButton;
-    private javax.swing.JButton backJButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox HospitalManageOrgJComboBox;
+    private javax.swing.JTable HospitalManageOrgJTable;
+    private javax.swing.JButton HospitalManageOrgaddJButton;
+    private javax.swing.JButton HospitalManageOrgbackJButton;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTable organizationJTable;
+    private javax.swing.JLabel lblHospitalOrgType;
     // End of variables declaration//GEN-END:variables
 }
