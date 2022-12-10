@@ -1,34 +1,34 @@
 /*
- * AdminWorkAreaJPanel.java
+ * AdminWorkPanel.java
  *
- * Created on October 10, 2008, 8:50 AM
+ * 
  */
 
 package UI_Main.C2D;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Organization.CDCManagerOrganization;
-import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
+import Business_Frame.MainSystem;
+import Business.EnterpriseFrame.Enterprise;
+import Business.OrganizationFrame.C2DManagerOrganization;
+import Business.OrganizationFrame.Organization;
+import Business.UserHaandle.UserHandle;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
  *
- * @author  raunak
+ * @author admin
  */
 public class C2DAdminWork_Space extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     Enterprise enterprise;
-  EcoSystem business;
+  MainSystem businesses;
     /** Creates new form AdminWorkAreaJPanel */
-    public C2DAdminWork_Space(JPanel userProcessContainer, Enterprise enterprise, EcoSystem business) {
+    public C2DAdminWork_Space(JPanel userProcessContainer, Enterprise enterprise, MainSystem businesses) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
-        this.business=business;
+        this.businesses=businesses;
     
         valueLabel.setText(enterprise.getName());
     }
@@ -124,7 +124,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
 
     private void btnCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogActionPerformed
         // TODO add your handling code here:
-        C2D_CatalogPanel manageOrganizationJPanel = new C2D_CatalogPanel(userProcessContainer, business);
+        C2D_CatalogPanel manageOrganizationJPanel = new C2D_CatalogPanel(userProcessContainer, businesses);
         userProcessContainer.add("CDCCatalogJPanel", manageOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Enterprise_Directory {
      private ArrayList<Enterprise> enterpriseList;

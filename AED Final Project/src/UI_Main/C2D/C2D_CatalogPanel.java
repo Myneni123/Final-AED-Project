@@ -5,16 +5,16 @@
  */
 package UI_Main.C2D;
 
-import Business.CDC.Disease;
-import Business.EcoSystem;
-import Business.Supplier.Vaccine;
+import Business.C2D.Disease;
+import Business_Frame.MainSystem;
+import Business.SupplierArea.Vaccine;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Administrator
+ * @author admin
  */
 public class C2D_CatalogPanel extends javax.swing.JPanel {
 
@@ -22,11 +22,11 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
      * Creates new form C2D_CatalogPanel
      */
     JPanel userProcessContainer;
-    EcoSystem business;
-    public C2D_CatalogPanel(JPanel userJPanel, EcoSystem business) {
+    MainSystem businesses;
+    public C2D_CatalogPanel(JPanel userJPanel, MainSystem businesses) {
         initComponents();
         userProcessContainer=userJPanel;
-        this.business=business;
+        this.businesses=businesses;
         populateDiseaseTable();
         populateVaccineTable();
     }
@@ -34,7 +34,7 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
          DefaultTableModel dtm= (DefaultTableModel) tblDisease.getModel();
        dtm.setRowCount(0);
       
-       for (Disease disease : business.getDiseaseList().getDiseaseList()) {
+       for (Disease disease : businesses.getDiseaseList().getDiseaseList()) {
            Object[] row = new Object[2];
            row[0]= disease;
            row[1]=disease.getDiseaseId();
@@ -45,7 +45,7 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
   public void populateVaccineTable(){
          DefaultTableModel dtm= (DefaultTableModel) tblVaccine.getModel();
        dtm.setRowCount(0);
-       for (Vaccine vaccine : business.getVaccineList().getVaccineList()) {
+       for (Vaccine vaccine : businesses.getVaccineList().getVaccineList()) {
         
            Object[] row = new Object[2];
            row[0]= vaccine;

@@ -17,7 +17,7 @@ import UI_Main.HospitalArea.Clinic.ClinicalAdminPanel;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class ClinicalRole extends Roles {
     @Override

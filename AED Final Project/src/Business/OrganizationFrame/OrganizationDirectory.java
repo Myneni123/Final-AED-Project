@@ -13,7 +13,7 @@ import Business.EnterpriseFrame.C2DEnterprise;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class OrganizationDirectory {
    

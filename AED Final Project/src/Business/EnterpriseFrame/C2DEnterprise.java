@@ -13,7 +13,7 @@ import Business.OrganizationFrame.Organization;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class C2DEnterprise extends Enterprise {
     public C2DEnterprise(String Name) {

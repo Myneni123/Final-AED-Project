@@ -18,7 +18,7 @@ import UI_Main.Hospital_class.HospitalAdminPanel;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class HospitalRole extends Roles {
     

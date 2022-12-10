@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import UI_Main.Hospital.Clinic.PharmacyArea.DoctorPanel;
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class DoctorRole extends Roles {
     

@@ -10,7 +10,7 @@ import Business.Role.DistributorRole;
 import Business.SupplierArea.Supplier_Directory;
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Supplier_Org extends Organization {
     

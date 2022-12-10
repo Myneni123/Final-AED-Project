@@ -11,7 +11,7 @@ import Business.SupplierArea.Provider;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Provider_Org extends Organization{
     

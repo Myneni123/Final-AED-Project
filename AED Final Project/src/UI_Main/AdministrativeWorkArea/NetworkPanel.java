@@ -4,33 +4,33 @@
  */
 package UI_Main.AdministrativeWorkArea;
 
-import Business.EcoSystem;
-import Business.Network.Network;
+import Business_Frame.MainSystem;
+import Business.NetworkArea.NetworkArea;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class NetworkPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem system;
+    private MainSystem sys;
 
     /**
      *
-     * Creates new form ManageNetworkJPanel
+     * Creates new form for ManageNetworkJPanel
      */
-    public NetworkPanel(JPanel userProcessContainer, EcoSystem system) {
+    public NetworkPanel(JPanel userProcessContainer, MainSystem sys) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
-        this.system = system;
+        this.sys = sys;
 
         populateNetworkTable();
     }
@@ -39,9 +39,9 @@ public class NetworkPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
 
         model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
+        for (NetworkArea networkarea : sys.getNetworkList()) {
             Object[] row = new Object[1];
-            row[0] = network;
+            row[0] = networkarea;
             model.addRow(row);
         }
     }
@@ -141,12 +141,12 @@ public class NetworkPanel extends javax.swing.JPanel {
 
         String name = nameJTextField.getText();
         if(!name.equals("")){
-        Network network = system.createAndAddNetwork();
-        network.setName(name);
+        NetworkArea networkarea = sys.createAndAddNetwork();
+        networkarea.setName(name);
 
         populateNetworkTable();
          }else{
-             JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Warning","Please enter a value", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_submitJButtonActionPerformed
@@ -169,23 +169,23 @@ public class NetworkPanel extends javax.swing.JPanel {
         }
         else{
 
-            Network p=(Network) networkJTable.getValueAt(selectedRow, 0);
+            NetworkArea p=(NetworkArea) networkJTable.getValueAt(selectedRow, 0);
 
-            for (Network network : system.getNetworkList()) {
-                    if(p==network){
-                      system.getNetworkList().remove(p);
+            for (NetworkArea networkarea : sys.getNetworkList()) {
+                    if(p==networkarea){
+                      sys.getNetworkList().remove(p);
                         break;
                     }
             }
 
-            JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
+            JOptionPane.showMessageDialog(null, "Account deleted successfully");
             populateNetworkTable();
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
         // TODO add your handling code here:
-        Validator.onlyString(evt, nameJTextField);
+        Validation.onlyString(evt, nameJTextField);
     }//GEN-LAST:event_nameJTextFieldKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

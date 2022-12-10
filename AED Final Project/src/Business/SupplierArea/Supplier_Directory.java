@@ -9,7 +9,7 @@ import Business.C2D.Disease;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Supplier_Directory {
     
