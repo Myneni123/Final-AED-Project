@@ -36,7 +36,7 @@ public class NetworkPanel extends javax.swing.JPanel {
     }
 
     private void populateNetworkTable() {
-        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblNetworkName.getModel();
 
         model.setRowCount(0);
         for (NetworkArea networkarea : sys.getNetworkList()) {
@@ -56,17 +56,18 @@ public class NetworkPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        networkJTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        submitJButton = new javax.swing.JButton();
-        nameJTextField = new javax.swing.JTextField();
-        backJButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
+        tblNetworkName = new javax.swing.JTable();
+        lblName = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        tfieldName = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        lblNetwork = new javax.swing.JLabel();
+        btnDeleteReq = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(153, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        networkJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblNetworkName.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -92,54 +93,54 @@ public class NetworkPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(networkJTable);
-        if (networkJTable.getColumnModel().getColumnCount() > 0) {
-            networkJTable.getColumnModel().getColumn(0).setResizable(false);
+        jScrollPane1.setViewportView(tblNetworkName);
+        if (tblNetworkName.getColumnModel().getColumnCount() > 0) {
+            tblNetworkName.getColumnModel().getColumn(0).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 63, 404, 91));
 
-        jLabel1.setText("Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 257, -1, -1));
+        lblName.setText("Name");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 257, -1, -1));
 
-        submitJButton.setText("Submit");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 253, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 253, -1, -1));
 
-        nameJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                nameJTextFieldKeyPressed(evt);
+                tfieldNameKeyPressed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 254, 93, -1));
+        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 254, 93, -1));
 
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 352, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 352, -1, -1));
 
-        jLabel4.setText("Manage Network Panel");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 150, 20));
+        lblNetwork.setText("Manage Network Panel");
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 150, 20));
 
-        btnDelete.setText("Delete request");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteReq.setText("Delete request");
+        btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                btnDeleteReqActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
+        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
-        String name = nameJTextField.getText();
+        String name = tfieldName.getText();
         if(!name.equals("")){
         NetworkArea networkarea = sys.createAndAddNetwork();
         networkarea.setName(name);
@@ -149,9 +150,9 @@ public class NetworkPanel extends javax.swing.JPanel {
              JOptionPane.showMessageDialog(null, "Warning","Please enter a value", JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -159,17 +160,17 @@ public class NetworkPanel extends javax.swing.JPanel {
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnDeleteReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteReqActionPerformed
         // TODO add your handling code here:
-        int selectedRow= networkJTable.getSelectedRow();
+        int selectedRow= tblNetworkName.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         else{
 
-            NetworkArea p=(NetworkArea) networkJTable.getValueAt(selectedRow, 0);
+            NetworkArea p=(NetworkArea) tblNetworkName.getValueAt(selectedRow, 0);
 
             for (NetworkArea networkarea : sys.getNetworkList()) {
                     if(p==networkarea){
@@ -181,21 +182,21 @@ public class NetworkPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Account deleted successfully");
             populateNetworkTable();
         }
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteReqActionPerformed
 
-    private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
+    private void tfieldNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfieldNameKeyPressed
         // TODO add your handling code here:
-        Validation.onlyString(evt, nameJTextField);
-    }//GEN-LAST:event_nameJTextFieldKeyPressed
+        Validation.onlyString(evt, tfieldName);
+    }//GEN-LAST:event_tfieldNameKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteReq;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JTable networkJTable;
-    private javax.swing.JButton submitJButton;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNetwork;
+    private javax.swing.JTable tblNetworkName;
+    private javax.swing.JTextField tfieldName;
     // End of variables declaration//GEN-END:variables
 }
