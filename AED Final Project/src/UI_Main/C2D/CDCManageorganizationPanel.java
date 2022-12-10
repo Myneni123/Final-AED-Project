@@ -68,6 +68,7 @@ public class CDCManageorganizationPanel extends javax.swing.JPanel {
         btnBackPage = new javax.swing.JButton();
         lblOrg = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
