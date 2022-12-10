@@ -39,31 +39,31 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
     }
 
     public void popOrganizationComboBox() {
-        organizationJComboBox.removeAllItems();
+        UserorgJComboBox.removeAllItems();
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            organizationJComboBox.addItem(organization);
+            UserorgJComboBox.addItem(organization);
         }
     }
     
     public void populateEmployeeComboBox(Organization organization){
-        employeeJComboBox.removeAllItems();
+        UserempJComboBox.removeAllItems();
         
         for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
-            employeeJComboBox.addItem(employee);
+            UserempJComboBox.addItem(employee);
         }
     }
     
     private void populateRoleComboBox(Enterprise e){
-        roleJComboBox.removeAllItems();
+        UserRoleJComboBox.removeAllItems();
         for (Roles role : e.getSupportedRole()){
-            roleJComboBox.addItem(role);
+            UserRoleJComboBox.addItem(role);
         }
     }
 
     public void popData() {
 
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) HospitalManageuserJTable.getModel();
 
         model.setRowCount(0);
 
@@ -72,7 +72,7 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
                 Object row[] = new Object[2];
                 row[0] = ua;
                 row[1] = ua.getRole();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+                ((DefaultTableModel) HospitalManageuserJTable.getModel()).addRow(row);
             }
         }
     }
@@ -86,36 +86,37 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        createUserJButton = new javax.swing.JButton();
-        nameJTextField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        HospitalcreateUserJButton = new javax.swing.JButton();
+        hsopitalManagenameJTextField = new javax.swing.JTextField();
+        lblHospitalMangeUsername = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        userJTable = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        passwordJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        employeeJComboBox = new javax.swing.JComboBox();
-        backjButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        organizationJComboBox = new javax.swing.JComboBox();
-        jLabel4 = new javax.swing.JLabel();
-        roleJComboBox = new javax.swing.JComboBox();
+        HospitalManageuserJTable = new javax.swing.JTable();
+        lblHospitalManagePassword = new javax.swing.JLabel();
+        HospitalUserpasswordJTextField = new javax.swing.JTextField();
+        lblHospitalUserEmp = new javax.swing.JLabel();
+        UserempJComboBox = new javax.swing.JComboBox();
+        HospitalUserbackjButton1 = new javax.swing.JButton();
+        lblHospitalManageOrg = new javax.swing.JLabel();
+        UserorgJComboBox = new javax.swing.JComboBox();
+        lblUserRole = new javax.swing.JLabel();
+        UserRoleJComboBox = new javax.swing.JComboBox();
 
+        setBackground(new java.awt.Color(153, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        createUserJButton.setText("Create");
-        createUserJButton.addActionListener(new java.awt.event.ActionListener() {
+        HospitalcreateUserJButton.setText("Create");
+        HospitalcreateUserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createUserJButtonActionPerformed(evt);
+                HospitalcreateUserJButtonActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 146, -1));
+        add(HospitalcreateUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
+        add(hsopitalManagenameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 146, -1));
 
-        jLabel1.setText("User Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 353, -1, -1));
+        lblHospitalMangeUsername.setText("User Name");
+        add(lblHospitalMangeUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 353, -1, -1));
 
-        userJTable.setModel(new javax.swing.table.DefaultTableModel(
+        HospitalManageuserJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -138,59 +139,59 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(userJTable);
-        if (userJTable.getColumnModel().getColumnCount() > 0) {
-            userJTable.getColumnModel().getColumn(0).setResizable(false);
-            userJTable.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(HospitalManageuserJTable);
+        if (HospitalManageuserJTable.getColumnModel().getColumnCount() > 0) {
+            HospitalManageuserJTable.getColumnModel().getColumn(0).setResizable(false);
+            HospitalManageuserJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 28, 375, 179));
 
-        jLabel2.setText("Password");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 393, -1, -1));
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 146, -1));
+        lblHospitalManagePassword.setText("Password");
+        add(lblHospitalManagePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 393, -1, -1));
+        add(HospitalUserpasswordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 146, -1));
 
-        jLabel3.setText("Employee");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
+        lblHospitalUserEmp.setText("Employee");
+        add(lblHospitalUserEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
 
-        employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 146, -1));
+        UserempJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(UserempJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 146, -1));
 
-        backjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backjButton1.setText("<< Back");
-        backjButton1.addActionListener(new java.awt.event.ActionListener() {
+        HospitalUserbackjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        HospitalUserbackjButton1.setText("<< Back");
+        HospitalUserbackjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backjButton1ActionPerformed(evt);
+                HospitalUserbackjButton1ActionPerformed(evt);
             }
         });
-        add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 112, -1));
+        add(HospitalUserbackjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 112, -1));
 
-        jLabel5.setText("Organization");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
+        lblHospitalManageOrg.setText("Organization");
+        add(lblHospitalManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
 
-        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        UserorgJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        UserorgJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                organizationJComboBoxActionPerformed(evt);
+                UserorgJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 237, 146, -1));
+        add(UserorgJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 237, 146, -1));
 
-        jLabel4.setText("Role");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
+        lblUserRole.setText("Role");
+        add(lblUserRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
 
-        roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 146, -1));
+        UserRoleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(UserRoleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 146, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        String userName = nameJTextField.getText();
-        String password = passwordJTextField.getText();
+    private void HospitalcreateUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalcreateUserJButtonActionPerformed
+        String userName = hsopitalManagenameJTextField.getText();
+        String password = HospitalUserpasswordJTextField.getText();
         if(!((userName.equals("") || (password.equals(""))))){
         if(MainSystem.checkIfUsernameIsUnique(userName)){
-        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        Employeeclass employee = (Employeeclass) employeeJComboBox.getSelectedItem();
-        Roles role = (Roles) roleJComboBox.getSelectedItem();
+        Organization organization = (Organization) UserorgJComboBox.getSelectedItem();
+        Employeeclass employee = (Employeeclass) UserempJComboBox.getSelectedItem();
+        Roles role = (Roles) UserRoleJComboBox.getSelectedItem();
         
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         
@@ -202,37 +203,37 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
         }else{
              JOptionPane.showMessageDialog(null, "Enter a valid value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_createUserJButtonActionPerformed
+    }//GEN-LAST:event_HospitalcreateUserJButtonActionPerformed
 
-    private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
+    private void HospitalUserbackjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalUserbackjButton1ActionPerformed
         // TODO add your handling code here:
         container.remove(this);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
-    }//GEN-LAST:event_backjButton1ActionPerformed
+    }//GEN-LAST:event_HospitalUserbackjButton1ActionPerformed
 
-    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
-        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+    private void UserorgJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserorgJComboBoxActionPerformed
+        Organization organization = (Organization) UserorgJComboBox.getSelectedItem();
         if (organization != null){
             populateEmployeeComboBox(organization);
             populateRoleComboBox(enterprise);
         }
-    }//GEN-LAST:event_organizationJComboBoxActionPerformed
+    }//GEN-LAST:event_UserorgJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backjButton1;
-    private javax.swing.JButton createUserJButton;
-    private javax.swing.JComboBox employeeJComboBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTable HospitalManageuserJTable;
+    private javax.swing.JButton HospitalUserbackjButton1;
+    private javax.swing.JTextField HospitalUserpasswordJTextField;
+    private javax.swing.JButton HospitalcreateUserJButton;
+    private javax.swing.JComboBox UserRoleJComboBox;
+    private javax.swing.JComboBox UserempJComboBox;
+    private javax.swing.JComboBox UserorgJComboBox;
+    private javax.swing.JTextField hsopitalManagenameJTextField;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTextField passwordJTextField;
-    private javax.swing.JComboBox roleJComboBox;
-    private javax.swing.JTable userJTable;
+    private javax.swing.JLabel lblHospitalManageOrg;
+    private javax.swing.JLabel lblHospitalManagePassword;
+    private javax.swing.JLabel lblHospitalMangeUsername;
+    private javax.swing.JLabel lblHospitalUserEmp;
+    private javax.swing.JLabel lblUserRole;
     // End of variables declaration//GEN-END:variables
 }
