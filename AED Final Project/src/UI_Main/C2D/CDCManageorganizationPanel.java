@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class CDCManageorganizationPanel extends javax.swing.JPanel {
 
