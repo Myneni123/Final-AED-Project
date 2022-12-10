@@ -73,7 +73,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
     }
      public void populateCombo(){
         for (Vaccine vaccine : business.getVaccineList().getVaccineList()) {
-            comboVaccine.addItem(vaccine);
+            comboxVaccine.addItem(vaccine);
         }
         
     }
@@ -82,7 +82,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
              if(organization1 instanceof Supplier_Org){
                  Supplier_Org s= (Supplier_Org) organization1;
                  for (Supplier supplier : s.getSupplierList().getSupplierList()) {
-                     comboSup.addItem(supplier);
+                     comboxSupplier.addItem(supplier);
                  }
                  
              }
@@ -194,17 +194,17 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         requestTable = new javax.swing.JTable();
-        comboVaccine = new javax.swing.JComboBox();
-        txtquant = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        comboxVaccine = new javax.swing.JComboBox();
+        txtQuantity = new javax.swing.JTextField();
+        lblVaccineProviderName = new javax.swing.JLabel();
+        btnRefresh = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         requestTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        reqBtn2 = new javax.swing.JButton();
-        btnDelete2 = new javax.swing.JButton();
-        comboSup = new javax.swing.JComboBox();
+        btnRequest = new javax.swing.JButton();
+        btnDeleteReq = new javax.swing.JButton();
+        comboxSupplier = new javax.swing.JComboBox();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -269,30 +269,30 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 500, 90));
 
-        add(comboVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 120, -1));
+        add(comboxVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 120, -1));
 
-        txtquant.addActionListener(new java.awt.event.ActionListener() {
+        txtQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtquantActionPerformed(evt);
+                txtQuantityActionPerformed(evt);
             }
         });
-        txtquant.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtquantKeyPressed(evt);
+                txtQuantityKeyPressed(evt);
             }
         });
-        add(txtquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 100, -1));
+        add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 100, -1));
 
-        jLabel2.setText("Vaccine Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 90, 20));
+        lblVaccineProviderName.setText("Vaccine Name:");
+        add(lblVaccineProviderName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 90, 20));
 
-        backJButton.setText("Refresh");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
+        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
 
         btnDelete.setText("Delete request");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -326,23 +326,23 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         jLabel6.setText("Vaccines Requested to Supplier");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 250, -1));
 
-        reqBtn2.setText("Request Vaccine");
-        reqBtn2.addActionListener(new java.awt.event.ActionListener() {
+        btnRequest.setText("Request Vaccine");
+        btnRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reqBtn2ActionPerformed(evt);
+                btnRequestActionPerformed(evt);
             }
         });
-        add(reqBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, 170, -1));
+        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, 170, -1));
 
-        btnDelete2.setText("Delete request");
-        btnDelete2.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteReq.setText("Delete request");
+        btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDelete2ActionPerformed(evt);
+                btnDeleteReqActionPerformed(evt);
             }
         });
-        add(btnDelete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
 
-        add(comboSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 130, -1));
+        add(comboxSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 130, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCompleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompleteActionPerformed
@@ -420,10 +420,10 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_reqBtnActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
 
         new ProviderWorkPanel(userProcessContainer, account, organization, enterprise, business);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
@@ -444,12 +444,12 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
          }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void reqBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqBtn2ActionPerformed
- if(!txtquant.getText().equals("")){
+    private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
+ if(!txtQuantity.getText().equals("")){
         SupplierW_Request request= new SupplierW_Request();
-        Supplier sup= (Supplier) comboSup.getSelectedItem();
-        request.setVaccine((Vaccine)comboVaccine.getSelectedItem());
-        request.setQuantity(Integer.parseInt(txtquant.getText()));
+        Supplier sup= (Supplier) comboxSupplier.getSelectedItem();
+        request.setVaccine((Vaccine)comboxVaccine.getSelectedItem());
+        request.setQuantity(Integer.parseInt(txtQuantity.getText()));
         request.setStatus("Requested");
         request.setSender(account);
         request.setSupplier(sup);
@@ -462,9 +462,9 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
 }else{
              JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_reqBtn2ActionPerformed
+    }//GEN-LAST:event_btnRequestActionPerformed
 
-    private void btnDelete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete2ActionPerformed
+    private void btnDeleteReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteReqActionPerformed
         // TODO add your handling code here:
         int selectedRow= requestTable1.getSelectedRow();
         if(selectedRow<0){
@@ -481,39 +481,39 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
             populateWorkQueueTable2();
         }
-    }//GEN-LAST:event_btnDelete2ActionPerformed
+    }//GEN-LAST:event_btnDeleteReqActionPerformed
 
-    private void txtquantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtquantActionPerformed
+    private void txtQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtquantActionPerformed
+    }//GEN-LAST:event_txtQuantityActionPerformed
 
-    private void txtquantKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtquantKeyPressed
+    private void txtQuantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyPressed
         // TODO add your handling code here:
-        Validation.onlyInteger(evt, txtquant);
-    }//GEN-LAST:event_txtquantKeyPressed
+        Validation.onlyInteger(evt, txtQuantity);
+    }//GEN-LAST:event_txtQuantityKeyPressed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable availableTable;
-    private javax.swing.JButton backJButton;
     private javax.swing.JButton btnComplete;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnDelete2;
-    private javax.swing.JComboBox comboSup;
-    private javax.swing.JComboBox comboVaccine;
+    private javax.swing.JButton btnDeleteReq;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnRequest;
+    private javax.swing.JComboBox comboxSupplier;
+    private javax.swing.JComboBox comboxVaccine;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblVaccineProviderName;
     private javax.swing.JButton reqBtn;
-    private javax.swing.JButton reqBtn2;
     private javax.swing.JTable requestTable;
     private javax.swing.JTable requestTable1;
-    private javax.swing.JTextField txtquant;
+    private javax.swing.JTextField txtQuantity;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
     
