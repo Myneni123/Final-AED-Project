@@ -42,7 +42,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
     }
 
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
 
         model.setRowCount(0);
         for (NetworkArea networkarea : sys.getNetworkList()) {
@@ -60,18 +60,18 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
     }
 
     private void populateNetworkComboBox() {
-        networkJComboBox.removeAllItems();
+        comboxNetwork.removeAllItems();
 
         for (NetworkArea networkarea : sys.getNetworkList()) {
-            networkJComboBox.addItem(networkarea);
+            comboxNetwork.addItem(networkarea);
         }
     }
 
     private void populateEnterpriseComboBox(NetworkArea networkarea) {
-        enterpriseJComboBox.removeAllItems();
+        comboxEnterprise.removeAllItems();
 
         for (Enterprise enterprise : networkarea.getEnterpriseDirectory().getEnterpriseList()) {
-            enterpriseJComboBox.addItem(enterprise);
+            comboxEnterprise.addItem(enterprise);
         }
 
     }
@@ -86,24 +86,25 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        enterpriseJTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        networkJComboBox = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        usernameJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        enterpriseJComboBox = new javax.swing.JComboBox();
-        submitJButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        nameJTextField = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        passwordJPasswordField = new javax.swing.JPasswordField();
-        backJButton = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        tblEnterprise = new javax.swing.JTable();
+        lblNetwork = new javax.swing.JLabel();
+        comboxNetwork = new javax.swing.JComboBox();
+        lblUsername = new javax.swing.JLabel();
+        tfieldUsername = new javax.swing.JTextField();
+        lblEnterprise = new javax.swing.JLabel();
+        comboxEnterprise = new javax.swing.JComboBox();
+        btnSubmit = new javax.swing.JButton();
+        lblPassword = new javax.swing.JLabel();
+        tfieldName = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
+        tfieldPassword = new javax.swing.JPasswordField();
+        btnBack = new javax.swing.JButton();
+        btnDeleteRequest = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblEnterprise.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -122,87 +123,87 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(enterpriseJTable);
+        jScrollPane1.setViewportView(tblEnterprise);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
 
-        jLabel1.setText("Network");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 201, -1, -1));
+        lblNetwork.setText("Network");
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 201, -1, -1));
 
-        networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        comboxNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboxNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                networkJComboBoxActionPerformed(evt);
+                comboxNetworkActionPerformed(evt);
             }
         });
-        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 198, 136, -1));
+        add(comboxNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 198, 136, -1));
 
-        jLabel2.setText("Username");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 294, -1, -1));
-        add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 291, 136, -1));
+        lblUsername.setText("Username");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 294, -1, -1));
+        add(tfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 291, 136, -1));
 
-        jLabel3.setText("Enterprise");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 254, -1, -1));
+        lblEnterprise.setText("Enterprise");
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 254, -1, -1));
 
-        enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 251, 136, -1));
+        comboxEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboxEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 251, 136, -1));
 
-        submitJButton.setText("Submit");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 432, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 432, -1, -1));
 
-        jLabel4.setText("Password");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 334, -1, -1));
+        lblPassword.setText("Password");
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 334, -1, -1));
 
-        nameJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                nameJTextFieldKeyPressed(evt);
+                tfieldNameKeyPressed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 371, 136, -1));
+        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 371, 136, -1));
 
-        jLabel5.setText("Name");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 374, -1, -1));
-        add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 331, 134, -1));
+        lblName.setText("Name");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 374, -1, -1));
+        add(tfieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 331, 134, -1));
 
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 423, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 423, -1, -1));
 
-        btnDelete.setText("Delete request");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteRequest.setText("Delete request");
+        btnDeleteRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                btnDeleteRequestActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
+        add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
+    private void comboxNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxNetworkActionPerformed
 
-        NetworkArea networkarea = (NetworkArea) networkJComboBox.getSelectedItem();
+        NetworkArea networkarea = (NetworkArea) comboxNetwork.getSelectedItem();
         if (networkarea != null) {
             populateEnterpriseComboBox(networkarea);
         }
 
 
-    }//GEN-LAST:event_networkJComboBoxActionPerformed
+    }//GEN-LAST:event_comboxNetworkActionPerformed
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        if(!nameJTextField.getText().equals("")){
-        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        if(!tfieldName.getText().equals("")){
+        Enterprise enterprise = (Enterprise) comboxEnterprise.getSelectedItem();
 
-        String username = usernameJTextField.getText();
-        String password = String.valueOf(passwordJPasswordField.getPassword());
-        String name = nameJTextField.getText();
+        String username = tfieldUsername.getText();
+        String password = String.valueOf(tfieldPassword.getPassword());
+        String name = tfieldName.getText();
 
         Employeeclass employeeclass = enterprise.getEmployeeDirectory().createEmployee(name);
         if (MainSystem.checkIfUsernameIsUnique(username)) {
@@ -224,9 +225,9 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
              JOptionPane.showMessageDialog(null, "Enter a value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -234,16 +235,16 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnDeleteRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRequestActionPerformed
         // TODO add your handling code here:
-        int selectedRow = enterpriseJTable.getSelectedRow();
+        int selectedRow = tblEnterprise.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row for deleting the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            UserHandle p = (UserHandle) enterpriseJTable.getValueAt(selectedRow, 2);
+            UserHandle p = (UserHandle) tblEnterprise.getValueAt(selectedRow, 2);
 
             for (NetworkArea networkarea : sys.getNetworkList()) {
                 for (Enterprise enterprise : networkarea.getEnterpriseDirectory().getEnterpriseList()) {
@@ -260,28 +261,28 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Account deleted successfully");
             populateTable();
         }
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteRequestActionPerformed
 
-    private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
+    private void tfieldNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfieldNameKeyPressed
         // TODO add your handling code here:
-        Validation.onlyString(evt, nameJTextField);
-    }//GEN-LAST:event_nameJTextFieldKeyPressed
+        Validation.onlyString(evt, tfieldName);
+    }//GEN-LAST:event_tfieldNameKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JComboBox enterpriseJComboBox;
-    private javax.swing.JTable enterpriseJTable;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteRequest;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox comboxEnterprise;
+    private javax.swing.JComboBox comboxNetwork;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JComboBox networkJComboBox;
-    private javax.swing.JPasswordField passwordJPasswordField;
-    private javax.swing.JButton submitJButton;
-    private javax.swing.JTextField usernameJTextField;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNetwork;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JTable tblEnterprise;
+    private javax.swing.JTextField tfieldName;
+    private javax.swing.JPasswordField tfieldPassword;
+    private javax.swing.JTextField tfieldUsername;
     // End of variables declaration//GEN-END:variables
 }
