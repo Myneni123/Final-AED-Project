@@ -38,31 +38,31 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
     }
 
     public void popOrganizationComboBox() {
-        organizationJComboBox.removeAllItems();
+        comboxOrg.removeAllItems();
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            organizationJComboBox.addItem(organization);
+            comboxOrg.addItem(organization);
         }
     }
     
     public void populateEmployeeComboBox(Organization organization){
-        employeeJComboBox.removeAllItems();
+        comboxEmployee.removeAllItems();
         
         for (Employeeclass employee : organization.getEmployeeDirectory().getEmployeeList()){
-            employeeJComboBox.addItem(employee);
+            comboxEmployee.addItem(employee);
         }
     }
     
     private void populateRoleComboBox(Enterprise e){
-        roleJComboBox.removeAllItems();
+        comboxRole.removeAllItems();
         for (Roles role : e.getSupportedRole()){
-            roleJComboBox.addItem(role);
+            comboxRole.addItem(role);
         }
     }
 
     public void popData() {
 
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
 
         model.setRowCount(0);
 
@@ -71,7 +71,7 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
                 Object row[] = new Object[2];
                 row[0] = ua;
                 row[1] = ua.getRole();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+                ((DefaultTableModel) tblUser.getModel()).addRow(row);
             }
         }
     }
@@ -85,36 +85,43 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        createUserJButton = new javax.swing.JButton();
-        nameJTextField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        btnCreateUser = new javax.swing.JButton();
+        tfieldUsername = new javax.swing.JTextField();
+        lblUsername = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        userJTable = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        passwordJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        employeeJComboBox = new javax.swing.JComboBox();
-        backjButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        organizationJComboBox = new javax.swing.JComboBox();
-        jLabel4 = new javax.swing.JLabel();
-        roleJComboBox = new javax.swing.JComboBox();
+        tblUser = new javax.swing.JTable();
+        lblPassword = new javax.swing.JLabel();
+        tfiledPassword = new javax.swing.JTextField();
+        lblEmployee = new javax.swing.JLabel();
+        comboxEmployee = new javax.swing.JComboBox();
+        btnBack = new javax.swing.JButton();
+        lblOrg = new javax.swing.JLabel();
+        comboxOrg = new javax.swing.JComboBox();
+        lblRole = new javax.swing.JLabel();
+        comboxRole = new javax.swing.JComboBox();
 
+        setBackground(new java.awt.Color(204, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        createUserJButton.setText("Create");
-        createUserJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateUser.setText("Create");
+        btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createUserJButtonActionPerformed(evt);
+                btnCreateUserActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 190, -1));
+        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
 
-        jLabel1.setText("User Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 353, -1, -1));
+        tfieldUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldUsernameActionPerformed(evt);
+            }
+        });
+        add(tfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 190, -1));
 
-        userJTable.setModel(new javax.swing.table.DefaultTableModel(
+        lblUsername.setText("User Name");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
+
+        tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -137,59 +144,58 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(userJTable);
-        if (userJTable.getColumnModel().getColumnCount() > 0) {
-            userJTable.getColumnModel().getColumn(0).setResizable(false);
-            userJTable.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(tblUser);
+        if (tblUser.getColumnModel().getColumnCount() > 0) {
+            tblUser.getColumnModel().getColumn(0).setResizable(false);
+            tblUser.getColumnModel().getColumn(1).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 28, 375, 179));
 
-        jLabel2.setText("Password");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 393, -1, -1));
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 190, -1));
+        lblPassword.setText("Password");
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+        add(tfiledPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 190, -1));
 
-        jLabel3.setText("Employee");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
+        lblEmployee.setText("Employee");
+        add(lblEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
 
-        employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 200, -1));
+        comboxEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboxEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 200, -1));
 
-        backjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backjButton1.setText("<< Back");
-        backjButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backjButton1ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 112, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 100, 20));
 
-        jLabel5.setText("Organization");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
+        lblOrg.setText("Organization");
+        add(lblOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
 
-        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        comboxOrg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboxOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                organizationJComboBoxActionPerformed(evt);
+                comboxOrgActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 237, 180, -1));
+        add(comboxOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 237, 180, -1));
 
-        jLabel4.setText("Role");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
+        lblRole.setText("Role");
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
 
-        roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 190, -1));
+        comboxRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 190, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        String userName = nameJTextField.getText();
-        String password = passwordJTextField.getText();
+    private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
+        String userName = tfieldUsername.getText();
+        String password = tfiledPassword.getText();
           if(!((userName.equals("") || (password.equals(""))))){
         if(MainSystem.checkIfUsernameIsUnique(userName)){
-        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        Employeeclass employee = (Employeeclass) employeeJComboBox.getSelectedItem();
-        Roles role = (Roles) roleJComboBox.getSelectedItem();
+        Organization organization = (Organization) comboxOrg.getSelectedItem();
+        Employeeclass employee = (Employeeclass) comboxEmployee.getSelectedItem();
+        Roles role = (Roles) comboxRole.getSelectedItem();
         
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         
@@ -201,37 +207,41 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
              JOptionPane.showMessageDialog(null, "Enter a value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
  
-    }//GEN-LAST:event_createUserJButtonActionPerformed
+    }//GEN-LAST:event_btnCreateUserActionPerformed
 
-    private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         container.remove(this);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
-    }//GEN-LAST:event_backjButton1ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
-        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+    private void comboxOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxOrgActionPerformed
+        Organization organization = (Organization) comboxOrg.getSelectedItem();
         if (organization != null){
             populateEmployeeComboBox(organization);
             populateRoleComboBox(enterprise);
         }
-    }//GEN-LAST:event_organizationJComboBoxActionPerformed
+    }//GEN-LAST:event_comboxOrgActionPerformed
+
+    private void tfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldUsernameActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backjButton1;
-    private javax.swing.JButton createUserJButton;
-    private javax.swing.JComboBox employeeJComboBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCreateUser;
+    private javax.swing.JComboBox comboxEmployee;
+    private javax.swing.JComboBox comboxOrg;
+    private javax.swing.JComboBox comboxRole;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTextField passwordJTextField;
-    private javax.swing.JComboBox roleJComboBox;
-    private javax.swing.JTable userJTable;
+    private javax.swing.JLabel lblEmployee;
+    private javax.swing.JLabel lblOrg;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblRole;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JTable tblUser;
+    private javax.swing.JTextField tfieldUsername;
+    private javax.swing.JTextField tfiledPassword;
     // End of variables declaration//GEN-END:variables
 }
