@@ -49,13 +49,14 @@ public class ClinicalAdminPanel extends javax.swing.JPanel {
         ClinicmanageEmpJButton = new javax.swing.JButton();
         lblClinicEnterprise = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblClinicWork.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblClinicWork.setText("Clinic Work Area -Adminstrative Role");
-        add(lblClinicWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        lblClinicWork.setText("Clinic Work -Admin");
+        add(lblClinicWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
 
         ClinicManageuserJButton.setText("Manage User Account");
         ClinicManageuserJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +64,7 @@ public class ClinicalAdminPanel extends javax.swing.JPanel {
                 ClinicManageuserJButtonActionPerformed(evt);
             }
         });
-        add(ClinicManageuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 170, -1));
+        add(ClinicManageuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 170, -1));
 
         ClinicmanageEmpJButton.setText("Manage Employee");
         ClinicmanageEmpJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,12 +72,15 @@ public class ClinicalAdminPanel extends javax.swing.JPanel {
                 ClinicmanageEmpJButtonActionPerformed(evt);
             }
         });
-        add(ClinicmanageEmpJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 170, -1));
+        add(ClinicmanageEmpJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 170, -1));
 
         lblClinicEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblClinicEnterprise.setText("Enterprise :");
         add(lblClinicEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, 30));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\Aed12.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 260, 170));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ClinicManageuserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicManageuserJButtonActionPerformed
@@ -100,6 +104,7 @@ public class ClinicalAdminPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ClinicManageuserJButton;
     private javax.swing.JButton ClinicmanageEmpJButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblClinicEnterprise;
     private javax.swing.JLabel lblClinicWork;
     private javax.swing.JLabel valueLabel;
