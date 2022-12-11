@@ -63,6 +63,7 @@ public class NetworkPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         lblNetwork = new javax.swing.JLabel();
         btnDeleteReq = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,44 +99,53 @@ public class NetworkPanel extends javax.swing.JPanel {
             tblNetworkName.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 63, 404, 91));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 404, 91));
 
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 257, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
 
-        btnSubmit.setText("Submit");
+        btnSubmit.setText("Create Network");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 253, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
 
+        tfieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldNameActionPerformed(evt);
+            }
+        });
         tfieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfieldNameKeyPressed(evt);
             }
         });
-        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 254, 93, -1));
+        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 93, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 352, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        lblNetwork.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblNetwork.setText("Manage Network Panel");
-        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 150, 20));
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 310, 30));
 
-        btnDeleteReq.setText("Delete request");
+        btnDeleteReq.setText("Delete Network");
         btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteReqActionPerformed(evt);
             }
         });
-        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
+        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\frame-0019.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 700, 550));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -189,10 +199,15 @@ public class NetworkPanel extends javax.swing.JPanel {
         Validation.onlyString(evt, tfieldName);
     }//GEN-LAST:event_tfieldNameKeyPressed
 
+    private void tfieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldNameActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteReq;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;

@@ -74,6 +74,7 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
         comboxDisease = new javax.swing.JComboBox();
         lblDiseaseName = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -96,7 +97,7 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblVaccineID);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 120, 590, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 590, 170));
 
         btnCreateVaccine.setText("Create New Vaccine");
         btnCreateVaccine.addActionListener(new java.awt.event.ActionListener() {
@@ -104,9 +105,9 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
                 btnCreateVaccineActionPerformed(evt);
             }
         });
-        add(btnCreateVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, 150, -1));
+        add(btnCreateVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 150, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -123,30 +124,33 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
                 btnDeletevaccineActionPerformed(evt);
             }
         });
-        add(btnDeletevaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 180, -1));
+        add(btnDeletevaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 180, -1));
 
         lblCreateVaccine.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblCreateVaccine.setText("Create Vaccine ");
-        add(lblCreateVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 170, 30));
+        add(lblCreateVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 170, 30));
 
         tfieldVaccineName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfieldVaccineNameKeyPressed(evt);
             }
         });
-        add(tfieldVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 120, -1));
+        add(tfieldVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 120, -1));
 
         lblVaccineDirectory.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblVaccineDirectory.setText("Manage Vaccine Directory");
-        add(lblVaccineDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 320, 30));
+        lblVaccineDirectory.setText("Manage Vaccines");
+        add(lblVaccineDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 200, 30));
 
-        add(comboxDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 120, -1));
+        add(comboxDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, 120, -1));
 
         lblDiseaseName.setText("Disease: ");
         add(lblDiseaseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
 
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aed1.png")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 310, 230));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateVaccineActionPerformed
@@ -198,6 +202,7 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCreateVaccine;
     private javax.swing.JButton btnDeletevaccine;
     private javax.swing.JComboBox comboxDisease;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCreateVaccine;
     private javax.swing.JLabel lblDiseaseName;
