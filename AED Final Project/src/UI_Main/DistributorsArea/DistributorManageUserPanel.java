@@ -205,7 +205,7 @@ public class DistributorManageUserPanel extends javax.swing.JPanel {
         add(RoleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 146, -1));
 
         lblUsername1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed8.jpg")); // NOI18N
-        add(lblUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 720, 460));
+        add(lblUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 710, 460));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
