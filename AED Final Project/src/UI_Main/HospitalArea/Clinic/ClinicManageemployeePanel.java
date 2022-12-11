@@ -91,8 +91,9 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
         ClinicnameEmpTextField = new javax.swing.JTextField();
         lblClinicViewEmp = new javax.swing.JLabel();
         lblClinicCreateEmp = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 153));
+        setBackground(new java.awt.Color(255, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ClinicOrgJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -127,7 +128,7 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
             ClinicOrgJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 63, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 480, 120));
 
         ClinicaddJButton.setText("Create Employee");
         ClinicaddJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -135,33 +136,36 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
                 ClinicaddJButtonActionPerformed(evt);
             }
         });
-        add(ClinicaddJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 315, -1, -1));
+        add(ClinicaddJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
-        ClinicEmpbackJButton.setText("<< Back");
+        ClinicEmpbackJButton.setText(" Back");
         ClinicEmpbackJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClinicEmpbackJButtonActionPerformed(evt);
             }
         });
-        add(ClinicEmpbackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 315, -1, -1));
+        add(ClinicEmpbackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         lblClinicEmpName.setText("Name");
-        add(lblClinicEmpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 40, -1));
+        add(lblClinicEmpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 40, -1));
 
         ClinicnameEmpTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 ClinicnameEmpTextFieldKeyPressed(evt);
             }
         });
-        add(ClinicnameEmpTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 126, -1));
+        add(ClinicnameEmpTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 126, -1));
 
-        lblClinicViewEmp.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblClinicViewEmp.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblClinicViewEmp.setText("View Employee");
-        add(lblClinicViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 130, 30));
+        add(lblClinicViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 30));
 
-        lblClinicCreateEmp.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblClinicCreateEmp.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblClinicCreateEmp.setText("Create Employee");
-        add(lblClinicCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 130, 30));
+        add(lblClinicCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 140, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed19.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 300, 150));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ClinicaddJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicaddJButtonActionPerformed
@@ -194,6 +198,7 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
     private javax.swing.JTable ClinicOrgJTable;
     private javax.swing.JButton ClinicaddJButton;
     private javax.swing.JTextField ClinicnameEmpTextField;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblClinicCreateEmp;
     private javax.swing.JLabel lblClinicEmpName;
