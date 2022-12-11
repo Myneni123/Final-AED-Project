@@ -100,21 +100,23 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
         UserorgJComboBox = new javax.swing.JComboBox();
         lblUserRole = new javax.swing.JLabel();
         UserRoleJComboBox = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        HospitalcreateUserJButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         HospitalcreateUserJButton.setText("Create");
         HospitalcreateUserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HospitalcreateUserJButtonActionPerformed(evt);
             }
         });
-        add(HospitalcreateUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
-        add(hsopitalManagenameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 146, -1));
+        add(HospitalcreateUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
+        add(hsopitalManagenameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 146, -1));
 
         lblHospitalMangeUsername.setText("User Name");
-        add(lblHospitalMangeUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 353, -1, -1));
+        add(lblHospitalMangeUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
 
         HospitalManageuserJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -145,29 +147,29 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
             HospitalManageuserJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 28, 375, 179));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 375, 179));
 
         lblHospitalManagePassword.setText("Password");
-        add(lblHospitalManagePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 393, -1, -1));
-        add(HospitalUserpasswordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 146, -1));
+        add(lblHospitalManagePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        add(HospitalUserpasswordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 146, -1));
 
         lblHospitalUserEmp.setText("Employee");
-        add(lblHospitalUserEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
+        add(lblHospitalUserEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
         UserempJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(UserempJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 146, -1));
+        add(UserempJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 146, -1));
 
         HospitalUserbackjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        HospitalUserbackjButton1.setText("<< Back");
+        HospitalUserbackjButton1.setText(" Back");
         HospitalUserbackjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HospitalUserbackjButton1ActionPerformed(evt);
             }
         });
-        add(HospitalUserbackjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 112, -1));
+        add(HospitalUserbackjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 112, -1));
 
         lblHospitalManageOrg.setText("Organization");
-        add(lblHospitalManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
+        add(lblHospitalManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, 20));
 
         UserorgJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         UserorgJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -175,13 +177,16 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
                 UserorgJComboBoxActionPerformed(evt);
             }
         });
-        add(UserorgJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 237, 146, -1));
+        add(UserorgJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 146, -1));
 
         lblUserRole.setText("Role");
-        add(lblUserRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
+        add(lblUserRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, 20));
 
         UserRoleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(UserRoleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 146, -1));
+        add(UserRoleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 146, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed22.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 530));
     }// </editor-fold>//GEN-END:initComponents
 
     private void HospitalcreateUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalcreateUserJButtonActionPerformed
@@ -229,6 +234,7 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox UserempJComboBox;
     private javax.swing.JComboBox UserorgJComboBox;
     private javax.swing.JTextField hsopitalManagenameJTextField;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblHospitalManageOrg;
     private javax.swing.JLabel lblHospitalManagePassword;
