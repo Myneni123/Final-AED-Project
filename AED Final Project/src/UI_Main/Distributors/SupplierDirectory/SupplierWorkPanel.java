@@ -129,30 +129,32 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
         btnRefresh = new javax.swing.JButton();
         btnVaccineAdd = new javax.swing.JButton();
         btnDeleteRequest = new javax.swing.JButton();
+        lblImage = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSupplier.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblSupplier.setText("Supplier Work Area -Adminstrative Role");
-        add(lblSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        lblSupplier.setText("Supplier Admin Work Area");
+        add(lblSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
 
-        btnCompleteSupplier.setText("Complete");
+        btnCompleteSupplier.setText("Complete Request");
         btnCompleteSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCompleteSupplierActionPerformed(evt);
             }
         });
-        add(btnCompleteSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 140, -1));
+        add(btnCompleteSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 140, -1));
 
-        btnAssign.setText("Assign To Me");
+        btnAssign.setText("Assign Request To Me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignActionPerformed(evt);
             }
         });
-        add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 120, -1));
+        add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 180, -1));
 
         tblVaccineAvailable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -164,7 +166,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblVaccineAvailable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 500, 90));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 500, 90));
 
         lblVaccineRequested.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblVaccineRequested.setText("Vaccines Requested");
@@ -194,17 +196,27 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 500, 90));
 
-        add(combolstVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, -1));
+        combolstVaccineName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combolstVaccineNameActionPerformed(evt);
+            }
+        });
+        add(combolstVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 120, -1));
 
+        tfieldQuantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldQuantityActionPerformed(evt);
+            }
+        });
         tfieldQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfieldQuantityKeyPressed(evt);
             }
         });
-        add(tfieldQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 100, -1));
+        add(tfieldQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 100, -1));
 
         lblVaccineName.setText("Vaccine Name:");
-        add(lblVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 90, 20));
+        add(lblVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 90, 20));
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -212,7 +224,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
                 btnRefreshActionPerformed(evt);
             }
         });
-        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
+        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         btnVaccineAdd.setText("Add Vaccine");
         btnVaccineAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +232,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
                 btnVaccineAddActionPerformed(evt);
             }
         });
-        add(btnVaccineAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 170, -1));
+        add(btnVaccineAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 110, -1));
 
         btnDeleteRequest.setText("Delete request");
         btnDeleteRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +240,13 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
                 btnDeleteRequestActionPerformed(evt);
             }
         });
-        add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+        add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aedsup3.jpg")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 520));
+
+        jLabel2.setText("Quantity");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCompleteSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompleteSupplierActionPerformed
@@ -358,6 +376,14 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
         Validation.onlyInteger(evt, tfieldQuantity);
     }//GEN-LAST:event_tfieldQuantityKeyPressed
 
+    private void combolstVaccineNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combolstVaccineNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combolstVaccineNameActionPerformed
+
+    private void tfieldQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldQuantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldQuantityActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssign;
@@ -366,8 +392,10 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnVaccineAdd;
     private javax.swing.JComboBox combolstVaccineName;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblSupplier;
     private javax.swing.JLabel lblVaccineName;
     private javax.swing.JLabel lblVaccineRequested;
