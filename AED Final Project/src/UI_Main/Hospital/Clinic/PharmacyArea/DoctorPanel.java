@@ -38,14 +38,17 @@ public class DoctorPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(153, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(lblAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 400, 240));
 
-        lblDoctor.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblDoctor.setText("Doctor Work Area");
-        add(lblDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 26, 137, 37));
+        lblAppointment.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed5.jpg")); // NOI18N
+        add(lblAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 270, 200));
 
-        lblAppointment1.setText("No Appointment for today");
-        add(lblAppointment1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 170, 38));
+        lblDoctor.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblDoctor.setText("Doctor Work ");
+        add(lblDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 150, 37));
+
+        lblAppointment1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAppointment1.setText("No Appointments are Available for today");
+        add(lblAppointment1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 290, 38));
     }// </editor-fold>//GEN-END:initComponents
 
 
