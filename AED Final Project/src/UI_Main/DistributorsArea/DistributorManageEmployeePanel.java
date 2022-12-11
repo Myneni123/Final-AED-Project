@@ -81,6 +81,7 @@ public class DistributorManageEmployeePanel extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         OrgEmp_JComboBox = new javax.swing.JComboBox();
         lblOrg1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -117,7 +118,7 @@ public class DistributorManageEmployeePanel extends javax.swing.JPanel {
             Org_JTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 63, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 480, 92));
 
         addEmp_JButton.setText("Create Employee");
         addEmp_JButton.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +126,7 @@ public class DistributorManageEmployeePanel extends javax.swing.JPanel {
                 addEmp_JButtonActionPerformed(evt);
             }
         });
-        add(addEmp_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 315, -1, -1));
+        add(addEmp_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, -1, -1));
 
         Org_JComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Org_JComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -133,28 +134,28 @@ public class DistributorManageEmployeePanel extends javax.swing.JPanel {
                 Org_JComboBoxActionPerformed(evt);
             }
         });
-        add(Org_JComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 34, 81, -1));
+        add(Org_JComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 81, -1));
 
         lblOrganization.setText("Organization");
-        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 37, -1, -1));
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, -1, -1));
 
-        back_JButton.setText("<< Back");
+        back_JButton.setText(" Back");
         back_JButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 back_JButtonActionPerformed(evt);
             }
         });
-        add(back_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 315, -1, -1));
+        add(back_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 229, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
 
         nameJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 nameJTextFieldKeyPressed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 226, 126, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 126, -1));
 
         OrgEmp_JComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         OrgEmp_JComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -162,10 +163,13 @@ public class DistributorManageEmployeePanel extends javax.swing.JPanel {
                 OrgEmp_JComboBoxActionPerformed(evt);
             }
         });
-        add(OrgEmp_JComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 186, 120, -1));
+        add(OrgEmp_JComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 120, -1));
 
         lblOrg1.setText("Organization");
-        add(lblOrg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 189, -1, -1));
+        add(lblOrg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\ThinkstockPhotos-605751078.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 500));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addEmp_JButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmp_JButtonActionPerformed
@@ -210,6 +214,7 @@ public class DistributorManageEmployeePanel extends javax.swing.JPanel {
     private javax.swing.JTable Org_JTable;
     private javax.swing.JButton addEmp_JButton;
     private javax.swing.JButton back_JButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblOrg1;
