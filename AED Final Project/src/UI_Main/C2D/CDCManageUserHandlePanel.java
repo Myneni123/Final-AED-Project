@@ -103,23 +103,23 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCreateUser.setText("Create");
+        btnCreateUser.setText("Create User");
         btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateUserActionPerformed(evt);
             }
         });
-        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 430, -1, -1));
+        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
         tfieldUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfieldUsernameActionPerformed(evt);
             }
         });
-        add(tfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 350, 190, -1));
+        add(tfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 200, -1));
 
         lblUsername.setText("User Name");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -150,28 +150,33 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
             tblUser.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 28, 375, 179));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 375, 179));
 
         lblPassword.setText("Password");
-        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
-        add(tfiledPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 390, 190, -1));
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+        add(tfiledPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 200, -1));
 
         lblEmployee.setText("Employee");
-        add(lblEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 280, -1, -1));
+        add(lblEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         comboxEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboxEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 277, 200, -1));
+        comboxEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboxEmployeeActionPerformed(evt);
+            }
+        });
+        add(comboxEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 200, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText(" Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 444, 100, 20));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         lblOrg.setText("Organization");
-        add(lblOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
+        add(lblOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         comboxOrg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboxOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -179,13 +184,18 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
                 comboxOrgActionPerformed(evt);
             }
         });
-        add(comboxOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 237, 180, -1));
+        add(comboxOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 200, -1));
 
         lblRole.setText("Role");
-        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 324, -1, -1));
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
         comboxRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 321, 190, -1));
+        comboxRole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboxRoleActionPerformed(evt);
+            }
+        });
+        add(comboxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
@@ -227,6 +237,14 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
     private void tfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfieldUsernameActionPerformed
+
+    private void comboxEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxEmployeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxEmployeeActionPerformed
+
+    private void comboxRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxRoleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxRoleActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

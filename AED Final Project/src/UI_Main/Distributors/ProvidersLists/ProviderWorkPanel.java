@@ -205,30 +205,31 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         btnRequestVaccine = new javax.swing.JButton();
         btnDeleteReq = new javax.swing.JButton();
         comboxSupplier = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblProvider.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblProvider.setText("Provider Work Area -Adminstrative Role");
-        add(lblProvider, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        lblProvider.setText("Provider Admin Work Area");
+        add(lblProvider, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
 
-        btnComplete.setText("Complete");
+        btnComplete.setText("Complete Request");
         btnComplete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCompleteActionPerformed(evt);
             }
         });
-        add(btnComplete, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 140, -1));
+        add(btnComplete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 140, -1));
 
-        btnAssignProvider.setText("Assign To Me");
+        btnAssignProvider.setText("Assign RequestTo Me");
         btnAssignProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignProviderActionPerformed(evt);
             }
         });
-        add(btnAssignProvider, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 120, -1));
+        add(btnAssignProvider, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 140, -1));
 
         availableTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -240,15 +241,17 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(availableTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 280, 400));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 280, 400));
 
-        lblVaccineRequest.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblVaccineRequest.setText("Vaccines Requested from Pharma");
+        lblVaccineRequest.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblVaccineRequest.setForeground(new java.awt.Color(255, 0, 51));
+        lblVaccineRequest.setText("Vaccines Requested by Pharmacy");
         add(lblVaccineRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 270, 30));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
         jLabel5.setText("Vaccines Available");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 170, 30));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 170, 30));
 
         tblVaccineRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -293,7 +296,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
                 btnRefreshActionPerformed(evt);
             }
         });
-        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
+        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         btnDeleteVaccineRequest.setText("Delete request");
         btnDeleteVaccineRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +304,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
                 btnDeleteVaccineRequestActionPerformed(evt);
             }
         });
-        add(btnDeleteVaccineRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+        add(btnDeleteVaccineRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         tblRequestSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -323,7 +326,8 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 550, 90));
 
-        lblSupplier.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblSupplier.setForeground(new java.awt.Color(255, 0, 51));
         lblSupplier.setText("Vaccines Requested to Supplier");
         add(lblSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 250, -1));
 
@@ -344,6 +348,9 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
         add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
 
         add(comboxSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 130, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\Doctor.Vaccine_7.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCompleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompleteActionPerformed
@@ -504,6 +511,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRequestVaccine;
     private javax.swing.JComboBox comboxSupplier;
     private javax.swing.JComboBox comboxVaccine;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

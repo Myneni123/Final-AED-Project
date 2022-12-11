@@ -213,7 +213,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
                 tfieldQuantityKeyPressed(evt);
             }
         });
-        add(tfieldQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 100, -1));
+        add(tfieldQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 100, -1));
 
         lblVaccineName.setText("Vaccine Name:");
         add(lblVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 90, 20));
@@ -243,7 +243,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
         add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aedsup3.jpg")); // NOI18N
-        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 520));
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 680, 530));
 
         jLabel2.setText("Quantity");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
