@@ -100,6 +100,8 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         tfieldPassword = new javax.swing.JPasswordField();
         btnBack = new javax.swing.JButton();
         btnDeleteRequest = new javax.swing.JButton();
+        tfieldEmail = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,7 +156,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 432, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, -1, -1));
 
         lblPassword.setText("Password");
         add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 334, -1, -1));
@@ -176,7 +178,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 423, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         btnDeleteRequest.setText("Delete request");
         btnDeleteRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -185,6 +187,10 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
             }
         });
         add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
+        add(tfieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 130, -1));
+
+        lblEmail.setText("Email");
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboxNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxNetworkActionPerformed
@@ -204,6 +210,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         String username = tfieldUsername.getText();
         String password = String.valueOf(tfieldPassword.getPassword());
         String name = tfieldName.getText();
+        String emailId = tfieldEmail.getText();
 
         Employeeclass employeeclass = enterprise.getEmployeeDirectory().createEmployee(name);
         if (MainSystem.checkIfUsernameIsUnique(username)) {
@@ -215,7 +222,15 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
             } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Hospital) {
                 account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employeeclass, new HospitalRole());
             }
-
+            EmailService emailService = new EmailService();
+            try {
+              String body = "Enterprise Admin Account for " + name + " created successfully with username "
+                      + username;
+              emailService.sendMail(emailId, "Enterprise Admin Account Created successfully", body);
+              JOptionPane.showMessageDialog(null, "Email sent to Enterprise Admin successfully");
+          } catch (Exception ex) {
+              System.out.println("Error while sending email to enterprise admin");
+          }
             populateTable();
         }
         else {
@@ -275,12 +290,14 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox comboxEnterprise;
     private javax.swing.JComboBox comboxNetwork;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JTable tblEnterprise;
+    private javax.swing.JTextField tfieldEmail;
     private javax.swing.JTextField tfieldName;
     private javax.swing.JPasswordField tfieldPassword;
     private javax.swing.JTextField tfieldUsername;
