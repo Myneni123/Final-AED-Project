@@ -48,13 +48,14 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
         lblEnterprise = new javax.swing.JLabel();
         lblValue = new javax.swing.JLabel();
         btnCatalog = new javax.swing.JButton();
+        lblImage = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblWorkArea.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblWorkArea.setText("My Work Area -Adminstrative Role");
-        add(lblWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        lblWorkArea.setText("CDC Admin Work Area");
+        add(lblWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
 
         btnManageUser.setText("Manage User");
         btnManageUser.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +63,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
                 btnManageUserActionPerformed(evt);
             }
         });
-        add(btnManageUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 150, -1));
+        add(btnManageUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 150, -1));
 
         btnManageEmployee.setText("Manage Employee");
         btnManageEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +71,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
                 btnManageEmployeeActionPerformed(evt);
             }
         });
-        add(btnManageEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 150, -1));
+        add(btnManageEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 150, -1));
 
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -78,14 +79,14 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
                 btnManageOrgActionPerformed(evt);
             }
         });
-        add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, -1));
+        add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 150, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblEnterprise.setText("Enterprise :");
-        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 120, 30));
 
         lblValue.setText("<value>");
-        add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 130, -1));
 
         btnCatalog.setBackground(new java.awt.Color(255, 255, 204));
         btnCatalog.setText("View Catalog");
@@ -94,7 +95,10 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
                 btnCatalogActionPerformed(evt);
             }
         });
-        add(btnCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 150, -1));
+        add(btnCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 150, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\Vaccine101-web.png")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 460, 450));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserActionPerformed
@@ -139,6 +143,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageUser;
     private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblValue;
     private javax.swing.JLabel lblWorkArea;
     // End of variables declaration//GEN-END:variables

@@ -82,6 +82,7 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
         comboxEmp = new javax.swing.JComboBox();
         lblOrganization = new javax.swing.JLabel();
         lblManageEmployee = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -118,7 +119,7 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
             tblIdName.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 63, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 480, 92));
 
         btnCreateEmp.setText("Create Employee");
         btnCreateEmp.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +127,7 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
                 btnCreateEmpActionPerformed(evt);
             }
         });
-        add(btnCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 315, -1, -1));
+        add(btnCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, -1));
 
         comboxOrg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboxOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -134,38 +135,46 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
                 comboxOrgActionPerformed(evt);
             }
         });
-        add(comboxOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 34, 81, -1));
+        add(comboxOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 81, -1));
 
         lblOrg.setText("Organization");
-        add(lblOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 37, -1, -1));
+        add(lblOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 315, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 229, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
 
+        tfieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldNameActionPerformed(evt);
+            }
+        });
         tfieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfieldNameKeyPressed(evt);
             }
         });
-        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 226, 126, -1));
+        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 126, -1));
 
         comboxEmp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboxEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 186, 130, -1));
+        add(comboxEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
 
         lblOrganization.setText("Organization");
-        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 189, -1, -1));
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 76, -1, -1));
 
-        lblManageEmployee.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblManageEmployee.setText("Manage Employee");
-        add(lblManageEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 150, 20));
+        lblManageEmployee.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblManageEmployee.setText("Manage Employee Details");
+        add(lblManageEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 220, 30));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image.png")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEmpActionPerformed
@@ -200,12 +209,17 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
         Validation.onlyString(evt, tfieldName);
     }//GEN-LAST:event_tfieldNameKeyPressed
 
+    private void tfieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldNameActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreateEmp;
     private javax.swing.JComboBox comboxEmp;
     private javax.swing.JComboBox comboxOrg;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblManageEmployee;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblOrg;
