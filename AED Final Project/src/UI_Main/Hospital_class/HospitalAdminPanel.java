@@ -39,13 +39,14 @@ public class HospitalAdminPanel extends javax.swing.JPanel {
         HospitalManageOrgJButton = new javax.swing.JButton();
         lblHospitalenterprise = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHospital.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblHospital.setText("Hospital Work Area -Adminstrative Role");
-        add(lblHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        lblHospital.setText("Hospital Work  -Admin");
+        add(lblHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
         HospitalManageuserJButton.setText("Manage User");
         HospitalManageuserJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +54,7 @@ public class HospitalAdminPanel extends javax.swing.JPanel {
                 HospitalManageuserJButtonActionPerformed(evt);
             }
         });
-        add(HospitalManageuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 150, -1));
+        add(HospitalManageuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 150, -1));
 
         HospitalManageEmployeeJButton.setText("Manage Employee");
         HospitalManageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +62,7 @@ public class HospitalAdminPanel extends javax.swing.JPanel {
                 HospitalManageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(HospitalManageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 150, -1));
+        add(HospitalManageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, -1));
 
         HospitalManageOrgJButton.setText("Manage Organization");
         HospitalManageOrgJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,12 +70,15 @@ public class HospitalAdminPanel extends javax.swing.JPanel {
                 HospitalManageOrgJButtonActionPerformed(evt);
             }
         });
-        add(HospitalManageOrgJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        add(HospitalManageOrgJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         lblHospitalenterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblHospitalenterprise.setText("Enterprise :");
-        add(lblHospitalenterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        add(lblHospitalenterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 120, 30));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed15.png")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 230, 180));
     }// </editor-fold>//GEN-END:initComponents
 
     private void HospitalManageuserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalManageuserJButtonActionPerformed
@@ -109,6 +113,7 @@ public class HospitalAdminPanel extends javax.swing.JPanel {
     private javax.swing.JButton HospitalManageEmployeeJButton;
     private javax.swing.JButton HospitalManageOrgJButton;
     private javax.swing.JButton HospitalManageuserJButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblHospital;
     private javax.swing.JLabel lblHospitalenterprise;
     private javax.swing.JLabel valueLabel;
