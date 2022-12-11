@@ -126,6 +126,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         lblPharmacy = new javax.swing.JLabel();
         reqBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -137,15 +138,19 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
         vaccineCombo = new javax.swing.JComboBox();
         Quanttxt = new javax.swing.JTextField();
         lblVacname = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
         btnDeleteReq = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed10.jpg")); // NOI18N
 
         setBackground(new java.awt.Color(204, 153, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPharmacy.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblPharmacy.setText("Pharmacy Work Area -Adminstrative Role");
-        add(lblPharmacy, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        lblPharmacy.setText("Pharmacy Work  -Admin");
+        add(lblPharmacy, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
         reqBtn.setText("Request Vaccine");
         reqBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +158,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
                 reqBtnActionPerformed(evt);
             }
         });
-        add(reqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 170, -1));
+        add(reqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 130, -1));
 
         VaccineAvailableTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,15 +170,15 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(VaccineAvailableTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, 90));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, 90));
 
-        lblReqVaccine.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblReqVaccine.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblReqVaccine.setText("Vaccines Requested");
         add(lblReqVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 170, 30));
 
-        lblVacAvailable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblVacAvailable.setText("Vaccines Available");
-        add(lblVacAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, 30));
+        lblVacAvailable.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblVacAvailable.setText(" Available Vaccines");
+        add(lblVacAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 150, 30));
 
         VaccineReqTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -195,33 +200,35 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 90));
 
-        add(vaccineCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 120, -1));
+        add(vaccineCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 120, -1));
 
         Quanttxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 QuanttxtKeyPressed(evt);
             }
         });
-        add(Quanttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 100, -1));
+        add(Quanttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 120, -1));
 
+        lblVacname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblVacname.setText("Vaccine Name:");
-        add(lblVacname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 90, 20));
+        add(lblVacname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 90, 20));
 
-        backJButton.setText("Refresh");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
-            }
-        });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
-
-        btnDeleteReq.setText("Delete request");
+        btnDeleteReq.setText("Delete Vaccine request");
         btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteReqActionPerformed(evt);
             }
         });
-        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
+        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed11.png")); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 520));
+
+        jLabel3.setText("jLabel3");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, -1, -1));
+
+        jLabel4.setText("jLabel4");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void reqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqBtnActionPerformed
@@ -241,11 +248,6 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
 
         
     }//GEN-LAST:event_reqBtnActionPerformed
-
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-
-        new PharmacyWorkPanel(userProcessContainer, account, organization, enterprise, business);
-    }//GEN-LAST:event_backJButtonActionPerformed
 
     private void btnDeleteReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteReqActionPerformed
         // TODO add your handling code here:
@@ -276,8 +278,11 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
     private javax.swing.JTextField Quanttxt;
     private javax.swing.JTable VaccineAvailableTable;
     private javax.swing.JTable VaccineReqTable;
-    private javax.swing.JButton backJButton;
     private javax.swing.JButton btnDeleteReq;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblPharmacy;
