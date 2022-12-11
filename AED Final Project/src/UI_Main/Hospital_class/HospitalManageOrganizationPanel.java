@@ -69,6 +69,8 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
         HospitalManageOrgJComboBox = new javax.swing.JComboBox();
         lblHospitalOrgType = new javax.swing.JLabel();
         HospitalManageOrgbackJButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,7 +107,7 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
             HospitalManageOrgJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 60, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 480, 92));
 
         HospitalManageOrgaddJButton.setText("Add Clinic");
         HospitalManageOrgaddJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,21 +115,26 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
                 HospitalManageOrgaddJButtonActionPerformed(evt);
             }
         });
-        add(HospitalManageOrgaddJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(511, 310, -1, -1));
+        add(HospitalManageOrgaddJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, -1, -1));
 
         HospitalManageOrgJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(HospitalManageOrgJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 81, -1));
+        add(HospitalManageOrgJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 81, -1));
 
+        lblHospitalOrgType.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblHospitalOrgType.setText("Organization Type ");
-        add(lblHospitalOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 228, -1, -1));
+        add(lblHospitalOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
 
-        HospitalManageOrgbackJButton.setText("<< Back");
+        HospitalManageOrgbackJButton.setText(" Back");
         HospitalManageOrgbackJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HospitalManageOrgbackJButtonActionPerformed(evt);
             }
         });
-        add(HospitalManageOrgbackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 310, -1, -1));
+        add(HospitalManageOrgbackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, -1, 10));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed21.jpg")); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
     }// </editor-fold>//GEN-END:initComponents
 
     private void HospitalManageOrgaddJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalManageOrgaddJButtonActionPerformed
@@ -149,6 +156,8 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
     private javax.swing.JTable HospitalManageOrgJTable;
     private javax.swing.JButton HospitalManageOrgaddJButton;
     private javax.swing.JButton HospitalManageOrgbackJButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblHospitalOrgType;
     // End of variables declaration//GEN-END:variables
