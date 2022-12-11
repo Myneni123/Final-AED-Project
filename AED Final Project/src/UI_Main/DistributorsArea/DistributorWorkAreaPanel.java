@@ -39,12 +39,13 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         ManageOrgJButton = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        valueLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblWorkarea.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblWorkarea.setText("My Work Area -Adminstrative Role");
+        lblWorkarea.setText(" Work Area -Adminstrative");
         add(lblWorkarea, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         WorkuserJButton.setText("Manage User");
@@ -53,7 +54,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
                 WorkuserJButtonActionPerformed(evt);
             }
         });
-        add(WorkuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 150, -1));
+        add(WorkuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 150, -1));
 
         ManageEmpJButton.setText("Manage Employee");
         ManageEmpJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +62,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
                 ManageEmpJButtonActionPerformed(evt);
             }
         });
-        add(ManageEmpJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 150, -1));
+        add(ManageEmpJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 150, -1));
 
         ManageOrgJButton.setText("Manage Organization");
         ManageOrgJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,14 +70,17 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
                 ManageOrgJButtonActionPerformed(evt);
             }
         });
-        add(ManageOrgJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        add(ManageOrgJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblEnterprise.setText("Enterprise :");
-        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        lblEnterprise.setText("Enterprise Name :");
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 170, 30));
 
-        valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        valueLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed2.jpg")); // NOI18N
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 200, 370));
+
+        valueLabel1.setText("<value>");
+        add(valueLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void WorkuserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WorkuserJButtonActionPerformed
@@ -114,6 +118,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblWorkarea;
     private javax.swing.JLabel valueLabel;
+    private javax.swing.JLabel valueLabel1;
     // End of variables declaration//GEN-END:variables
     
 }
