@@ -78,7 +78,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
                 btnManageOrgActionPerformed(evt);
             }
         });
-        add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblEnterprise.setText("Enterprise :");
@@ -94,7 +94,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
                 btnCatalogActionPerformed(evt);
             }
         });
-        add(btnCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 160, -1));
+        add(btnCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserActionPerformed

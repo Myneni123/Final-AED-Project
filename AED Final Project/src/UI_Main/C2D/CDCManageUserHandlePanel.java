@@ -99,6 +99,7 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
         comboxOrg = new javax.swing.JComboBox();
         lblRole = new javax.swing.JLabel();
         comboxRole = new javax.swing.JComboBox();
+        lblImage = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,7 +110,7 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
                 btnCreateUserActionPerformed(evt);
             }
         });
-        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
 
         tfieldUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +151,7 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
             tblUser.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 375, 179));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 375, 179));
 
         lblPassword.setText("Password");
         add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
@@ -196,6 +197,9 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
             }
         });
         add(comboxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 200, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image.png")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 610, 530));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
@@ -254,6 +258,7 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
     private javax.swing.JComboBox comboxRole;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEmployee;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblOrg;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRole;
