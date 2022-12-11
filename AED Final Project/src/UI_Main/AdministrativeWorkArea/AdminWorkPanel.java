@@ -14,9 +14,13 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import UI_Main.AdministrativeWorkArea.VaccineDirectoryPanel;
-import UI_Main.AdministrativeWorkArea.DiseaseDirectoryPanel;
-import UI_Main.AdministrativeWorkArea.DiseaseDirectoryPanel;
+import java.awt.Color;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -236,6 +240,17 @@ public class AdminWorkPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnMngDiseaseCatalogActionPerformed
 
     private void btnGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraphActionPerformed
+
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.setValue(400, "VaccineCount", "Supplier");
+                dataset.setValue(200, "VaccineCount", "Distributer");
+                        dataset.setValue(100, "VaccineCount", "Pharma");
+                        JFreeChart chart = ChartFactory.createBarChart("VaccinationTrend", "VaccinationSystem", "Number of Vaccinations",dataset,PlotOrientation.VERTICAL,false,true,false);
+                        CategoryPlot p = chart.getCategoryPlot();
+                        p.setRangeGridlinePaint(Color.black);
+                        ChartFrame frame = new ChartFrame(" Vaccination trend in the system",chart);
+                        frame.setVisible(true);
+                        frame.setSize(450,300);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGraphActionPerformed
 
