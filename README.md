@@ -1,4 +1,4 @@
-                                                    AED Project - GET VACCINATED
+                                              AED Project - GET VACCINATED
 
 Team Members:
 Divya Myneni (002746471)
