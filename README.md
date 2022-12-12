@@ -1,4 +1,4 @@
-                                              AED Project - GET VACCINATED
+                                                 GET VACCINATED
 
 Team Members:
 
