@@ -1,4 +1,4 @@
-                                                               AED Project - GET VACCINATED
+                                                            AED Project - GET VACCINATED
 
 Team Members:
 Divya Myneni (002746471)
@@ -15,7 +15,9 @@ The project will manage the vaccination production in an enterprise/busines. We 
 Description:
 
 1.Vaccine plays an important role in each and everyone’s life .
+
 2.In present  situation everyone has atleast been vaccinated since the virus has been spread all over the world ,even in this situation many organizations have not been vaccinated due to  supply of the vaccines. 
+
 3.Our application is created to supply the vaccine to each and every organization based on the request from the Provider’s and the Pharamacy’s.
 
 
