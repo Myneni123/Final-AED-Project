@@ -14,7 +14,7 @@ import java.util.HashSet;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Hospital_Enterprise extends Enterprise {
     public Hospital_Enterprise(String Name) {

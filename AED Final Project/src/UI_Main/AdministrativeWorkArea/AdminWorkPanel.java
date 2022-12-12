@@ -1,53 +1,57 @@
 /*
- * AdminWorkAreaJPanel.java
+ * AdminWorkPanel.java
  *
- * Created on October 10, 2008, 8:50 AM
+ *
  */
 package UI_Main.AdministrativeWorkArea;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.Organization;
+import Business_Frame.MainSystem;
+import Business.EnterpriseFrame.Enterprise;
+import Business.NetworkArea.NetworkArea;
+import Business.OrganizationFrame.Organization;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import userinterface.SystemAdminWorkAreas.ManageVaccineDirectoryJPanel;
-import userinterface.SystemAdminWorkAreas.ManageDiseaseDirectoryJPanel;
-import userinterface.SystemAdminWorkAreas.ManageDiseaseDirectoryJPanel;
+import java.awt.Color;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class AdminWorkPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    EcoSystem system;
+    MainSystem sys;
 
     /**
-     * Creates new form AdminWorkAreaJPanel
+     * Creates new form AdminWorkPanel
      */
-    public AdminWorkPanel(JPanel userProcessContainer, EcoSystem system) {
+    public AdminWorkPanel(JPanel userProcessContainer, MainSystem sys) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.system = system;
+        this.sys = sys;
 
         populateTree();
     }
 
     public void populateTree() {
         
-        DefaultTreeModel model = (DefaultTreeModel) JTree.getModel();
+        DefaultTreeModel model = (DefaultTreeModel) treeSystem.getModel();
 
         
         
-        ArrayList<Network> networkList = system.getNetworkList();
+        ArrayList<NetworkArea> networkList = sys.getNetworkList();
         ArrayList<Enterprise> enterpriseList;
         ArrayList<Organization> organizationList;
-        Network network;
+        NetworkArea networkarea;
         Enterprise enterprise;
         Organization organization;
 
@@ -60,11 +64,11 @@ public class AdminWorkPanel extends javax.swing.JPanel {
         DefaultMutableTreeNode enterpriseNode;
         DefaultMutableTreeNode organizationNode;
         for (int i = 0; i < networkList.size(); i++) {
-            network = networkList.get(i);
-            networkNode = new DefaultMutableTreeNode(network.getName());
+            networkarea = networkList.get(i);
+            networkNode = new DefaultMutableTreeNode(networkarea.getName());
             networks.insert(networkNode, i);
 
-            enterpriseList = network.getEnterpriseDirectory().getEnterpriseList();
+            enterpriseList = networkarea.getEnterpriseDirectory().getEnterpriseList();
 
             for (int j = 0; j < enterpriseList.size(); j++) {
                 enterprise = enterpriseList.get(j);
@@ -92,149 +96,187 @@ public class AdminWorkPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jSplitPane1 = new javax.swing.JSplitPane();
-        jPanel1 = new javax.swing.JPanel();
-        manageNetworkJButton = new javax.swing.JButton();
-        manageAdminJButton = new javax.swing.JButton();
-        manageEnterpriseJButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        selectedNodeJLabel = new javax.swing.JLabel();
-        btnVaccine = new javax.swing.JButton();
-        btnDisease = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        pnlMainScreen = new javax.swing.JPanel();
+        btnManageNetwork = new javax.swing.JButton();
+        btnMngAdmin = new javax.swing.JButton();
+        btnManageEnterprise = new javax.swing.JButton();
+        lblSelectedNode = new javax.swing.JLabel();
+        lblSelectedNodes = new javax.swing.JLabel();
+        btnMngVaccineCatalog = new javax.swing.JButton();
+        btnMngDiseaseCatalog = new javax.swing.JButton();
+        btnGraph = new javax.swing.JButton();
+        lblHeading = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
+        pnlSystem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JTree = new javax.swing.JTree();
+        treeSystem = new javax.swing.JTree();
 
         setLayout(new java.awt.BorderLayout());
 
         jSplitPane1.setDividerLocation(150);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlMainScreen.setBackground(new java.awt.Color(255, 204, 204));
+        pnlMainScreen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageNetworkJButton.setText("Manage Network");
-        manageNetworkJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnManageNetwork.setText("Manage Network");
+        btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageNetworkJButtonActionPerformed(evt);
+                btnManageNetworkActionPerformed(evt);
             }
         });
-        jPanel1.add(manageNetworkJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 102, 179, -1));
+        pnlMainScreen.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 179, -1));
 
-        manageAdminJButton.setText("Manage Enterprise Admin");
-        manageAdminJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnMngAdmin.setText("Manage Enterprise Admin");
+        btnMngAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageAdminJButtonActionPerformed(evt);
+                btnMngAdminActionPerformed(evt);
             }
         });
-        jPanel1.add(manageAdminJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+        pnlMainScreen.add(btnMngAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 180, -1));
 
-        manageEnterpriseJButton.setText("Manage Enterprise");
-        manageEnterpriseJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnManageEnterprise.setText("Manage Enterprise");
+        btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageEnterpriseJButtonActionPerformed(evt);
+                btnManageEnterpriseActionPerformed(evt);
             }
         });
-        jPanel1.add(manageEnterpriseJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 179, -1));
+        pnlMainScreen.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 179, -1));
 
-        jLabel1.setText("Selected Node:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 36, -1, -1));
+        lblSelectedNode.setText("Selected Node:");
+        pnlMainScreen.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        pnlMainScreen.add(lblSelectedNodes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 180, 40));
 
-        selectedNodeJLabel.setText("<view_selected_node>");
-        jPanel1.add(selectedNodeJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 36, -1, -1));
-
-        btnVaccine.setText("Manage Vaccine Catalog");
-        btnVaccine.addActionListener(new java.awt.event.ActionListener() {
+        btnMngVaccineCatalog.setText("Manage Vaccine Catalog");
+        btnMngVaccineCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVaccineActionPerformed(evt);
+                btnMngVaccineCatalogActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 180, -1));
+        pnlMainScreen.add(btnMngVaccineCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 180, -1));
 
-        btnDisease.setText("Manage Disease Catalog");
-        btnDisease.addActionListener(new java.awt.event.ActionListener() {
+        btnMngDiseaseCatalog.setText("Manage Disease Catalog");
+        btnMngDiseaseCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDiseaseActionPerformed(evt);
+                btnMngDiseaseCatalogActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 180, -1));
+        pnlMainScreen.add(btnMngDiseaseCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 180, -1));
 
-        jSplitPane1.setRightComponent(jPanel1);
+        btnGraph.setText("View Graphical Data");
+        btnGraph.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraphActionPerformed(evt);
+            }
+        });
+        pnlMainScreen.add(btnGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 180, -1));
+
+        lblHeading.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblHeading.setForeground(new java.awt.Color(255, 0, 51));
+        lblHeading.setText("VACCINE SUPPLY MANAGEMENT CHAIN");
+        pnlMainScreen.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 370, 30));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image (2).png")); // NOI18N
+        pnlMainScreen.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 230, 200));
+
+        jSplitPane1.setRightComponent(pnlMainScreen);
+
+        pnlSystem.setBackground(new java.awt.Color(204, 204, 255));
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("System");
-        JTree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        JTree.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
+        treeSystem.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        treeSystem.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        treeSystem.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
                 valueChangedAction(evt);
             }
         });
-        jScrollPane1.setViewportView(JTree);
+        jScrollPane1.setViewportView(treeSystem);
 
-        jPanel2.add(jScrollPane1);
+        pnlSystem.add(jScrollPane1);
 
-        jSplitPane1.setLeftComponent(jPanel2);
+        jSplitPane1.setLeftComponent(pnlSystem);
 
         add(jSplitPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageEnterpriseJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEnterpriseJButtonActionPerformed
+    private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
 
-        EnterprisePanel manageEnterpriseJPanel = new EnterprisePanel(userProcessContainer, system);
+        EnterprisePanel manageEnterpriseJPanel = new EnterprisePanel(userProcessContainer, sys);
         userProcessContainer.add("manageEnterpriseJPanel", manageEnterpriseJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageEnterpriseJButtonActionPerformed
+    }//GEN-LAST:event_btnManageEnterpriseActionPerformed
 
-    private void manageAdminJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageAdminJButtonActionPerformed
+    private void btnMngAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMngAdminActionPerformed
         // TODO add your handling code here:
-        EnterpriseAdminPanel manageEnterpriseAdminJPanel = new EnterpriseAdminPanel(userProcessContainer, system);
+        EnterpriseAdminPanel manageEnterpriseAdminJPanel = new EnterpriseAdminPanel(userProcessContainer, sys);
         userProcessContainer.add("manageEnterpriseAdminJPanel", manageEnterpriseAdminJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageAdminJButtonActionPerformed
+    }//GEN-LAST:event_btnMngAdminActionPerformed
 
-    private void manageNetworkJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageNetworkJButtonActionPerformed
-        NetworkPanel manageNetworkJPanel = new NetworkPanel(userProcessContainer, system);
+    private void btnManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNetworkActionPerformed
+        NetworkPanel manageNetworkJPanel = new NetworkPanel(userProcessContainer, sys);
         userProcessContainer.add("manageNetworkJPanel", manageNetworkJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageNetworkJButtonActionPerformed
+    }//GEN-LAST:event_btnManageNetworkActionPerformed
 
     private void valueChangedAction(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_valueChangedAction
-        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) JTree.getLastSelectedPathComponent();
+        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) treeSystem.getLastSelectedPathComponent();
         if (selectedNode != null) {
-            selectedNodeJLabel.setText(selectedNode.toString());
+            lblSelectedNodes.setText(selectedNode.toString());
         }
 
     }//GEN-LAST:event_valueChangedAction
 
-    private void btnVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineActionPerformed
+    private void btnMngVaccineCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMngVaccineCatalogActionPerformed
         // TODO add your handling code here:
-        VaccineDirectoryPanel manageNetworkJPanel = new VaccineDirectoryPanel(userProcessContainer, system);
+        VaccineDirectoryPanel manageNetworkJPanel = new VaccineDirectoryPanel(userProcessContainer, sys);
         userProcessContainer.add("ManageVaccineDirectoryJPanel", manageNetworkJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnVaccineActionPerformed
+    }//GEN-LAST:event_btnMngVaccineCatalogActionPerformed
 
-    private void btnDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiseaseActionPerformed
+    private void btnMngDiseaseCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMngDiseaseCatalogActionPerformed
         // TODO add your handling code here:
-         DiseaseDirectoryPanel manageNetworkJPanel = new DiseaseDirectoryPanel(userProcessContainer, system);
+         DiseaseDirectoryPanel manageNetworkJPanel = new DiseaseDirectoryPanel(userProcessContainer, sys);
         userProcessContainer.add("ManageDiseaseDirectoryJPanel", manageNetworkJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnDiseaseActionPerformed
+    }//GEN-LAST:event_btnMngDiseaseCatalogActionPerformed
+
+    private void btnGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraphActionPerformed
+
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.setValue(400, "VaccineCount", "Supplier");
+                dataset.setValue(200, "VaccineCount", "Distributer");
+                        dataset.setValue(100, "VaccineCount", "Pharma");
+                        JFreeChart chart = ChartFactory.createBarChart("VaccinationTrend", "VaccinationSystem", "Number of Vaccinations",dataset,PlotOrientation.VERTICAL,false,true,false);
+                        CategoryPlot p = chart.getCategoryPlot();
+                        p.setRangeGridlinePaint(Color.black);
+                        ChartFrame frame = new ChartFrame(" Vaccination trend in the system",chart);
+                        frame.setVisible(true);
+                        frame.setSize(450,300);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGraphActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTree JTree;
-    private javax.swing.JButton btnDisease;
-    private javax.swing.JButton btnVaccine;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton btnGraph;
+    private javax.swing.JButton btnManageEnterprise;
+    private javax.swing.JButton btnManageNetwork;
+    private javax.swing.JButton btnMngAdmin;
+    private javax.swing.JButton btnMngDiseaseCatalog;
+    private javax.swing.JButton btnMngVaccineCatalog;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton manageAdminJButton;
-    private javax.swing.JButton manageEnterpriseJButton;
-    private javax.swing.JButton manageNetworkJButton;
-    private javax.swing.JLabel selectedNodeJLabel;
+    private javax.swing.JLabel lblHeading;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblSelectedNode;
+    private javax.swing.JLabel lblSelectedNodes;
+    private javax.swing.JPanel pnlMainScreen;
+    private javax.swing.JPanel pnlSystem;
+    private javax.swing.JTree treeSystem;
     // End of variables declaration//GEN-END:variables
 }

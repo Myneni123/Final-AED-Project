@@ -13,7 +13,7 @@ import Business.Role.HospitalRole;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class C2DManagerOrganization extends Organization {
     

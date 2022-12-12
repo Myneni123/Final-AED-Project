@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import UI_Main.C2D.C2D_CatalogPanel;
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class C2D_Manager extends Roles {
     

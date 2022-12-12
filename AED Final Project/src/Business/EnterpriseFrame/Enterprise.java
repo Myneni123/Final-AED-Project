@@ -8,7 +8,7 @@ import Business.OrganizationFrame.OrganizationDirectory;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public abstract class Enterprise extends Organization {
     private EnterpriseType enterpriseType;

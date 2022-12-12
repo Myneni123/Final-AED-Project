@@ -12,7 +12,7 @@ import Business.Clinicarea.PharmacyWork;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class Clinical_Organization extends Organization {
     

@@ -20,7 +20,7 @@ import UI_Main.Hospital.Clinic.PharmacyArea.PharmacyWorkPanel;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class PharmacyRole extends Roles {
     

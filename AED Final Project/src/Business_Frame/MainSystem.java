@@ -20,7 +20,7 @@ import Business.UserHaandle.UserHandle;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class MainSystem extends Organization {
      private static MainSystem business;

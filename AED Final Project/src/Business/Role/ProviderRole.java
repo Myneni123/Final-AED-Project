@@ -21,7 +21,7 @@ import UI_Main.Distributors.ProvidersLists.ProviderWorkPanel;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class ProviderRole extends Roles {
     

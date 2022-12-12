@@ -4,46 +4,46 @@
  */
 package UI_Main.AdministrativeWorkArea;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
+import Business_Frame.MainSystem;
+import Business.EnterpriseFrame.Enterprise;
+import Business.NetworkArea.NetworkArea;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import utility.Validator;
+import Validation.Validation;
 
 /**
  *
- * @author raunak
+ * @author admin
  */
 public class EnterprisePanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem system;
+    private MainSystem sys;
 
     /**
-     * Creates new form ManageEnterpriseJPanel
+     * Creates new form for ManageEnterprisePanel
      */
-    public EnterprisePanel(JPanel userProcessContainer, EcoSystem system) {
+    public EnterprisePanel(JPanel userProcessContainer, MainSystem sys) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.system = system;
+        this.sys = sys;
 
         populateTable();
         populateComboBox();
     }
 
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
 
         model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+        for (NetworkArea networkarea : sys.getNetworkList()) {
+            for (Enterprise enterprise : networkarea.getEnterpriseDirectory().getEnterpriseList()) {
                 Object[] row = new Object[3];
                 row[0] = enterprise;
-                row[1] = network.getName();
+                row[1] = networkarea.getName();
                 row[2] = enterprise.getEnterpriseType().getValue();
 
                 model.addRow(row);
@@ -52,15 +52,15 @@ public class EnterprisePanel extends javax.swing.JPanel {
     }
 
     private void populateComboBox() {
-        networkJComboBox.removeAllItems();
-        enterpriseTypeJComboBox.removeAllItems();
+        comboxNetwork.removeAllItems();
+        comboxEnterpriseType.removeAllItems();
 
-        for (Network network : system.getNetworkList()) {
-            networkJComboBox.addItem(network);
+        for (NetworkArea networkarea : sys.getNetworkList()) {
+            comboxNetwork.addItem(networkarea);
         }
 
         for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
-            enterpriseTypeJComboBox.addItem(type);
+            comboxEnterpriseType.addItem(type);
         }
 
     }
@@ -75,17 +75,18 @@ public class EnterprisePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        enterpriseJTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        networkJComboBox = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        nameJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        enterpriseTypeJComboBox = new javax.swing.JComboBox();
-        submitJButton = new javax.swing.JButton();
-        backJButton = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        tblEnterprise = new javax.swing.JTable();
+        lblNetwork = new javax.swing.JLabel();
+        comboxNetwork = new javax.swing.JComboBox();
+        lblName = new javax.swing.JLabel();
+        tfieldName = new javax.swing.JTextField();
+        lblEnterpriseType = new javax.swing.JLabel();
+        comboxEnterpriseType = new javax.swing.JComboBox();
+        btnSubmit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnDeleteReq = new javax.swing.JButton();
+        lblEnterprisePanel = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -94,7 +95,7 @@ public class EnterprisePanel extends javax.swing.JPanel {
         });
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblEnterprise.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -113,83 +114,105 @@ public class EnterprisePanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(enterpriseJTable);
+        jScrollPane1.setViewportView(tblEnterprise);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 523, 95));
 
-        jLabel1.setText("Network");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 201, -1, -1));
+        lblNetwork.setForeground(new java.awt.Color(255, 255, 255));
+        lblNetwork.setText("Network");
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
-        networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 198, 136, -1));
+        comboxNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboxNetwork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboxNetworkActionPerformed(evt);
+            }
+        });
+        add(comboxNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 136, -1));
 
-        jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 294, -1, -1));
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setText("Name");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
-        nameJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldNameActionPerformed(evt);
+            }
+        });
+        tfieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                nameJTextFieldKeyPressed(evt);
+                tfieldNameKeyPressed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 291, 136, -1));
+        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 136, -1));
 
-        jLabel3.setText("Enterprise Type");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 254, -1, -1));
+        lblEnterpriseType.setForeground(new java.awt.Color(255, 255, 255));
+        lblEnterpriseType.setText("Enterprise Type");
+        add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
 
-        enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 251, 136, -1));
-
-        submitJButton.setText("Submit");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        comboxEnterpriseType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboxEnterpriseType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                comboxEnterpriseTypeActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 331, -1, -1));
+        add(comboxEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 136, -1));
 
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setText("Create Enterprise");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 331, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, -1));
 
-        btnDelete.setText("Delete request");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
-        jLabel4.setText("Manage Enterprise Panel");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+        btnDeleteReq.setText("Delete request");
+        btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteReqActionPerformed(evt);
+            }
+        });
+        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
+
+        lblEnterprisePanel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblEnterprisePanel.setText("Manage Enterprise Panel");
+        add(lblEnterprisePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\vaccine-story-knowledge-enterprise_1170x625px.jpg")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 470));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
-        if(!nameJTextField.getText().equals("")){
-        Network network = (Network) networkJComboBox.getSelectedItem();
-        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
+        if(!tfieldName.getText().equals("")){
+        NetworkArea networkarea = (NetworkArea) comboxNetwork.getSelectedItem();
+        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) comboxEnterpriseType.getSelectedItem();
 
-        if (network == null || type == null) {
+        if (networkarea == null || type == null) {
             JOptionPane.showMessageDialog(null, "Invalid Input!");
             return;
         }
 
-        String name = nameJTextField.getText();
+        String name = tfieldName.getText();
         
-        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+        Enterprise enterprise = networkarea.getEnterpriseDirectory().createAndAddEnterprise(name, type);
 
         populateTable();
          }else{
-             JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Enter a valid value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -198,23 +221,23 @@ public class EnterprisePanel extends javax.swing.JPanel {
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnDeleteReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteReqActionPerformed
         // TODO add your handling code here:
-        int selectedRow= enterpriseJTable.getSelectedRow();
+        int selectedRow= tblEnterprise.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select atleast one row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         else{
 
-            Enterprise p=(Enterprise) enterpriseJTable.getValueAt(selectedRow, 0);
+            Enterprise p=(Enterprise) tblEnterprise.getValueAt(selectedRow, 0);
 
-            for (Network network : system.getNetworkList()) {
-                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            for (NetworkArea networkarea : sys.getNetworkList()) {
+                for (Enterprise enterprise : networkarea.getEnterpriseDirectory().getEnterpriseList()) {
                    
                         if(p==enterprise){
-                           network.getEnterpriseDirectory().getEnterpriseList().remove(p);
+                           networkarea.getEnterpriseDirectory().getEnterpriseList().remove(p);
                             break;
                         }
 
@@ -222,32 +245,45 @@ public class EnterprisePanel extends javax.swing.JPanel {
                 }
             }
 
-            JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
+            JOptionPane.showMessageDialog(null, "Account deleted successfully");
             populateTable();
         }
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteReqActionPerformed
 
-    private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
+    private void tfieldNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfieldNameKeyPressed
         // TODO add your handling code here:
-        Validator.onlyString(evt, nameJTextField);
-    }//GEN-LAST:event_nameJTextFieldKeyPressed
+        Validation.onlyString(evt, tfieldName);
+    }//GEN-LAST:event_tfieldNameKeyPressed
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
 
+    private void tfieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldNameActionPerformed
+
+    private void comboxEnterpriseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxEnterpriseTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxEnterpriseTypeActionPerformed
+
+    private void comboxNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxNetworkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxNetworkActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JTable enterpriseJTable;
-    private javax.swing.JComboBox enterpriseTypeJComboBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteReq;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox comboxEnterpriseType;
+    private javax.swing.JComboBox comboxNetwork;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JComboBox networkJComboBox;
-    private javax.swing.JButton submitJButton;
+    private javax.swing.JLabel lblEnterprisePanel;
+    private javax.swing.JLabel lblEnterpriseType;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNetwork;
+    private javax.swing.JTable tblEnterprise;
+    private javax.swing.JTextField tfieldName;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,7 +11,7 @@ import Business.SupplierArea.Vaccine_Directory;
 
 /**
  *
- * @author mynenidivya
+ * @author admin
  */
 public class PharmacyWork {
     private Vaccine_Directory VaccineList;
