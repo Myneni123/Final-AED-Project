@@ -167,7 +167,7 @@ public class HospitalManageEmployeePanel extends javax.swing.JPanel {
         jLabel3.setText("Organization");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed20.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (13).png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 230, 230));
     }// </editor-fold>//GEN-END:initComponents
 

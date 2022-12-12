@@ -242,7 +242,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
         });
         add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aedsup3.jpg")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aedsup3.jpg"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 680, 530));
 
         jLabel2.setText("Quantity");

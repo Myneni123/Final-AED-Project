@@ -204,7 +204,7 @@ public class DistributorManageUserPanel extends javax.swing.JPanel {
         RoleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(RoleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 146, -1));
 
-        lblUsername1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed8.jpg")); // NOI18N
+        lblUsername1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (26).png"))); // NOI18N
         add(lblUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 710, 460));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -173,7 +173,7 @@ public class C2DManageemployeePanel extends javax.swing.JPanel {
         lblManageEmployee.setText("Manage Employee Details");
         add(lblManageEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 220, 30));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image.png")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image.png"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
     }// </editor-fold>//GEN-END:initComponents
 

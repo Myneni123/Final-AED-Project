@@ -349,7 +349,7 @@ public class ProviderWorkPanel extends javax.swing.JPanel {
 
         add(comboxSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 130, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\Doctor.Vaccine_7.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Doctor.Vaccine_7.jpg"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -198,7 +198,7 @@ public class CDCManageUserHandlePanel extends javax.swing.JPanel {
         });
         add(comboxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 200, -1));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image.png")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (6).png"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 610, 530));
     }// </editor-fold>//GEN-END:initComponents
 

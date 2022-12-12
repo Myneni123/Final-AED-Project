@@ -207,7 +207,7 @@ public class ClinicManageUsersPanel extends javax.swing.JPanel {
         });
         add(clinicBackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed18.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (8).png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 260, 180));
     }// </editor-fold>//GEN-END:initComponents
 

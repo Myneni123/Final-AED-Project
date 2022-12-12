@@ -185,7 +185,7 @@ public class HospitalManageUserPanel extends javax.swing.JPanel {
         UserRoleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(UserRoleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 146, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed22.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (7).png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 530));
     }// </editor-fold>//GEN-END:initComponents
 

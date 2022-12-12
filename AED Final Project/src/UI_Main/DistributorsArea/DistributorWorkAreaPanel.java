@@ -48,7 +48,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         lblWorkarea.setText(" Work Area -Adminstrative");
         add(lblWorkarea, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        WorkuserJButton.setText("Manage User");
+        WorkuserJButton.setText("User");
         WorkuserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 WorkuserJButtonActionPerformed(evt);
@@ -56,7 +56,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         });
         add(WorkuserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 150, -1));
 
-        ManageEmpJButton.setText("Manage Employee");
+        ManageEmpJButton.setText("Employee");
         ManageEmpJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManageEmpJButtonActionPerformed(evt);
@@ -64,19 +64,19 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         });
         add(ManageEmpJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 150, -1));
 
-        ManageOrgJButton.setText("Manage Organization");
+        ManageOrgJButton.setText("Organization");
         ManageOrgJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManageOrgJButtonActionPerformed(evt);
             }
         });
-        add(ManageOrgJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
+        add(ManageOrgJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 160, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblEnterprise.setText("Enterprise Name :");
         add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 170, 30));
 
-        valueLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed2.jpg")); // NOI18N
+        valueLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (21).png"))); // NOI18N
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 200, 370));
 
         valueLabel1.setText("<value>");

@@ -149,7 +149,7 @@ public class VaccineDirectoryPanel extends javax.swing.JPanel {
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aed1.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aed1.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 310, 230));
     }// </editor-fold>//GEN-END:initComponents
 

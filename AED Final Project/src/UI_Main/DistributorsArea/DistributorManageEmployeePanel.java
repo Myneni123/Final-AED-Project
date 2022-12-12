@@ -168,7 +168,7 @@ public class DistributorManageEmployeePanel extends javax.swing.JPanel {
         lblOrg1.setText("Organization");
         add(lblOrg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\ThinkstockPhotos-605751078.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (17).png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 500));
     }// </editor-fold>//GEN-END:initComponents
 

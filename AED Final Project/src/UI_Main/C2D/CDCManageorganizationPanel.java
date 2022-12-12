@@ -137,7 +137,7 @@ public class CDCManageorganizationPanel extends javax.swing.JPanel {
         lblOrg.setText("Manage Organizations");
         add(lblOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 190, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aed1.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aed1.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, 160));
     }// </editor-fold>//GEN-END:initComponents
 

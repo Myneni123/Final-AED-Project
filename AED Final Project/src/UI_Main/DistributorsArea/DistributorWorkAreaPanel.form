@@ -38,7 +38,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="WorkuserJButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage User"/>
+        <Property name="text" type="java.lang.String" value="User"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WorkuserJButtonActionPerformed"/>
@@ -51,7 +51,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="ManageEmpJButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage Employee"/>
+        <Property name="text" type="java.lang.String" value="Employee"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ManageEmpJButtonActionPerformed"/>
@@ -64,14 +64,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="ManageOrgJButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage Organization"/>
+        <Property name="text" type="java.lang.String" value="Organization"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ManageOrgJButtonActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="200" y="230" width="-1" height="-1"/>
+          <AbsoluteConstraints x="200" y="230" width="160" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -91,7 +91,7 @@
     <Component class="javax.swing.JLabel" name="valueLabel">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\namra\Downloads\aed2.jpg"/>
+          <Image iconType="3" name="/images/MicrosoftTeams-image (21).png"/>
         </Property>
       </Properties>
       <Constraints>

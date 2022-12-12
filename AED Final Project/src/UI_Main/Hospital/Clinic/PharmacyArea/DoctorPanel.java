@@ -39,7 +39,7 @@ public class DoctorPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(153, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblAppointment.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed5.jpg")); // NOI18N
+        lblAppointment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (20).png"))); // NOI18N
         add(lblAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 270, 200));
 
         lblDoctor.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N

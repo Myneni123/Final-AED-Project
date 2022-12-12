@@ -173,7 +173,7 @@
     <Component class="javax.swing.JLabel" name="lblImage">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bhema\Downloads\children-under-_five-covid-vaccine.jpg"/>
+          <Image iconType="3" name="/images/children-under-_five-covid-vaccine.jpg"/>
         </Property>
       </Properties>
       <Constraints>

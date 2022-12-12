@@ -3,11 +3,6 @@
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\namra\Downloads\aed5.jpg"/>
-        </Property>
-      </Properties>
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -136,7 +131,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\namra\Downloads\aed7.png"/>
+          <Image iconType="3" name="/images/MicrosoftTeams-image (18).png"/>
         </Property>
       </Properties>
       <Constraints>

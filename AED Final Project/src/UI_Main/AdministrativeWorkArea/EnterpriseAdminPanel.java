@@ -205,7 +205,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         lblEmail.setText("Email");
         add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aedsup3.jpg")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aedsup3.jpg"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 520));
     }// </editor-fold>//GEN-END:initComponents
 

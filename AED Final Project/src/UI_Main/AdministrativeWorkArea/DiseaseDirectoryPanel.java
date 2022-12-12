@@ -139,7 +139,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\children-under-_five-covid-vaccine.jpg")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/children-under-_five-covid-vaccine.jpg"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 650, 520));
     }// </editor-fold>//GEN-END:initComponents
 

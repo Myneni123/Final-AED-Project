@@ -133,7 +133,7 @@ public class HospitalManageOrganizationPanel extends javax.swing.JPanel {
         add(HospitalManageOrgbackJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, -1, 10));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed21.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (10).png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
     }// </editor-fold>//GEN-END:initComponents
 

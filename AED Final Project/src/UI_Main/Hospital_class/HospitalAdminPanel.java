@@ -77,7 +77,7 @@ public class HospitalAdminPanel extends javax.swing.JPanel {
         add(lblHospitalenterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 120, 30));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed15.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (14).png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 230, 180));
     }// </editor-fold>//GEN-END:initComponents
 

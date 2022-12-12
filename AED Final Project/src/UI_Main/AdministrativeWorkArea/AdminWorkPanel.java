@@ -175,7 +175,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
         lblHeading.setText("VACCINE SUPPLY MANAGEMENT CHAIN");
         pnlMainScreen.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 370, 30));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image (2).png")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (2).png"))); // NOI18N
         pnlMainScreen.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 230, 200));
 
         jSplitPane1.setRightComponent(pnlMainScreen);

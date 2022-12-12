@@ -186,7 +186,7 @@ public class EnterprisePanel extends javax.swing.JPanel {
         lblEnterprisePanel.setText("Manage Enterprise Panel");
         add(lblEnterprisePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\vaccine-story-knowledge-enterprise_1170x625px.jpg")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vaccine-story-knowledge-enterprise_1170x625px.jpg"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 470));
     }// </editor-fold>//GEN-END:initComponents
 

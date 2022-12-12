@@ -164,7 +164,7 @@ public class ClinicManageemployeePanel extends javax.swing.JPanel {
         lblClinicCreateEmp.setText("Create Employee");
         add(lblClinicCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 140, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed19.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (11).png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 300, 150));
     }// </editor-fold>//GEN-END:initComponents
 

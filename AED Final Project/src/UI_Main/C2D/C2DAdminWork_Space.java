@@ -97,7 +97,7 @@ public class C2DAdminWork_Space extends javax.swing.JPanel {
         });
         add(btnCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 150, -1));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\Vaccine101-web.png")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine101-web.png"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 460, 450));
     }// </editor-fold>//GEN-END:initComponents
 

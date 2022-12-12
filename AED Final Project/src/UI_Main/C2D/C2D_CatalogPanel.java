@@ -121,7 +121,7 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
         lblManageVaccine.setText("View Vaccine Directory");
         add(lblManageVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 320, 30));
 
-        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image (4).png")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (4).png"))); // NOI18N
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
     }// </editor-fold>//GEN-END:initComponents
 

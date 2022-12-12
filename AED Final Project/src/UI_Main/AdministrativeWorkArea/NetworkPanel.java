@@ -144,7 +144,7 @@ public class NetworkPanel extends javax.swing.JPanel {
         });
         add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\frame-0019.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frame-0019.jpg"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 700, 550));
     }// </editor-fold>//GEN-END:initComponents
 

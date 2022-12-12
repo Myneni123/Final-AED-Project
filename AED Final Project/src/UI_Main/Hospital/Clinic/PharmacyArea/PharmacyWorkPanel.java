@@ -143,8 +143,6 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed10.jpg")); // NOI18N
-
         setBackground(new java.awt.Color(204, 153, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -221,7 +219,7 @@ public class PharmacyWorkPanel extends javax.swing.JPanel {
         });
         add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed11.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aed11.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 520));
 
         jLabel3.setText("jLabel3");

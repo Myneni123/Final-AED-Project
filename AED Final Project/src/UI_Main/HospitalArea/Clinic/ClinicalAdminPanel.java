@@ -79,7 +79,7 @@ public class ClinicalAdminPanel extends javax.swing.JPanel {
         add(lblClinicEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, 30));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\Aed12.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (16).png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 260, 170));
     }// </editor-fold>//GEN-END:initComponents
 

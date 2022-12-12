@@ -73,8 +73,6 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed5.jpg")); // NOI18N
-
         setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -135,7 +133,7 @@ public class DistributorManageOrganization extends javax.swing.JPanel {
         add(back_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, 110));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\namra\\Downloads\\aed7.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MicrosoftTeams-image (18).png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 520));
     }// </editor-fold>//GEN-END:initComponents
 
