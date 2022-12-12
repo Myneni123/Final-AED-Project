@@ -64,7 +64,6 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDisease = new javax.swing.JTable();
-        btnBack = new javax.swing.JButton();
         lblManageDisease = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblVaccine = new javax.swing.JTable();
@@ -93,14 +92,6 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblDisease);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 590, 170));
-
-        btnBack.setText(" Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         lblManageDisease.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblManageDisease.setText("View Disease Directory");
@@ -134,16 +125,8 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
         add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblImage;

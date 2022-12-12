@@ -50,6 +50,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
@@ -62,9 +63,11 @@ public class MainFrame extends javax.swing.JFrame {
         container = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
+        jLabel3.setText("jLabel3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnLogin.setText("Login");
@@ -77,9 +80,11 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.add(tfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 50, 118, -1));
         jPanel1.add(tfieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 109, 118, -1));
 
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
         lblUsername.setText("User Name");
         jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 21, -1, -1));
 
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password");
         jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 86, -1, -1));
         jPanel1.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
@@ -97,9 +102,8 @@ public class MainFrame extends javax.swing.JFrame {
 
         container.setLayout(new java.awt.CardLayout());
 
-        jLabel1.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\maxresdefault.jpg")); // NOI18N
-        container.add(jLabel1, "card2");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\image (1).jpg")); // NOI18N
+        container.add(jLabel1, "card3");
 
         jSplitPane1.setRightComponent(container);
 
@@ -224,6 +228,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnLogout;
     private javax.swing.JPanel container;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblPassword;
