@@ -66,6 +66,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         tfieldDiseaseName = new javax.swing.JTextField();
         lblDiseaseDirectory = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +89,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblDiseaseID);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 120, 590, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 590, 170));
 
         btnCreateDisease.setText("Create New Disease");
         btnCreateDisease.addActionListener(new java.awt.event.ActionListener() {
@@ -96,15 +97,15 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
                 btnCreateDiseaseActionPerformed(evt);
             }
         });
-        add(btnCreateDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, 150, -1));
+        add(btnCreateDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 150, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         lblwelcome.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         add(lblwelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 240, 20));
@@ -115,25 +116,31 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
                 btnDeleteDiseaseActionPerformed(evt);
             }
         });
-        add(btnDeleteDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 180, -1));
+        add(btnDeleteDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 110, -1));
 
         lblCreate.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblCreate.setForeground(new java.awt.Color(255, 255, 255));
         lblCreate.setText("Create Disease ");
-        add(lblCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 170, 30));
+        add(lblCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 170, 30));
 
         tfieldDiseaseName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfieldDiseaseNameKeyPressed(evt);
             }
         });
-        add(tfieldDiseaseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 120, -1));
+        add(tfieldDiseaseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 120, -1));
 
-        lblDiseaseDirectory.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblDiseaseDirectory.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblDiseaseDirectory.setForeground(new java.awt.Color(255, 255, 255));
         lblDiseaseDirectory.setText("Manage Disease Directory");
-        add(lblDiseaseDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 320, 30));
+        add(lblDiseaseDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 320, 30));
 
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\children-under-_five-covid-vaccine.jpg")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 650, 520));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDiseaseActionPerformed
@@ -186,6 +193,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCreate;
     private javax.swing.JLabel lblDiseaseDirectory;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblwelcome;
     private javax.swing.JTable tblDiseaseID;

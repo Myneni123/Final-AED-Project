@@ -102,6 +102,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         btnDeleteRequest = new javax.swing.JButton();
         tfieldEmail = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,10 +128,11 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblEnterprise);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 523, 95));
 
+        lblNetwork.setForeground(new java.awt.Color(255, 255, 255));
         lblNetwork.setText("Network");
-        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 201, -1, -1));
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         comboxNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboxNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -138,17 +140,19 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
                 comboxNetworkActionPerformed(evt);
             }
         });
-        add(comboxNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 198, 136, -1));
+        add(comboxNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 136, -1));
 
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
         lblUsername.setText("Username");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 294, -1, -1));
-        add(tfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 291, 136, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        add(tfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 136, -1));
 
+        lblEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         lblEnterprise.setText("Enterprise");
-        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 254, -1, -1));
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
 
         comboxEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboxEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 251, 136, -1));
+        add(comboxEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 136, -1));
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -156,29 +160,31 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
 
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password");
-        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 334, -1, -1));
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, -1, 20));
 
         tfieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfieldNameKeyPressed(evt);
             }
         });
-        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 371, 136, -1));
+        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 136, -1));
 
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 374, -1, -1));
-        add(tfieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 331, 134, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
+        add(tfieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 140, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         btnDeleteRequest.setText("Delete request");
         btnDeleteRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -186,11 +192,21 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
                 btnDeleteRequestActionPerformed(evt);
             }
         });
-        add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
-        add(tfieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 130, -1));
+        add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
 
+        tfieldEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldEmailActionPerformed(evt);
+            }
+        });
+        add(tfieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 140, -1));
+
+        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aedsup3.jpg")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 520));
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboxNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxNetworkActionPerformed
@@ -283,6 +299,10 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         Validation.onlyString(evt, tfieldName);
     }//GEN-LAST:event_tfieldNameKeyPressed
 
+    private void tfieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldEmailActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteRequest;
@@ -292,6 +312,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;
     private javax.swing.JLabel lblPassword;

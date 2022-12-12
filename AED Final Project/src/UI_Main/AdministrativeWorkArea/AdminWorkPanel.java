@@ -105,6 +105,8 @@ public class AdminWorkPanel extends javax.swing.JPanel {
         btnMngVaccineCatalog = new javax.swing.JButton();
         btnMngDiseaseCatalog = new javax.swing.JButton();
         btnGraph = new javax.swing.JButton();
+        lblHeading = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
         pnlSystem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         treeSystem = new javax.swing.JTree();
@@ -122,7 +124,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
                 btnManageNetworkActionPerformed(evt);
             }
         });
-        pnlMainScreen.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 179, -1));
+        pnlMainScreen.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 179, -1));
 
         btnMngAdmin.setText("Manage Enterprise Admin");
         btnMngAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +132,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
                 btnMngAdminActionPerformed(evt);
             }
         });
-        pnlMainScreen.add(btnMngAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 180, -1));
+        pnlMainScreen.add(btnMngAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 180, -1));
 
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
@@ -138,13 +140,13 @@ public class AdminWorkPanel extends javax.swing.JPanel {
                 btnManageEnterpriseActionPerformed(evt);
             }
         });
-        pnlMainScreen.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 179, -1));
+        pnlMainScreen.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 179, -1));
 
         lblSelectedNode.setText("Selected Node:");
-        pnlMainScreen.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        pnlMainScreen.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         lblSelectedNodes.setText("<view_selected_node>");
-        pnlMainScreen.add(lblSelectedNodes, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, -1, -1));
+        pnlMainScreen.add(lblSelectedNodes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, 30));
 
         btnMngVaccineCatalog.setText("Manage Vaccine Catalog");
         btnMngVaccineCatalog.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +154,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
                 btnMngVaccineCatalogActionPerformed(evt);
             }
         });
-        pnlMainScreen.add(btnMngVaccineCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 180, -1));
+        pnlMainScreen.add(btnMngVaccineCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 180, -1));
 
         btnMngDiseaseCatalog.setText("Manage Disease Catalog");
         btnMngDiseaseCatalog.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +162,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
                 btnMngDiseaseCatalogActionPerformed(evt);
             }
         });
-        pnlMainScreen.add(btnMngDiseaseCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 180, -1));
+        pnlMainScreen.add(btnMngDiseaseCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 180, -1));
 
         btnGraph.setText("View Graphical Data");
         btnGraph.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +170,15 @@ public class AdminWorkPanel extends javax.swing.JPanel {
                 btnGraphActionPerformed(evt);
             }
         });
-        pnlMainScreen.add(btnGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 180, -1));
+        pnlMainScreen.add(btnGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 180, -1));
+
+        lblHeading.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblHeading.setForeground(new java.awt.Color(255, 0, 51));
+        lblHeading.setText("VACCINE SUPPLY MANAGEMENT CHAIN");
+        pnlMainScreen.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 370, 30));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image (2).png")); // NOI18N
+        pnlMainScreen.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 230, 200));
 
         jSplitPane1.setRightComponent(pnlMainScreen);
 
@@ -263,6 +273,8 @@ public class AdminWorkPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnMngVaccineCatalog;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel lblHeading;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblSelectedNode;
     private javax.swing.JLabel lblSelectedNodes;
     private javax.swing.JPanel pnlMainScreen;

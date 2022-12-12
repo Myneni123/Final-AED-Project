@@ -86,6 +86,7 @@ public class EnterprisePanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnDeleteReq = new javax.swing.JButton();
         lblEnterprisePanel = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -115,45 +116,63 @@ public class EnterprisePanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblEnterprise);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 523, 95));
 
+        lblNetwork.setForeground(new java.awt.Color(255, 255, 255));
         lblNetwork.setText("Network");
-        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 201, -1, -1));
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         comboxNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboxNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 198, 136, -1));
+        comboxNetwork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboxNetworkActionPerformed(evt);
+            }
+        });
+        add(comboxNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 136, -1));
 
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 294, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
+        tfieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldNameActionPerformed(evt);
+            }
+        });
         tfieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfieldNameKeyPressed(evt);
             }
         });
-        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 291, 136, -1));
+        add(tfieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 136, -1));
 
+        lblEnterpriseType.setForeground(new java.awt.Color(255, 255, 255));
         lblEnterpriseType.setText("Enterprise Type");
-        add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 254, -1, -1));
+        add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
 
         comboxEnterpriseType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboxEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 251, 136, -1));
+        comboxEnterpriseType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboxEnterpriseTypeActionPerformed(evt);
+            }
+        });
+        add(comboxEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 136, -1));
 
-        btnSubmit.setText("Submit");
+        btnSubmit.setText("Create Enterprise");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 331, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 331, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         btnDeleteReq.setText("Delete request");
         btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
@@ -161,10 +180,14 @@ public class EnterprisePanel extends javax.swing.JPanel {
                 btnDeleteReqActionPerformed(evt);
             }
         });
-        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
+        add(btnDeleteReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
 
+        lblEnterprisePanel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblEnterprisePanel.setText("Manage Enterprise Panel");
         add(lblEnterprisePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\vaccine-story-knowledge-enterprise_1170x625px.jpg")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 470));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -236,6 +259,18 @@ public class EnterprisePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
 
+    private void tfieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldNameActionPerformed
+
+    private void comboxEnterpriseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxEnterpriseTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxEnterpriseTypeActionPerformed
+
+    private void comboxNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxNetworkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxNetworkActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteReq;
@@ -245,6 +280,7 @@ public class EnterprisePanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterprisePanel;
     private javax.swing.JLabel lblEnterpriseType;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;
     private javax.swing.JTable tblEnterprise;
