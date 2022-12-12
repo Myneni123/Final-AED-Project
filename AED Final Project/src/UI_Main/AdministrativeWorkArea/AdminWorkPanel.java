@@ -144,9 +144,7 @@ public class AdminWorkPanel extends javax.swing.JPanel {
 
         lblSelectedNode.setText("Selected Node:");
         pnlMainScreen.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
-
-        lblSelectedNodes.setText("<view_selected_node>");
-        pnlMainScreen.add(lblSelectedNodes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, 30));
+        pnlMainScreen.add(lblSelectedNodes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 180, 40));
 
         btnMngVaccineCatalog.setText("Manage Vaccine Catalog");
         btnMngVaccineCatalog.addActionListener(new java.awt.event.ActionListener() {

@@ -99,7 +99,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 204, 204));
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\maxresdefault.jpg")); // NOI18N
-        jLabel1.setText("jLabel1");
         container.add(jLabel1, "card2");
 
         jSplitPane1.setRightComponent(container);

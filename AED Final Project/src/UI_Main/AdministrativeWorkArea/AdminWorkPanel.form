@@ -94,12 +94,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblSelectedNodes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&lt;view_selected_node&gt;"/>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="130" y="220" width="-1" height="30"/>
+                  <AbsoluteConstraints x="130" y="220" width="180" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
