@@ -27,4 +27,5 @@ Description:
 
 ![ClassDiagramAed](https://user-images.githubusercontent.com/114035799/206918955-513899ec-fa23-46a9-a64e-bc299fd2db44.png)
 
-![SequenceDiagram](https://user-images.githubusercontent.com/114035799/206955749-b7cb2ca2-eb35-45e7-911a-2d28c857ba02.png)
+
+![SequenceDiagram](https://user-images.githubusercontent.com/114035799/206961190-71c7f4ff-a087-472c-8402-30921d80d54d.png)
