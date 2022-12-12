@@ -65,11 +65,13 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDisease = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lblManageDisease = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblVaccine = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
+        lblManageVaccine = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblDisease.setModel(new javax.swing.table.DefaultTableModel(
@@ -90,19 +92,19 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblDisease);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 590, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 590, 170));
 
-        btnBack.setText("<< Back");
+        btnBack.setText(" Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel4.setText("Manage Disease Directory");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 320, 30));
+        lblManageDisease.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblManageDisease.setText("View Disease Directory");
+        add(lblManageDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 320, 30));
 
         tblVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,11 +124,14 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblVaccine);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 590, 170));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 590, 170));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel5.setText("Manage Vaccine Directory");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 320, 30));
+        lblManageVaccine.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblManageVaccine.setText("View Vaccine Directory");
+        add(lblManageVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 320, 30));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\MicrosoftTeams-image (4).png")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -139,10 +144,11 @@ public class C2D_CatalogPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblManageDisease;
+    private javax.swing.JLabel lblManageVaccine;
     private javax.swing.JTable tblDisease;
     private javax.swing.JTable tblVaccine;
     // End of variables declaration//GEN-END:variables

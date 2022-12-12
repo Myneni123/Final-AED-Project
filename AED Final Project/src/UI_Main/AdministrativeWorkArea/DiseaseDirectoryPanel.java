@@ -36,7 +36,7 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         populateDiseaseTable();
     }
     public void populateDiseaseTable(){
-         DefaultTableModel dtm= (DefaultTableModel) tblDisease.getModel();
+         DefaultTableModel dtm= (DefaultTableModel) tblDiseaseID.getModel();
        dtm.setRowCount(0);
        for (Disease disease : businesses.getDiseaseList().getDiseaseList()) {
            Object[] row = new Object[2];
@@ -57,19 +57,21 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDisease = new javax.swing.JTable();
-        btnNew = new javax.swing.JButton();
+        tblDiseaseID = new javax.swing.JTable();
+        btnCreateDisease = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         lblwelcome = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        txtVaccineName = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnDeleteDisease = new javax.swing.JButton();
+        lblCreate = new javax.swing.JLabel();
+        tfieldDiseaseName = new javax.swing.JTextField();
+        lblDiseaseDirectory = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblDisease.setModel(new javax.swing.table.DefaultTableModel(
+        tblDiseaseID.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -85,68 +87,74 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblDisease);
+        jScrollPane1.setViewportView(tblDiseaseID);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 120, 590, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 590, 170));
 
-        btnNew.setText("Create New Disease");
-        btnNew.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateDisease.setText("Create New Disease");
+        btnCreateDisease.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewActionPerformed(evt);
+                btnCreateDiseaseActionPerformed(evt);
             }
         });
-        add(btnNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, 150, -1));
+        add(btnCreateDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 150, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         lblwelcome.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         add(lblwelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 240, 20));
 
-        btnDelete.setText("Delete Disease");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteDisease.setText("Delete Disease");
+        btnDeleteDisease.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                btnDeleteDiseaseActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 180, -1));
+        add(btnDeleteDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 110, -1));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel3.setText("Create Disease ");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 170, 30));
+        lblCreate.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblCreate.setForeground(new java.awt.Color(255, 255, 255));
+        lblCreate.setText("Create Disease ");
+        add(lblCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 170, 30));
 
-        txtVaccineName.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfieldDiseaseName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtVaccineNameKeyPressed(evt);
+                tfieldDiseaseNameKeyPressed(evt);
             }
         });
-        add(txtVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 120, -1));
+        add(tfieldDiseaseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 120, -1));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel4.setText("Manage Disease Directory");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 320, 30));
+        lblDiseaseDirectory.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblDiseaseDirectory.setForeground(new java.awt.Color(255, 255, 255));
+        lblDiseaseDirectory.setText("Manage Disease Directory");
+        add(lblDiseaseDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 320, 30));
 
-        jLabel2.setText("Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, -1, -1));
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\children-under-_five-covid-vaccine.jpg")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 650, 520));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
+    private void btnCreateDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDiseaseActionPerformed
         // TODO add your handling code here:
-         if(!txtVaccineName.getText().equals("")){
+         if(!tfieldDiseaseName.getText().equals("")){
         Disease v= businesses.getDiseaseList().addDisease();
-        v.setDiseaseName(txtVaccineName.getText());
+        v.setDiseaseName(tfieldDiseaseName.getText());
         populateDiseaseTable();
          }else{
              JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
         
-    }//GEN-LAST:event_btnNewActionPerformed
+    }//GEN-LAST:event_btnCreateDiseaseActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -155,39 +163,40 @@ public class DiseaseDirectoryPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnDeleteDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDiseaseActionPerformed
         // TODO add your handling code here:
-          int selectedRow= tblDisease.getSelectedRow();
+          int selectedRow= tblDiseaseID.getSelectedRow();
          if(selectedRow<0){
              JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
       }
         else{
              
-         Disease p=(Disease) tblDisease.getValueAt(selectedRow, 0);
+         Disease p=(Disease) tblDiseaseID.getValueAt(selectedRow, 0);
 
          businesses.getDiseaseList().removeDisease(p);
           JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
         populateDiseaseTable();
          }
          
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteDiseaseActionPerformed
 
-    private void txtVaccineNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVaccineNameKeyPressed
+    private void tfieldDiseaseNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfieldDiseaseNameKeyPressed
         // TODO add your handling code here:
-        Validation.onlyString(evt, txtVaccineName);
-    }//GEN-LAST:event_txtVaccineNameKeyPressed
+        Validation.onlyString(evt, tfieldDiseaseName);
+    }//GEN-LAST:event_tfieldDiseaseNameKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnNew;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnCreateDisease;
+    private javax.swing.JButton btnDeleteDisease;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCreate;
+    private javax.swing.JLabel lblDiseaseDirectory;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblwelcome;
-    private javax.swing.JTable tblDisease;
-    private javax.swing.JTextField txtVaccineName;
+    private javax.swing.JTable tblDiseaseID;
+    private javax.swing.JTextField tfieldDiseaseName;
     // End of variables declaration//GEN-END:variables
 }

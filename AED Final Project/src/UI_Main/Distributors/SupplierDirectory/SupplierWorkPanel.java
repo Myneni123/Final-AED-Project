@@ -67,13 +67,13 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
 
     public void populateCombo() {
         for (Vaccine vaccine : business.getVaccineList().getVaccineList()) {
-            comboVaccine.addItem(vaccine);
+            combolstVaccineName.addItem(vaccine);
         }
 
     }
 
     public void populateWorkQueueTable() {
-        DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblVaccineRequest.getModel();
 
         model.setRowCount(0);
 
@@ -91,7 +91,7 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
     }
 
     public void populateAvailable() {
-        DefaultTableModel model = (DefaultTableModel) availableTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblVaccineAvailable.getModel();
 
         model.setRowCount(0);
 
@@ -113,47 +113,50 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblSupplier = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
-        btnComplete = new javax.swing.JButton();
-        reqBtn = new javax.swing.JButton();
+        btnCompleteSupplier = new javax.swing.JButton();
+        btnAssign = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        availableTable = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        tblVaccineAvailable = new javax.swing.JTable();
+        lblVaccineRequested = new javax.swing.JLabel();
+        lblVaccinesAvailable = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        requestTable = new javax.swing.JTable();
-        comboVaccine = new javax.swing.JComboBox();
-        txtquant = new javax.swing.JTextField();
+        tblVaccineRequest = new javax.swing.JTable();
+        combolstVaccineName = new javax.swing.JComboBox();
+        tfieldQuantity = new javax.swing.JTextField();
+        lblVaccineName = new javax.swing.JLabel();
+        btnRefresh = new javax.swing.JButton();
+        btnVaccineAdd = new javax.swing.JButton();
+        btnDeleteRequest = new javax.swing.JButton();
+        lblImage = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
-        sellBtn = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Supplier Work Area -Adminstrative Role");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        lblSupplier.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblSupplier.setText("Supplier Admin Work Area");
+        add(lblSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 130, 20));
 
-        btnComplete.setText("Complete");
-        btnComplete.addActionListener(new java.awt.event.ActionListener() {
+        btnCompleteSupplier.setText("Complete Request");
+        btnCompleteSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCompleteActionPerformed(evt);
+                btnCompleteSupplierActionPerformed(evt);
             }
         });
-        add(btnComplete, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 140, -1));
+        add(btnCompleteSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 140, -1));
 
-        reqBtn.setText("Assign To Me");
-        reqBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnAssign.setText("Assign Request To Me");
+        btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reqBtnActionPerformed(evt);
+                btnAssignActionPerformed(evt);
             }
         });
-        add(reqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 120, -1));
+        add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 180, -1));
 
-        availableTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblVaccineAvailable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -161,19 +164,19 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
                 "Vaccine Name", "Quantity"
             }
         ));
-        jScrollPane1.setViewportView(availableTable);
+        jScrollPane1.setViewportView(tblVaccineAvailable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 500, 90));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 500, 90));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel4.setText("Vaccines Requested");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 170, 30));
+        lblVaccineRequested.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblVaccineRequested.setText("Vaccines Requested");
+        add(lblVaccineRequested, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 170, 30));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("Vaccines Available");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 150, 30));
+        lblVaccinesAvailable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblVaccinesAvailable.setText("Vaccines Available");
+        add(lblVaccinesAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 150, 30));
 
-        requestTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblVaccineRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -189,55 +192,71 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(requestTable);
+        jScrollPane2.setViewportView(tblVaccineRequest);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 500, 90));
 
-        add(comboVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, -1));
+        combolstVaccineName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combolstVaccineNameActionPerformed(evt);
+            }
+        });
+        add(combolstVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 120, -1));
 
-        txtquant.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfieldQuantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfieldQuantityActionPerformed(evt);
+            }
+        });
+        tfieldQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtquantKeyPressed(evt);
+                tfieldQuantityKeyPressed(evt);
             }
         });
-        add(txtquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 100, -1));
+        add(tfieldQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 100, -1));
 
-        jLabel2.setText("Vaccine Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 90, 20));
+        lblVaccineName.setText("Vaccine Name:");
+        add(lblVaccineName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 90, 20));
 
-        backJButton.setText("Refresh");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
+        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
-        sellBtn.setText("Add Vaccine");
-        sellBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnVaccineAdd.setText("Add Vaccine");
+        btnVaccineAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sellBtnActionPerformed(evt);
+                btnVaccineAddActionPerformed(evt);
             }
         });
-        add(sellBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 170, -1));
+        add(btnVaccineAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 110, -1));
 
-        btnDelete.setText("Delete request");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteRequest.setText("Delete request");
+        btnDeleteRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                btnDeleteRequestActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+        add(btnDeleteRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+
+        lblImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\bhema\\Downloads\\aedsup3.jpg")); // NOI18N
+        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 680, 530));
+
+        jLabel2.setText("Quantity");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCompleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompleteActionPerformed
+    private void btnCompleteSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompleteSupplierActionPerformed
         // TODO add your handling code here:
-        int selectedRow = requestTable.getSelectedRow();
+        int selectedRow = tblVaccineRequest.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select the row to assign the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            SupplierW_Request p = (SupplierW_Request) requestTable.getValueAt(selectedRow, 2);
+            SupplierW_Request p = (SupplierW_Request) tblVaccineRequest.getValueAt(selectedRow, 2);
                 int temp=0;
             if (p.getReceiver() != null) {
                 if (p.getStatus().equals("Pending")) {
@@ -277,15 +296,15 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
             }
 
         }
-    }//GEN-LAST:event_btnCompleteActionPerformed
+    }//GEN-LAST:event_btnCompleteSupplierActionPerformed
 
-    private void reqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqBtnActionPerformed
-        int selectedRow = requestTable.getSelectedRow();
+    private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
+        int selectedRow = tblVaccineRequest.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select the row to assign the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            SupplierW_Request p = (SupplierW_Request) requestTable.getValueAt(selectedRow, 2);
+            SupplierW_Request p = (SupplierW_Request) tblVaccineRequest.getValueAt(selectedRow, 2);
 
             p.setStatus("Pending");
             p.setReceiver(account);
@@ -302,18 +321,18 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
 //        s.getWorkQueue().getWorkRequestList().add(request);
 //        populateWorkQueueTable();
 
-    }//GEN-LAST:event_reqBtnActionPerformed
+    }//GEN-LAST:event_btnAssignActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
 
         new SupplierWorkPanel(userProcessContainer, account, organization, enterprise, business);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void sellBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sellBtnActionPerformed
+    private void btnVaccineAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineAddActionPerformed
         // TODO add your handling code here:
-        if(!txtquant.getText().equals("")){
-        int quant = Integer.parseInt(txtquant.getText());
-        Vaccine v = (Vaccine) comboVaccine.getSelectedItem();
+        if(!tfieldQuantity.getText().equals("")){
+        int quant = Integer.parseInt(tfieldQuantity.getText());
+        Vaccine v = (Vaccine) combolstVaccineName.getSelectedItem();
         int temp = 0;
         for (Vaccine vaccine : s.getVaccineList().getVaccineList()) {
             if (v.getVaccineName().equals(vaccine.getVaccineName())) {
@@ -333,16 +352,16 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
              JOptionPane.showMessageDialog(null, "Enter value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
   
-    }//GEN-LAST:event_sellBtnActionPerformed
+    }//GEN-LAST:event_btnVaccineAddActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnDeleteRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRequestActionPerformed
         // TODO add your handling code here:
-        int selectedRow = requestTable.getSelectedRow();
+        int selectedRow = tblVaccineRequest.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            PharmacyW_Request p = (PharmacyW_Request) requestTable.getValueAt(selectedRow, 2);
+            PharmacyW_Request p = (PharmacyW_Request) tblVaccineRequest.getValueAt(selectedRow, 2);
 
             s.getWorkQueue().getWorkRequestList().remove(p);
             business.getWorkQueue().getWorkRequestList().remove(p);
@@ -350,30 +369,40 @@ public class SupplierWorkPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
             populateWorkQueueTable();
         }
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteRequestActionPerformed
 
-    private void txtquantKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtquantKeyPressed
+    private void tfieldQuantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfieldQuantityKeyPressed
         // TODO add your handling code here:
-        Validation.onlyInteger(evt, txtquant);
-    }//GEN-LAST:event_txtquantKeyPressed
+        Validation.onlyInteger(evt, tfieldQuantity);
+    }//GEN-LAST:event_tfieldQuantityKeyPressed
+
+    private void combolstVaccineNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combolstVaccineNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combolstVaccineNameActionPerformed
+
+    private void tfieldQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfieldQuantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfieldQuantityActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable availableTable;
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnComplete;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JComboBox comboVaccine;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JButton btnCompleteSupplier;
+    private javax.swing.JButton btnDeleteRequest;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnVaccineAdd;
+    private javax.swing.JComboBox combolstVaccineName;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton reqBtn;
-    private javax.swing.JTable requestTable;
-    private javax.swing.JButton sellBtn;
-    private javax.swing.JTextField txtquant;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblSupplier;
+    private javax.swing.JLabel lblVaccineName;
+    private javax.swing.JLabel lblVaccineRequested;
+    private javax.swing.JLabel lblVaccinesAvailable;
+    private javax.swing.JTable tblVaccineAvailable;
+    private javax.swing.JTable tblVaccineRequest;
+    private javax.swing.JTextField tfieldQuantity;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 
